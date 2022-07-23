@@ -2,6 +2,7 @@
 // import { AuthContext } from "../../../contexts/authContext";
 // import { api } from "../../../api/api";
 // import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { NavBar } from "../../components/HomePage/navBar";
 import { Hello } from "../../components/HomePage/helloUser";
@@ -19,6 +20,13 @@ export function HomePage() {
       <TripSlider />
       <Community />
       <ContactUs />
+
+      <Link to="log-in">
+        <button>Login</button>
+      </Link>
+      <Link to="sign-up">
+        <button>Sign-Up</button>
+      </Link>
     </div>
   );
 }
