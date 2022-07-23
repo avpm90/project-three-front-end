@@ -1,4 +1,4 @@
-/* import { useEffect, useState, useContext } from "react";
+import { useContext } from "react";
 //import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/authContext";
@@ -30,4 +30,3 @@ export function HomeUser() {
     </>
   );
 }
- */
