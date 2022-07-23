@@ -1,9 +1,9 @@
-import { useEffect, useState, useContext } from "react";
-import { api } from "../../api/api";
+/* import { useEffect, useState, useContext } from "react";
+//import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/authContext";
 
-export function Profile() {
+export function HomeUser() {
   // const [user, setUser] = useState({ name: "", email: "" });
   const navigate = useNavigate();
   // useEffect(() => {
@@ -30,3 +30,4 @@ export function Profile() {
     </>
   );
 }
+ */

@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
-import { AuthContext } from "../../contexts/authContext";
-import { api } from "../../api/api";
+import { AuthContext } from "../../../contexts/authContext";
+import { api } from "../../../api/api";
 import { useNavigate } from "react-router-dom";
 
 export function Login() {
@@ -21,7 +21,7 @@ export function Login() {
     e.preventDefault();
 
     try {
-      const response = await api.post("/user/login", form);
+      const response = await api.post("/user/log-in", form);
       setLoggedInUser({ ...response.data });
 
       localStorage.setItem("loggedInUser", JSON.stringify(response.data));
