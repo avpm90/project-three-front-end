@@ -6,22 +6,23 @@ export function Signup() {
   const navigate = useNavigate();
   const [form, setForm] = useState({
     name: "",
+    surname: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
 
-  const [img, setImg] = useState("");
+ // const [img, setImg] = useState("");
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  function handleImage(e) {
+/*   function handleImage(e) {
     setImg(e.target.files[0]);
   }
-
-  async function handleUpload() {
+ */
+  /*   async function handleUpload() {
     try {
       const uploadData = new FormData();
       uploadData.append("picture", img);
@@ -33,13 +34,13 @@ export function Signup() {
       console.log(error);
     }
   }
-
+ */
   async function handleSubmit(e) {
     e.preventDefault();
 
     try {
-      const imgURL = await handleUpload();
-      await api.post("/user/signup", { ...form, img: imgURL });
+      // const imgURL = await handleUpload();
+      await api.post("/user/sign-up", form);
 
       navigate("/login");
     } catch (error) {
@@ -49,7 +50,7 @@ export function Signup() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="formName">Nome:</label>
+      <label htmlFor="formName">Name:</label>
       <input
         id="formName"
         name="name"
@@ -57,9 +58,17 @@ export function Signup() {
         value={form.name}
         onChange={handleChange}
       />
-      <label htmlFor="formImg">Sua foto de perfil:</label>
+      <label htmlFor="formSurname">Surname:</label>
+      <input
+        id="formSurname"
+        name="surname"
+        type="text"
+        value={form.surname}
+        onChange={handleChange}
+      />
+      {/* <label htmlFor="formImg">Sua foto de perfil:</label>
       <input type="file" id="formImg" onChange={handleImage} />
-
+ */}
       <label htmlFor="formEmail">E-mail:</label>
       <input
         id="formEmail"

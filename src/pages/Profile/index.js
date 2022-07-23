@@ -16,7 +16,7 @@ export function Profile() {
   // }, []);
 
   const { loggedInUser } = useContext(AuthContext);
-
+  console.log(loggedInUser);
   function handleLogOut() {
     localStorage.removeItem("loggedInUser");
     navigate("/");
