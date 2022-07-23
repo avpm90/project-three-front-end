@@ -5,7 +5,7 @@ import { Signup } from "./pages/HomePage/Signup";
 import { AuthContextComponent } from "./contexts/authContext";
 import { HomeUser } from "./pages/HomeUser/index";
 import { ErrorPage } from "./pages/ErrorPage";
-
+import { HomeAdmin } from "./pages/HomeAdmin/index";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
             path="/user"
             element={<ProtectedRoute component={HomeUser} />}
           />
+          <Route path="/admin" element={<HomeAdmin />} />
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>
