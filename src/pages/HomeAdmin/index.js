@@ -1,4 +1,9 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { EditOrder } from "../../components/HomeAdmin/EditOrder";
+import { EditTrip } from "../../components/HomeAdmin/EditTrip";
+import { EditUser } from "../../components/HomeAdmin/EditUser";
+
 export function HomeAdmin() {
   const [showTrips, setShowTrips] = useState(false);
   const [showOrders, setShowOrders] = useState(false);
@@ -21,20 +26,25 @@ export function HomeAdmin() {
     setShowOrders(false);
     setShowUsers(true);
   }
+
   return (
     <>
       <button onClick={handleTrip}>Trips</button>
       <button onClick={handleOrders}>Orders</button>
       <button onClick={handleUsers}>Users</button>
       {showTrips && ( // se esse state for TRUE mostra isso
-        <p>TODAS AS TRIPS</p>
+        <EditTrip />
       )}
       {showOrders && ( // se esse state for TRUE mostra isso
-        <p>TODOS OS ORDERS </p>
+        <EditOrder />
       )}
       {showUsers && ( // se esse state for TRUE mostra isso
-        <p>TODOS OS USERS</p>
+        <EditUser />
       )}
+
+      <Link to="/">
+        <button>Home</button>
+      </Link>
     </>
   );
 }

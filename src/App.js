@@ -7,6 +7,7 @@ import { HomeUser } from "./pages/HomeUser/index";
 import { ErrorPage } from "./pages/ErrorPage";
 import { HomeAdmin } from "./pages/HomeAdmin/index";
 import { ProtectedRoute } from "./components/ProtectedRoute";
+import { ViewTrip } from "./pages/HomeAdmin/ViewTrip";
 
 function App() {
   return (
@@ -20,7 +21,13 @@ function App() {
             path="/user"
             element={<ProtectedRoute component={HomeUser} />}
           />
-          <Route path="/admin" element={<HomeAdmin />} />
+          <Route
+            path="/admin"
+            element={<ProtectedRoute component={HomeAdmin} />}
+          />
+          <Route path="/admin/:id" element={<ViewTrip />} />
+          
+
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </AuthContextComponent>
