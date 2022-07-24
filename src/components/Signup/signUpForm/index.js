@@ -134,7 +134,6 @@ export function SignUpForm() {
             value={form.confirmPassword}
             onChange={handleChange}
           />
-          {/* <button type="submit">Cadastrar</button> NAO PRECISA! */}
           <label htmlFor="formBirthday">What's your date of birth?</label>
           <input
             id="formBirthday"

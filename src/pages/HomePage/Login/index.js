@@ -23,10 +23,14 @@ export function Login() {
     try {
       const response = await api.post("/user/log-in", form);
       setLoggedInUser({ ...response.data });
+      console.log(response.data);
 
       localStorage.setItem("loggedInUser", JSON.stringify(response.data));
-
-      navigate("/");
+      if (response.data.user.role === "ADMIN") {
+        navigate("/admin");
+      } else {
+        navigate("/");
+      }
     } catch (error) {
       console.log(error);
     }

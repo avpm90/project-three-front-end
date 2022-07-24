@@ -1,7 +1,14 @@
 import style from "./style.module.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+
+
+
+import { LoginModal } from "../loginModal";
 
 export function NavBar() {
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <div className={style.navComp}>
       <div className={style.navRight}>
@@ -17,10 +24,20 @@ export function NavBar() {
       </Link>
       <div className={style.navLeft}>
         <div>
-          <Link to={""}>CONTACT</Link>
+          <a href="#contactInfo">CONTACT</a>
         </div>
-        <div>
-          <Link to={"/log-in"}>LOG IN</Link>
+        <div className={style.modalDiv}>
+          <p
+            onClick={() => {
+              setOpenModal(true);
+            }} className={style.loginP}
+          >
+            LOG IN
+          </p>
+          <div className={style.loginDiv}>
+          {openModal && <LoginModal closeModal={setOpenModal} />}
+          </div>
+          
         </div>
       </div>
     </div>
