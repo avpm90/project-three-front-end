@@ -11,26 +11,23 @@ import { ProtectedRoute } from './components/ProtectedRoute';
 import { Store } from './pages/Store/index';
 
 function App() {
-	return (
-		<>
-			<p>Hello world.</p>
-			<AuthContextComponent>
-				<Routes>
-					<Route path="/" element={<HomePage />} />
-					<Route path="/sign-up" element={<Signup />} />
-					<Route path="/log-in" element={<Login />} />
-					<Route path="/store" element={<Store />} />
-					<Route
-						path="/user"
-						element={<ProtectedRoute component={HomeUser} />}
-					/>
-					<Route path="/admin" element={<HomeAdmin />} />
-
-					<Route path="*" element={<ErrorPage />} />
-				</Routes>
-			</AuthContextComponent>
-		</>
-	);
+  return (
+    <>
+      <AuthContextComponent>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/sign-up" element={<Signup />} />
+          <Route path="/log-in" element={<Login />} />
+          <Route
+            path="/user"
+            element={<ProtectedRoute component={HomeUser} />}
+          />
+          <Route path="/admin" element={<HomeAdmin />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </AuthContextComponent>
+    </>
+  );
 }
 
 export default App;
