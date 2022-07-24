@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { api } from "../../api/api";
-import { Card } from "antd";
+import { EditOrder } from "../../components/HomeAdmin/EditOrder";
+import { EditTrip } from "../../components/HomeAdmin/EditTrip";
+import { EditUser } from "../../components/HomeAdmin/EditUser";
 
 export function HomeAdmin() {
   const [showTrips, setShowTrips] = useState(false);
@@ -25,61 +26,6 @@ export function HomeAdmin() {
     setShowOrders(false);
     setShowUsers(true);
   }
-  const [users, setUsers] = useState([
-    {
-      name: "",
-      surname: "",
-    },
-  ]);
-  console.log(users);
-
-  useEffect(() => {
-    async function fetchUsers() {
-      const response = await api.get("/user/all-users");
-      setUsers(response.data);
-    }
-    fetchUsers();
-  }, []);
-
-  const [trips, setTrips] = useState([
-    {
-      destination: "",
-      category: "",
-    },
-  ]);
-  console.log(trips);
-
-  useEffect(() => {
-    async function fetchTrips() {
-      const response = await api.get("/trip/all-trips");
-      setTrips(response.data);
-    }
-    fetchTrips();
-  }, []);
-
-  const [orders, setOrders] = useState([
-    {
-      customerId: "",
-      dateCreated: "",
-      orderTotal: "",
-      trips: [
-        {
-          trip: "",
-          quantity: "",
-          unitPrice: "",
-        },
-      ],
-    },
-  ]);
-
-  useEffect(() => {
-    async function fetchOrders() {
-      const response = await api.get("/order/all-orders");
-      setOrders(response.data);
-      console.log(response.data);
-    }
-    fetchOrders();
-  }, []);
 
   return (
     <>
@@ -87,66 +33,18 @@ export function HomeAdmin() {
       <button onClick={handleOrders}>Orders</button>
       <button onClick={handleUsers}>Users</button>
       {showTrips && ( // se esse state for TRUE mostra isso
-        <Card style={{ borderRadius: 50 }}>
-          {trips.map((currentTrip) => {
-            return (
-              <div key={currentTrip.customerId}>
-                <p>{currentTrip.destination}</p>
-                <p>{currentTrip.category}</p>
-
-                <button>View</button>
-                <button>Delete</button>
-              </div>
-            );
-          })}
-        </Card>
+        <EditTrip />
       )}
       {showOrders && ( // se esse state for TRUE mostra isso
-        <Card>
-          {orders.map((currentOrder) => {
-            return (
-              <div>
-                <Card key={currentOrder.customerId}>
-                  <p>{currentOrder.customerId.name}</p>
-                  <p>{currentOrder.dateCreated}</p>
-                  <p>{currentOrder.orderTotal}</p>
-                </Card>
-                {currentOrder.trips.map((currentTrip) => {
-                  return (
-                    <>
-                      <p>{currentTrip.trip}</p>
-                      <p>{currentTrip.quantity}</p>
-                      <p>{currentTrip.unitPrice}</p>
-                    </>
-                  );
-                })}
-              </div>
-            );
-          })}
-        </Card>
+        <EditOrder />
       )}
       {showUsers && ( // se esse state for TRUE mostra isso
-        <div>
-          <Card style={{ borderRadius: 50 }}>
-            {users.map((currentUser) => {
-              return (
-                <div key={currentUser.customerId}>
-                  <p>
-                    {currentUser.name} {currentUser.surname}
-                  </p>
-                  <p>{currentUser.email}</p>
-                  <button>View</button>
-                  <button>Delete</button>
-                </div>
-              );
-            })}
-          </Card>
-
-          <Link to="/">
-            <button>Home</button>
-          </Link>
-        </div>
+        <EditUser />
       )}
+
+      <Link to="/">
+        <button>Home</button>
+      </Link>
     </>
   );
 }

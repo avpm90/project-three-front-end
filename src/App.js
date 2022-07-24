@@ -28,6 +28,7 @@ function App() {
 			</AuthContextComponent>
 		</>
 	);
+
 }
 
 export default App;
