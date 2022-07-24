@@ -1,0 +1,14 @@
+.navComp {
+  background-color: aquamarine;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+}
+.navRight {
+  gap: 10px;
+  display: flex;
+}
+.navLeft {
+  gap: 10px;
+  display: flex;
+}

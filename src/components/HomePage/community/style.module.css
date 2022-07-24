@@ -1,0 +1,12 @@
+.communityComp {
+  background-color: darkcyan;
+  border: 1px solid black;
+}
+.cards {
+  display: flex;
+}
+.card {
+  /* height: 100px; */
+  /* width: 100px; */
+  text-align: center;
+}
