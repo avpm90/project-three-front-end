@@ -40,21 +40,32 @@ export function EditTrip() {
     <>
       <Card style={{ borderRadius: 50 }}>
         <Form>
-          <label>Destination</label>
+          <label>Destination:</label>
           <input
             name="destination"
             value={form.destination}
             onChange={handleForm}
           />
-          <label>Category</label>
-          <input name="category" value={form.category} onChange={handleForm} />
-          <label>Description</label>
+          <label>Category:</label>
+          <select
+            name="category"
+            placeholder="Category"
+            value={form.category}
+            onChange={handleForm}
+          >
+            <option value="Adventure">Adventure</option>
+            <option value="Relax">Relax</option>
+            <option value="Night Life">Night Life</option>
+            <option value="Culture">Culture</option>
+            <option value="Beach">Beach</option>
+          </select>
+          <label>Description:</label>
           <input
             name="description"
             value={form.description}
             onChange={handleForm}
           />
-          <label>In Stock</label>
+          <label>In Stock:</label>
           <input name="inStock" value={form.inStock} onChange={handleForm} />
           <label>Price</label>
           <input
