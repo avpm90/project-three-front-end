@@ -20,12 +20,11 @@ export function HomePage() {
       <TripSlider />
       <Community />
       <ContactUs />
-
       <Link to="log-in">
-        <button>Login</button>
+        <button>Log in</button>
       </Link>
       <Link to="sign-up">
-        <button>Sign-Up</button>
+        <button>Sign up</button>
       </Link>
     </div>
   );

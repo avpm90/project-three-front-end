@@ -11,7 +11,6 @@ import { ProtectedRoute } from "./components/ProtectedRoute";
 function App() {
   return (
     <>
-      <p>Hello world.</p>
       <AuthContextComponent>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -22,7 +21,6 @@ function App() {
             element={<ProtectedRoute component={HomeUser} />}
           />
           <Route path="/admin" element={<HomeAdmin />} />
-
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </AuthContextComponent>
