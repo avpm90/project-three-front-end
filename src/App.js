@@ -7,7 +7,7 @@ import { HomeUser } from "./pages/HomeUser/index";
 import { ErrorPage } from "./pages/ErrorPage";
 import { HomeAdmin } from "./pages/HomeAdmin/index";
 import { ProtectedRoute } from "./components/ProtectedRoute";
-import { ViewTrip } from "./pages/HomeAdmin/ViewTrip";
+import { EditTrip } from "./pages/HomeAdmin/EditTrip";
 
 function App() {
   return (
@@ -25,8 +25,7 @@ function App() {
             path="/admin"
             element={<ProtectedRoute component={HomeAdmin} />}
           />
-          <Route path="/admin/:id" element={<ViewTrip />} />
-          
+          <Route path="/admin/:id" element={<EditTrip />} />
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { EditOrder } from "../../components/HomeAdmin/EditOrder";
-import { EditTrip } from "../../components/HomeAdmin/EditTrip";
-import { EditUser } from "../../components/HomeAdmin/EditUser";
+import { ViewOrder } from "../../components/HomeAdmin/ViewOrder";
+import { ViewTrip } from "../../components/HomeAdmin/ViewTrip";
+import { ViewUser } from "../../components/HomeAdmin/ViewUser";
 
 export function HomeAdmin() {
   const [showTrips, setShowTrips] = useState(false);
@@ -33,13 +33,13 @@ export function HomeAdmin() {
       <button onClick={handleOrders}>Orders</button>
       <button onClick={handleUsers}>Users</button>
       {showTrips && ( // se esse state for TRUE mostra isso
-        <EditTrip />
+        <ViewTrip />
       )}
       {showOrders && ( // se esse state for TRUE mostra isso
-        <EditOrder />
+        <ViewOrder />
       )}
       {showUsers && ( // se esse state for TRUE mostra isso
-        <EditUser />
+        <ViewUser />
       )}
 
       <Link to="/">

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { api } from "../../../api/api";
 import { Form, Card, Divider } from "antd";
 
-export function ViewTrip() {
+export function EditTrip() {
   const { id } = useParams();
 
   const [form, setForm] = useState({
@@ -30,7 +30,7 @@ export function ViewTrip() {
     e.preventDefault();
     delete form._id;
     try {
-      await api.put(`/trip/one-trip/${id}`, form);
+      await api.patch(`/trip/edit-trip/${id}`, form);
     } catch (err) {
       console.log(err);
     }
@@ -38,12 +38,12 @@ export function ViewTrip() {
 
   return (
     <>
-      <Card style={{ borderRadius: 50, width:"500" }}>
-        <p>{form.destination}</p>
-        <p>{form.category}</p>
-        <p>{form.description}</p>
-        <p>{form.inStock}</p>
-        <p>{form.unitPrice}</p>
+      <Card style={{ borderRadius: 50, width: "500" }}>
+        <p>Destination: {form.destination}</p>
+        <p>Category: {form.category}</p>
+        <p>Description: {form.description}</p>
+        <p>In Stock: {form.inStock}</p>
+        <p>Unit Price: {form.unitPrice}</p>
       </Card>
       <Divider></Divider>
       <Card style={{ borderRadius: 50 }}>
@@ -83,7 +83,7 @@ export function ViewTrip() {
             value={form.unitPrice}
             onChange={handleForm}
           />
-          <button onClick={handleUpdate}>Edit</button>
+          <button onClick={handleUpdate}>Add Changes</button>
         </Form>
       </Card>
     </>
