@@ -1,0 +1,7 @@
+.contactComp {
+  background-color: darkcyan;
+  border: 1px solid black;
+}
+.cards {
+  display: flex;
+}
