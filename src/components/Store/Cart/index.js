@@ -1,5 +1,6 @@
 import React from 'react';
 import { useCart } from 'react-use-cart';
+import { DeleteOutlined } from '@ant-design/icons';
 
 export const Cart = () => {
 	const {
@@ -28,9 +29,9 @@ export const Cart = () => {
 									return (
 										<tr key={index}>
 											<td>{/* <img /> */}</td>
-											<td>{item.title}</td>
-											<td>{item.price}</td>
-											<td>Quantity ({item.quantity})</td>
+											<td>Destination: {item.destination}</td>
+											<td>Price: ${item.price}</td>
+											<td>Quantity: ({item.quantity})</td>
 											<td>
 												<button
 													onClick={() =>
@@ -47,7 +48,7 @@ export const Cart = () => {
 													+
 												</button>
 												<button onClick={() => removeItem(item.id)}>
-													Remove Item
+													{<DeleteOutlined />}
 												</button>
 											</td>
 										</tr>
