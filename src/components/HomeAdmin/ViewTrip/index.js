@@ -4,7 +4,7 @@ import { api } from "../../../api/api";
 import { Card } from "antd";
 import { CreateTrip } from "../CreateTrip";
 
-export function EditTrip() {
+export function ViewTrip() {
   const [trips, setTrips] = useState([
     {
       destination: "",
@@ -39,14 +39,14 @@ export function EditTrip() {
           return (
             <Card style={{ borderRadius: 50 }}>
               <div key={currentTrip.trip}>
-                <p>{currentTrip.destination}</p>
-                <p>{currentTrip.category}</p>
-                <p>{currentTrip.description}</p>
-                <p>{currentTrip.inStock}</p>
-                <p>{currentTrip.unitPrice}</p>
+                <p>Destination: {currentTrip.destination}</p>
+                <p>Category: {currentTrip.category}</p>
+                <p>Description: {currentTrip.description}</p>
+                <p>In Stock: {currentTrip.inStock}</p>
+                <p>Unit Price: {currentTrip.unitPrice}</p>
 
                 <Link to={`/admin/${currentTrip._id}`}>
-                  <button>View</button>
+                  <button>Edit</button>
                 </Link>
               </div>
             </Card>
