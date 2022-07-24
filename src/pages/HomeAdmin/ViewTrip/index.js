@@ -38,7 +38,7 @@ export function ViewTrip() {
 
   return (
     <>
-      <Card style={{ borderRadius: 50 }}>
+      <Card style={{ borderRadius: 50, width:"500" }}>
         <p>{form.destination}</p>
         <p>{form.category}</p>
         <p>{form.description}</p>
