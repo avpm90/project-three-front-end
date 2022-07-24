@@ -12,3 +12,14 @@
   gap: 10px;
   display: flex;
 }
+/* .modalDiv {
+  display: flex;
+  align-items: flex-end;
+} */
+.loginP {
+  margin: 0px;
+}
+.loginDiv {
+  position:relative;
+  right: 250px;
+}
