@@ -6,9 +6,11 @@ import { useState } from "react";
 
 import { LoginModal } from "../loginModal";
 
+
+ 
 export function NavBar() {
   const [openModal, setOpenModal] = useState(false);
-
+  // CONST GET ELEMENT BY ID
   return (
     <div className={style.navComp}>
       <div className={style.navRight}>
@@ -24,7 +26,7 @@ export function NavBar() {
       </Link>
       <div className={style.navLeft}>
         <div>
-          <a href="#contactInfo">CONTACT</a>
+          <a href="DOCUMENT ELEMENT BY ID">CONTACT</a>
         </div>
         <div className={style.modalDiv}>
           <p
