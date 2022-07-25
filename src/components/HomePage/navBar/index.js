@@ -1,18 +1,15 @@
 import style from "./style.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
 import { AuthContext } from "../../../contexts/authContext";
+import { Link } from "react-scroll";
 
 import { LoginModal } from "../loginModal";
 
 export function NavBar() {
   const { loggedInUser } = useContext(AuthContext);
-
   const [openModal, setOpenModal] = useState(false);
-
   const redirectAfterLogOut = useNavigate();
-
-  // const [logOff, set] = useState(false);
 
   function logOut() {
     localStorage.removeItem("loggedInUser");
@@ -25,27 +22,34 @@ export function NavBar() {
     <div className={style.navComp}>
       <div className={style.navRight}>
         <div>
-          <Link to={"/store"}>STORE</Link>
+          <a href="/store">Store</a>
         </div>
         <div>
-          <Link to={"/sign-up"}>SIGN UP</Link>
+          <a href="/sign-up">Sign Up</a>
         </div>
       </div>
-      <Link to={"/"} className={style.navLogo}>
-        LOGO HERE
-      </Link>
+      <a href="/" className={style.navLogo}>
+        Logo Here
+      </a>
       <div className={style.navLeft}>
         <div>
-          <p href="DOCUMENT ELEMENT BY ID">CONTACT</p>
+          <Link
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+          >
+            Contact Us
+          </Link>
         </div>
         {loggedInUser ? (
           <button
             onClick={() => {
-              // console.log("clicou");
               logOut();
             }}
           >
-            LOG OUT
+            loginDiv Out
           </button>
         ) : (
           <div className={style.modalDiv}>
@@ -55,7 +59,7 @@ export function NavBar() {
                 setOpenModal(true);
               }}
             >
-              LOG IN
+              Log In
             </button>
             <div className={style.loginDiv}>
               {openModal && <LoginModal closeModal={setOpenModal} />}

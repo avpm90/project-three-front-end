@@ -4,6 +4,7 @@ import { ViewOrder } from "../../components/HomeAdmin/ViewOrder";
 import { ViewTrip } from "../../components/HomeAdmin/ViewTrip";
 import { ViewUser } from "../../components/HomeAdmin/ViewUser";
 import "./style.css";
+import { NavBar } from "../../components/HomePage/navBar";
 
 export function HomeAdmin() {
   const [showTrips, setShowTrips] = useState(false);
@@ -27,6 +28,7 @@ export function HomeAdmin() {
 
   return (
     <>
+    <NavBar />
       <button className={showTrips ? "test" : "btn"} onClick={handleTrip}>
         Trips
       </button>

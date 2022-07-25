@@ -6,7 +6,7 @@ import React from "react";
 export function ContactUs() {
   return (
     // colocar o ID AQUI
-    <div className={style.contactComp}> 
+    <div className={style.contactComp} id="contact"> 
       <div>
         <h2>Contact Us</h2>
       </div>

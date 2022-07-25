@@ -1,10 +1,12 @@
 import { TripCard } from '../../components/Store/TripCard';
 import { Cart } from '../../components/Store/Cart';
 import { CartProvider } from 'react-use-cart';
+import { NavBar } from '../../components/HomePage/navBar';
 
 export function Store() {
 	return (
 		<>
+		<NavBar />
 			{/* <div>Cart HERE</div> */}
 			<div
 				className="container"

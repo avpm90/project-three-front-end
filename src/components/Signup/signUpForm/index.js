@@ -73,7 +73,7 @@ export function SignUpForm() {
   }
 
   return (
-    <>
+    <div>
       {/* <Modal
         title="Basic Modal"
         visible={isModalVisible}
@@ -156,6 +156,6 @@ export function SignUpForm() {
           Sign up!
         </button>
       </div>
-    </>
+    </div>
   );
 }
