@@ -27,7 +27,7 @@ function App() {
             element={<ProtectedRoute component={HomeAdmin} />}
           />
           <Route path="/admin/:id" element={<EditTrip />} />
-          <Route path="/admin/user/:id" element={<EditUser />} />
+          <Route path="/admin/user" element={<EditUser />} />
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>

@@ -9,6 +9,9 @@ export function ViewTrip() {
     {
       destination: "",
       category: "",
+      description: "",
+      inStock: "",
+      unitPrice: "",
     },
   ]);
   console.log(trips);
@@ -34,14 +37,14 @@ export function ViewTrip() {
         {trips.map((currentTrip) => {
           return (
             <Card style={{ borderRadius: 50 }}>
-              <div key={currentTrip.trip}>
+              <div key={currentTrip._id}>
                 <p>Destination: {currentTrip.destination}</p>
                 <p>Category: {currentTrip.category}</p>
                 <p>Description: {currentTrip.description}</p>
                 <p>In Stock: {currentTrip.inStock}</p>
                 <p>Unit Price: {currentTrip.unitPrice}</p>
 
-                <Link to={`/admin/${currentTrip.id}`}>
+                <Link to={`/admin/${currentTrip._id}`}>
                   <button>Edit</button>
                 </Link>
               </div>

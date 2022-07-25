@@ -23,13 +23,13 @@ export function ViewUser() {
     <>
       {users.map((currentUser) => {
         return (
-          <div key={currentUser.name}>
+          <div key={currentUser._id}>
             <Card style={{ borderRadius: 50 }}>
               <p>
                 {currentUser.name} {currentUser.surname}
               </p>
               <p>{currentUser.email}</p>
-              <Link to={`user/${currentUser._id}`}>
+              <Link to={`admin/user/${currentUser._id}`}>
                 <button>Edit</button>
               </Link>{" "}
               <button>Delete</button>

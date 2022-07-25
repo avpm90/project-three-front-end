@@ -14,7 +14,7 @@ export function EditUser() {
 
   useEffect(() => {
     async function fetchId() {
-      const response = await api.get(`/user/profile/${id}`);
+      const response = await api.get(`/user/profile`);
       setForm(response.data);
     }
     fetchId();
@@ -28,7 +28,7 @@ export function EditUser() {
     e.preventDefault();
     delete form._id;
     try {
-      await api.patch(`/user/update-user/${id}`, form);
+      await api.patch(`/user/update-user`, form);
     } catch (err) {
       console.log(err);
     }

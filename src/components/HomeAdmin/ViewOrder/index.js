@@ -33,7 +33,7 @@ export function ViewOrder() {
         {orders.map((currentOrder) => {
           return (
             <div>
-              <Card style={{ borderRadius: 50 }} key={currentOrder.customerId}>
+              <Card style={{ borderRadius: 50 }} key={currentOrder._id}>
                 <p>{currentOrder.customerId.name}</p>
                 <p>{currentOrder.dateCreated}</p>
                 <p>{currentOrder.orderTotal}</p>
@@ -41,7 +41,7 @@ export function ViewOrder() {
               {currentOrder.trips.map((currentTrip) => {
                 return (
                   <>
-                    <Card style={{ borderRadius: 50 }} key={currentTrip.trip}>
+                    <Card style={{ borderRadius: 50 }} key={currentTrip._id}>
                       <p>{currentTrip.trip}</p>
                       <p>{currentTrip.quantity}</p>
                       <p>{currentTrip.unitPrice}</p>
