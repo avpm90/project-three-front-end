@@ -38,32 +38,30 @@ export function NavBar() {
         <div>
           <p href="DOCUMENT ELEMENT BY ID">CONTACT</p>
         </div>
-        <div className={style.modalDiv}>
-          <p className={style.loginP}>
-            {loggedInUser ? (
-              <button
-                onClick={() => {
-                  console.log("clicou");
-                  logOut();
-                }}
-              >
-                LOG OUT
-              </button>
-            ) : (
-              <p
-                onClick={() => {
-                  setOpenModal(true);
-                }}
-              >
-                LOG IN
-              </p>
-            )}
-          </p>
-
-          <div className={style.loginDiv}>
-            {openModal && <LoginModal closeModal={setOpenModal} />}
+        {loggedInUser ? (
+          <button
+            onClick={() => {
+              // console.log("clicou");
+              logOut();
+            }}
+          >
+            LOG OUT
+          </button>
+        ) : (
+          <div className={style.modalDiv}>
+            <button
+              className={style.loginP}
+              onClick={() => {
+                setOpenModal(true);
+              }}
+            >
+              LOG IN
+            </button>
+            <div className={style.loginDiv}>
+              {openModal && <LoginModal closeModal={setOpenModal} />}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
