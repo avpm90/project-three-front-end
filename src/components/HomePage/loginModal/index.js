@@ -17,6 +17,8 @@ export function LoginModal({ closeModal }) {
 
   const { setLoggedInUser } = useContext(AuthContext);
 
+
+
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
@@ -39,6 +41,9 @@ export function LoginModal({ closeModal }) {
       console.log(error);
     }
   }
+
+  const [isToggled, setisToggled] = useState(false);
+
   return (
     <div className={style.modalBackground}>
       <div className={style.modalDiv}>
@@ -60,7 +65,7 @@ export function LoginModal({ closeModal }) {
             value={form.password}
             onChange={handleChange}
           />
-          <button type="submit">Log In</button>
+          <button type="submit" onClick= {() => setisToggled(!isToggled)}>Log In</button>
           <button onClick={() => closeModal(false)}>Cancel</button>
         </form>
       </div>
