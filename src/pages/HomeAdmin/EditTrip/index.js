@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import { api } from "../../../api/api";
 import { Form, Card, Divider } from "antd";
 
-export function EditTrip() {
+export function EditTrip({ tripsEdit }) {
+  console.log("---------------->", tripsEdit);
   const { id } = useParams();
 
   const [form, setForm] = useState({
@@ -34,6 +35,9 @@ export function EditTrip() {
     } catch (err) {
       console.log(err);
     }
+  }
+  async function deleteTrip() {
+    await api.delete(`/trip/delete-trip/${id}`);
   }
 
   return (
@@ -74,6 +78,7 @@ export function EditTrip() {
             onChange={handleForm}
           />
           <button onClick={handleUpdate}>Add Changes</button>
+          <button onClick={deleteTrip}>Delete</button>
         </Form>
       </Card>
       <Divider></Divider>

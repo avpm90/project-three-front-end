@@ -9,7 +9,11 @@ import { LoginModal } from "../loginModal";
 
  
 export function NavBar() {
+
   const [openModal, setOpenModal] = useState(false);
+  // const [isToggled, setisToggled] = useState(false);
+
+
   // CONST GET ELEMENT BY ID
   return (
     <div className={style.navComp}>
@@ -26,7 +30,7 @@ export function NavBar() {
       </Link>
       <div className={style.navLeft}>
         <div>
-          <a href="DOCUMENT ELEMENT BY ID">CONTACT</a>
+          <p href="DOCUMENT ELEMENT BY ID">CONTACT</p>
         </div>
         <div className={style.modalDiv}>
           <p
@@ -36,6 +40,7 @@ export function NavBar() {
           >
             LOG IN
           </p>
+          {/* { isToggled && "LOG OFF"} */}
           <div className={style.loginDiv}>
           {openModal && <LoginModal closeModal={setOpenModal} />}
           </div>
