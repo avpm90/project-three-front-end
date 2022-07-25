@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { api } from "../../../api/api";
 import { Form, Card, Divider } from "antd";
-
-export function EditTrip({ tripsEdit }) {
-  console.log("---------------->", tripsEdit);
+export function EditTrip() {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const [form, setForm] = useState({
     destination: "",
@@ -38,6 +37,7 @@ export function EditTrip({ tripsEdit }) {
   }
   async function deleteTrip() {
     await api.delete(`/trip/delete-trip/${id}`);
+    navigate("/admin");
   }
 
   return (
