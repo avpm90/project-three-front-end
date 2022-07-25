@@ -1,20 +1,15 @@
 import style from "./style.module.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-
-
+import { useState, useContext } from "react";
+import { AuthContext } from "../../../contexts/authContext";
 
 import { LoginModal } from "../loginModal";
 
-
- 
 export function NavBar() {
-
+  const { loggedInUser } = useContext(AuthContext);
   const [openModal, setOpenModal] = useState(false);
-  // const [isToggled, setisToggled] = useState(false);
 
 
-  // CONST GET ELEMENT BY ID
   return (
     <div className={style.navComp}>
       <div className={style.navRight}>
@@ -36,15 +31,14 @@ export function NavBar() {
           <p
             onClick={() => {
               setOpenModal(true);
-            }} className={style.loginP}
+            }}
+            className={style.loginP}
           >
-            LOG IN
+            {loggedInUser ? <p>LOG OFF</p> : <p>LOG IN</p>}
           </p>
-          {/* { isToggled && "LOG OFF"} */}
           <div className={style.loginDiv}>
-          {openModal && <LoginModal closeModal={setOpenModal} />}
+            {openModal && <LoginModal closeModal={setOpenModal} />}
           </div>
-          
         </div>
       </div>
     </div>

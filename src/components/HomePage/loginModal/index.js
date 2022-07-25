@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 // import React from "react";
 
 export function LoginModal({ closeModal }) {
-
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -16,8 +15,6 @@ export function LoginModal({ closeModal }) {
   const navigate = useNavigate();
 
   const { setLoggedInUser } = useContext(AuthContext);
-
-
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -42,8 +39,6 @@ export function LoginModal({ closeModal }) {
     }
   }
 
-  const [isToggled, setisToggled] = useState(false);
-
   return (
     <div className={style.modalBackground}>
       <div className={style.modalDiv}>
@@ -65,7 +60,7 @@ export function LoginModal({ closeModal }) {
             value={form.password}
             onChange={handleChange}
           />
-          <button type="submit" onClick= {() => setisToggled(!isToggled)}>Log In</button>
+          <button type="submit">Log In</button>
           <button onClick={() => closeModal(false)}>Cancel</button>
         </form>
       </div>

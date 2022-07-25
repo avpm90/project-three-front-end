@@ -5,11 +5,10 @@ import { AuthContext } from "../../../contexts/authContext";
 
 export function Hello() {
   const { loggedInUser } = useContext(AuthContext);
-  // console.log(loggedInUser.user.name);
 
   return (
     <div className={style.helloComp}>
-      <p>Hello, {loggedInUser.user.name}</p>
+      {loggedInUser ? <p>{`Hello, ${loggedInUser.user.name}`}</p> : null}
       <div className={style.helloText}>
         <h1>TEXT HERE!</h1>
         <h2>TEXT HERE!</h2>
