@@ -9,6 +9,7 @@ import { HomeAdmin } from "./pages/HomeAdmin/index";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { Store } from "./pages/Store/index";
 import { EditTrip } from "./pages/HomeAdmin/EditTrip";
+import { EditUser } from "./pages/HomeAdmin/EditUser";
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
             element={<ProtectedRoute component={HomeAdmin} />}
           />
           <Route path="/admin/:id" element={<EditTrip />} />
+          <Route path="/admin/user/:id" element={<EditUser />} />
+
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </AuthContextComponent>
