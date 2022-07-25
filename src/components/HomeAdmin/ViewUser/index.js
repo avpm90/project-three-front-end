@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { api } from "../../../api/api";
 import { Card } from "antd";
+import { Link } from "react-router-dom";
 
 export function ViewUser() {
   const [users, setUsers] = useState([
@@ -28,7 +29,9 @@ export function ViewUser() {
                 {currentUser.name} {currentUser.surname}
               </p>
               <p>{currentUser.email}</p>
-              <button>View</button>
+              <Link to={`user/${currentUser._id}`}>
+                <button>Edit</button>
+              </Link>{" "}
               <button>Delete</button>
             </Card>
           </div>

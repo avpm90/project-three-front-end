@@ -26,10 +26,6 @@ export function ViewTrip() {
     setShowCreate(!showCreate);
   }
 
-  /*  async function deleteTrip() {
-    await api.delete(`/trip/delete-trip/${id}`);
-  } */
-
   return (
     <div>
       <>
@@ -45,7 +41,7 @@ export function ViewTrip() {
                 <p>In Stock: {currentTrip.inStock}</p>
                 <p>Unit Price: {currentTrip.unitPrice}</p>
 
-                <Link to={`/admin/${currentTrip._id}`}>
+                <Link to={`/admin/${currentTrip.id}`}>
                   <button>Edit</button>
                 </Link>
               </div>
