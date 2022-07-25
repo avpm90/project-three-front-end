@@ -21,6 +21,7 @@ export function CreateTrip() {
     console.log(form);
     const response = await api.post("/trip/add-trip", form);
     console.log(response);
+    window.location.reload();
   }
 
   return (

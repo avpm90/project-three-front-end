@@ -44,7 +44,7 @@ export function ViewTrip() {
                 <p>In Stock: {currentTrip.inStock}</p>
                 <p>Unit Price: {currentTrip.unitPrice}</p>
 
-                <Link to={`/admin/${currentTrip._id}`}>
+                <Link to={`/admin/trip/${currentTrip._id}`}>
                   <button>Edit</button>
                 </Link>
               </div>

@@ -32,17 +32,9 @@ export function HomeAdmin() {
       </button>
       <button onClick={handleOrders}>Orders</button>
       <button onClick={handleUsers}>Users</button>
-      {showTrips && ( // se esse state for TRUE mostra isso
-        <ViewTrip />
-      )}
-
-      {showOrders && ( // se esse state for TRUE mostra isso
-        <ViewOrder />
-      )}
-      {showUsers && ( // se esse state for TRUE mostra isso
-        <ViewUser />
-      )}
-
+      {showTrips && <ViewTrip />}
+      {showOrders && <ViewOrder />}
+      {showUsers && <ViewUser />}
       <Link to="/">
         <button>Home</button>
       </Link>
