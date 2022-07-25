@@ -26,7 +26,7 @@ export function LoginModal({ closeModal }) {
     try {
       const response = await api.post("/user/log-in", form);
       setLoggedInUser({ ...response.data });
-      console.log(response.data);
+      // console.log(response.data);
 
       localStorage.setItem("loggedInUser", JSON.stringify(response.data));
       if (response.data.user.role === "ADMIN") {
@@ -43,9 +43,9 @@ export function LoginModal({ closeModal }) {
     <div className={style.modalBackground}>
       <div className={style.modalDiv}>
         <form onSubmit={handleSumit}>
-          <div>
+          {/* <div>
             <button onClick={() => closeModal(false)}>X</button>
-          </div>
+          </div> */}
           <label>Email</label>
           <input
             type="email"

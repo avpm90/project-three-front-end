@@ -1,5 +1,5 @@
 import style from "./style.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
 import { AuthContext } from "../../../contexts/authContext";
 
@@ -7,8 +7,19 @@ import { LoginModal } from "../loginModal";
 
 export function NavBar() {
   const { loggedInUser } = useContext(AuthContext);
+
   const [openModal, setOpenModal] = useState(false);
 
+  const redirectAfterLogOut = useNavigate();
+
+  // const [logOff, set] = useState(false);
+
+  function logOut() {
+    localStorage.removeItem("loggedInUser");
+    console.log(localStorage);
+    redirectAfterLogOut("/");
+    window.location.reload();
+  }
 
   return (
     <div className={style.navComp}>
@@ -27,19 +38,30 @@ export function NavBar() {
         <div>
           <p href="DOCUMENT ELEMENT BY ID">CONTACT</p>
         </div>
-        <div className={style.modalDiv}>
-          <p
+        {loggedInUser ? (
+          <button
             onClick={() => {
-              setOpenModal(true);
+              // console.log("clicou");
+              logOut();
             }}
-            className={style.loginP}
           >
-            {loggedInUser ? <p>LOG OFF</p> : <p>LOG IN</p>}
-          </p>
-          <div className={style.loginDiv}>
-            {openModal && <LoginModal closeModal={setOpenModal} />}
+            LOG OUT
+          </button>
+        ) : (
+          <div className={style.modalDiv}>
+            <button
+              className={style.loginP}
+              onClick={() => {
+                setOpenModal(true);
+              }}
+            >
+              LOG IN
+            </button>
+            <div className={style.loginDiv}>
+              {openModal && <LoginModal closeModal={setOpenModal} />}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
