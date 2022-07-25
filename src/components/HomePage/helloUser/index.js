@@ -1,10 +1,15 @@
 import style from "./style.module.css";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../../contexts/authContext";
 
 export function Hello() {
+  const { loggedInUser } = useContext(AuthContext);
+  // console.log(loggedInUser.user.name);
+
   return (
     <div className={style.helloComp}>
-      <p>Hello, Fulano!</p>
+      <p>Hello, {loggedInUser.user.name}</p>
       <div className={style.helloText}>
         <h1>TEXT HERE!</h1>
         <h2>TEXT HERE!</h2>
