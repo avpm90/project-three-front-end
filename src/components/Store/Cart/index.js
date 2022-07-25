@@ -1,6 +1,11 @@
 import React from 'react';
 import { useCart } from 'react-use-cart';
-import { DeleteOutlined } from '@ant-design/icons';
+import {
+	ShoppingCartOutlined,
+	MinusCircleOutlined,
+	PlusCircleOutlined,
+	DeleteOutlined,
+} from '@ant-design/icons';
 
 export const Cart = () => {
 	const {
@@ -13,7 +18,12 @@ export const Cart = () => {
 		removeItem,
 		emptyCart,
 	} = useCart();
-	if (isEmpty) return <h1>Your Cart is Empty</h1>;
+	if (isEmpty)
+		return (
+			<h2>
+				Your Cart is Empty <ShoppingCartOutlined />
+			</h2>
+		);
 	console.log(items);
 	return (
 		<>
@@ -21,7 +31,7 @@ export const Cart = () => {
 				<div>
 					<div>
 						<h5>
-							Cart ({totalUniqueItems})total Items: ({totalItems})
+							Cart Items: ({totalUniqueItems}) Total Items: ({totalItems})
 						</h5>
 						<table>
 							<tbody>
@@ -38,14 +48,14 @@ export const Cart = () => {
 														updateItemQuantity(item.id, item.quantity - 1)
 													}
 												>
-													-
+													{<MinusCircleOutlined />}
 												</button>
 												<button
 													onClick={() =>
 														updateItemQuantity(item.id, item.quantity + 1)
 													}
 												>
-													+
+													{<PlusCircleOutlined />}
 												</button>
 												<button onClick={() => removeItem(item.id)}>
 													{<DeleteOutlined />}

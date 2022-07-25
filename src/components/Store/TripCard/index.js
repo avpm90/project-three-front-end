@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { api } from '../../../api/api';
 import { Card } from 'antd';
-
 import { useCart } from 'react-use-cart';
 
 export function TripCard() {
@@ -27,7 +26,7 @@ export function TripCard() {
 	return (
 		<>
 			<div>
-				<h1>All Trips</h1>
+				<div>All Trips</div>
 				<section>
 					{trips.map((currentTrip, index) => {
 						let item = {
