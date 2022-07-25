@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { api } from "../../../api/api";
 import { Card } from "antd";
+import { Link } from "react-router-dom";
 
 export function ViewOrder() {
   const [orders, setOrders] = useState([
@@ -26,26 +27,24 @@ export function ViewOrder() {
     }
     fetchOrders();
   }, []);
-
   return (
     <>
       <Card style={{ borderRadius: 50 }}>
         {orders.map((currentOrder) => {
           return (
             <div>
-              <Card style={{ borderRadius: 50 }} key={currentOrder._id}>
-                <p>{currentOrder.customerId.name}</p>
-                <p>{currentOrder.dateCreated}</p>
-                <p>{currentOrder.orderTotal}</p>
-              </Card>
+              <p>Customer: {currentOrder.customerId.name}</p>
+              <p>Order Date: {currentOrder.dateCreated}</p>
               {currentOrder.trips.map((currentTrip) => {
                 return (
                   <>
-                    <Card style={{ borderRadius: 50 }} key={currentTrip._id}>
-                      <p>{currentTrip.trip}</p>
-                      <p>{currentTrip.quantity}</p>
-                      <p>{currentTrip.unitPrice}</p>
-                    </Card>
+                    <p>Order Id: {currentTrip.trip}</p>
+                    <p>Trip's Quantity: {currentTrip.quantity}</p>
+                    <p>Trip Price: ${currentTrip.unitPrice}</p>
+                    <p>Total Price: ${currentOrder.orderTotal}</p>
+                    <Link to={`/admin/order/${currentOrder._id}`}>
+                      <button>Edit Order</button>
+                    </Link>
                   </>
                 );
               })}
