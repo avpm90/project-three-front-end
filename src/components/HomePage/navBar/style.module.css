@@ -1,8 +1,10 @@
 .navComp {
+  /* position: fixed; */
   background-color: aquamarine;
   border: 1px solid black;
   display: flex;
   justify-content: space-between;
+  text-transform: uppercase;
 }
 .navRight {
   gap: 10px;
