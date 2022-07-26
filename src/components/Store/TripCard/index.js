@@ -44,12 +44,12 @@ export function TripCard() {
 		fetchTrips();
 	}, []);
 
-	let filteredCulture = [...clone];
-	function handleCulture(category) {
-		filteredCulture = filteredCulture.filter((currentCategory) => {
+	let filteredCategory = [...clone];
+	function handleCategory(category) {
+		filteredCategory = filteredCategory.filter((currentCategory) => {
 			return currentCategory.category === category;
 		});
-		setTrips(filteredCulture);
+		setTrips(filteredCategory);
 	}
 	return (
 		<>
@@ -64,35 +64,35 @@ export function TripCard() {
 					</button>
 					<button
 						onClick={() => {
-							handleCulture('Adventure');
+							handleCategory('Adventure');
 						}}
 					>
 						Adventure
 					</button>
 					<button
 						onClick={() => {
-							handleCulture('Beach');
+							handleCategory('Beach');
 						}}
 					>
 						Beach
 					</button>
 					<button
 						onClick={() => {
-							handleCulture('Culture');
+							handleCategory('Culture');
 						}}
 					>
 						Culture
 					</button>
 					<button
 						onClick={() => {
-							handleCulture('Night Life');
+							handleCategory('Nightlife');
 						}}
 					>
-						Night Life
+						Nightlife
 					</button>
 					<button
 						onClick={() => {
-							handleCulture('Relax');
+							handleCategory('Relax');
 						}}
 					>
 						Relax
