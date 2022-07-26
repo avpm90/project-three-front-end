@@ -45,7 +45,7 @@ export function CreateTrip() {
 
   return (
     <div>
-      <Form>
+      <Form onSubmit={handleUpload}>
         <label>Destination</label>
         <input
           name="destination"
@@ -90,7 +90,9 @@ export function CreateTrip() {
           value={form.unitPrice}
           onChange={handleForm}
         />
-        <button onClick={handleTrips}>Add</button>
+        <button type="submit" onClick={handleTrips}>
+          Add
+        </button>
       </Form>
     </div>
   );
