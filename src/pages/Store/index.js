@@ -3,8 +3,6 @@ import { Cart } from '../../components/Store/Cart';
 import { CartProvider } from 'react-use-cart';
 import { NavBar } from '../../components/HomePage/navBar';
 
-import CardDetails from '../../components/Store/CardDetails/teste';
-
 export function Store() {
 	return (
 		<>
@@ -19,7 +17,6 @@ export function Store() {
 					</div>
 					<div className="cart">
 						<Cart />
-						<CardDetails />
 					</div>
 				</CartProvider>
 			</div>
