@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import { HomePage } from "./pages/HomePage/index";
-import { Signup } from "./pages/HomePage/Signup";
 import { AuthContextComponent } from "./contexts/authContext";
 import { HomeUser } from "./pages/HomeUser/index";
 import { ErrorPage } from "./pages/ErrorPage";
@@ -16,7 +15,6 @@ function App() {
       <AuthContextComponent>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/sign-up" element={<Signup />} />
           <Route path="/store" element={<Store />} />
           <Route
             path="/user"
