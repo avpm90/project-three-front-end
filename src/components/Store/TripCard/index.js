@@ -2,27 +2,14 @@ import { useState, useEffect } from 'react';
 import { api } from '../../../api/api';
 import { Card } from 'antd';
 import { useCart } from 'react-use-cart';
+import CardDetails from '../CardDetails/teste';
+
+// import { CardDetails } from '../CardDetails/index';
+// import { Link } from 'react-router-dom';
 
 export function TripCard() {
 	const { addItem } = useCart();
-
-	// const [adventure, setAdventure] = useState(false);
-	// const [culture, setCulture] = useState(false);
-
-	// const [nightLife, setNightLife] = useState(false);
-	// const [relax, setRelax] = useState(false);
-
-	// function handleA() {
-	// 	setAdventure(true);
-	// 	setCulture(false);
-	// }
-	// function handleC() {
-	// 	setAdventure(false);
-	// 	setCulture(true);
-	// }
-
 	const [clone, setClone] = useState([]);
-
 	const [trips, setTrips] = useState([
 		{
 			tripImg: '',
@@ -53,77 +40,79 @@ export function TripCard() {
 	}
 	return (
 		<>
-			<div>
-				<div className="categoriesDiv">
-					<button
-						onClick={() => {
-							setTrips(clone);
-						}}
-					>
-						All Trips
-					</button>
-					<button
-						onClick={() => {
-							handleCategory('Adventure');
-						}}
-					>
-						Adventure
-					</button>
-					<button
-						onClick={() => {
-							handleCategory('Beach');
-						}}
-					>
-						Beach
-					</button>
-					<button
-						onClick={() => {
-							handleCategory('Culture');
-						}}
-					>
-						Culture
-					</button>
-					<button
-						onClick={() => {
-							handleCategory('Nightlife');
-						}}
-					>
-						Nightlife
-					</button>
-					<button
-						onClick={() => {
-							handleCategory('Relax');
-						}}
-					>
-						Relax
-					</button>
-				</div>
+			<div className="categoriesDiv">
+				<button
+					onClick={() => {
+						setTrips(clone);
+					}}
+				>
+					All Trips
+				</button>
+				<button
+					onClick={() => {
+						handleCategory('Adventure');
+					}}
+				>
+					Adventure
+				</button>
+				<button
+					onClick={() => {
+						handleCategory('Beach');
+					}}
+				>
+					Beach
+				</button>
+				<button
+					onClick={() => {
+						handleCategory('Culture');
+					}}
+				>
+					Culture
+				</button>
+				<button
+					onClick={() => {
+						handleCategory('Nightlife');
+					}}
+				>
+					Nightlife
+				</button>
+				<button
+					onClick={() => {
+						handleCategory('Relax');
+					}}
+				>
+					Relax
+				</button>
+			</div>
 
-				<div className="cardsDiv">
-					{trips.map((currentTrip) => {
-						let item = {
-							...currentTrip,
-							id: currentTrip._id,
-							price: currentTrip.unitPrice,
-						};
-						return (
-							<Card key={currentTrip._Id}>
-								<p>{currentTrip.tripImg}</p>
-								<p>{currentTrip.destination}</p>
-								<p>{currentTrip.description}</p>
-								<p>${currentTrip.unitPrice}</p>
-								{/* <p>{currentTrip}</p> */}
-								{/* <p>{index}</p> */}
+			<div className="cardsDiv">
+				{trips.map((currentTrip) => {
+					let item = {
+						...currentTrip,
+						id: currentTrip._id,
+						price: currentTrip.unitPrice,
+					};
+					console.log(currentTrip);
+					return (
+						<Card
+							className="card"
+							style={{ width: '300px', height: '300px' }}
+							key={currentTrip._Id}
+						>
+							<p>{currentTrip.tripImg}</p>
+							<p>{currentTrip.destination}</p>
+							<p>{currentTrip.description}</p>
+							<p>${currentTrip.unitPrice}</p>
 
-								{/* {adventure && <p>{currentTrip}</p>}
-								{culture && <p>{currentTrip}</p>} */}
+							{/* <Link to={`<CardDetails/>${currentTrip._id}`}> */}
+							{/* <button>Trip Details</button> */}
+							{/* </Link> */}
+							<CardDetails trip={currentTrip} />
 
-								<button>See Details</button>
-								<button onClick={() => addItem(item)}>Add to Cart</button>
-							</Card>
-						);
-					})}
-				</div>
+							<button onClick={() => addItem(item)}>Add to Cart</button>
+						</Card>
+					);
+				})}
 			</div>
 		</>
 	);

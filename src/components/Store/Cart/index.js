@@ -20,11 +20,13 @@ export const Cart = () => {
 	} = useCart();
 	if (isEmpty)
 		return (
-			<h2>
-				Your Cart is Empty <ShoppingCartOutlined />
-			</h2>
+			<div style={{ display: 'flex', flexDirection: 'row' }}>
+				<h2>
+					Your Cart is Empty <ShoppingCartOutlined />
+				</h2>
+			</div>
 		);
-	console.log(items);
+	// console.log(items);
 	return (
 		<>
 			<section>
