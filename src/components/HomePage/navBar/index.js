@@ -1,5 +1,5 @@
 import style from "./style.module.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useContext } from "react";
 import { AuthContext } from "../../../contexts/authContext";
 import { Link } from "react-scroll";
@@ -10,6 +10,9 @@ export function NavBar() {
   const { loggedInUser } = useContext(AuthContext);
   const [openModal, setOpenModal] = useState(false);
   const redirectAfterLogOut = useNavigate();
+  const location = useLocation();
+  console.log(location);
+  console.log(window.location);
 
   function logOut() {
     localStorage.removeItem("loggedInUser");
@@ -33,15 +36,17 @@ export function NavBar() {
       </a>
       <div className={style.navLeft}>
         <div>
-          <Link
-            to="contact"
-            spy={true}
-            smooth={true}
-            offset={50}
-            duration={500}
-          >
-            Contact Us
-          </Link>
+          {location.pathname === "/" && (
+            <Link
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+            >
+              Contact Us
+            </Link>
+          )}
         </div>
         {loggedInUser ? (
           <button
