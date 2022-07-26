@@ -1,20 +1,21 @@
-import { useContext } from "react";
-//import { api } from "../../api/api";
+import { useContext, useState, useEffect } from "react";
+import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/authContext";
 import { NavBar } from "../../components/HomePage/navBar";
+import { ViewOrders } from "../../components/HomeUser/ViewOrders";
 
 export function HomeUser() {
-  // const [user, setUser] = useState({ name: "", email: "" });
+  const [user, setUser] = useState({ name: "", email: "" });
   const navigate = useNavigate();
-  // useEffect(() => {
-  //   async function fetchUser() {
-  //     const response = await api.get("/user/profile");
-  //     setUser(response.data);
-  //   }
+  useEffect(() => {
+    async function fetchUser() {
+      const response = await api.get("/user/profile");
+      setUser(response.data);
+    }
 
-  //   fetchUser();
-  // }, []);
+    fetchUser();
+  }, []);
 
   const { loggedInUser } = useContext(AuthContext);
 
@@ -25,10 +26,13 @@ export function HomeUser() {
 
   return (
     <>
-    <NavBar />
-      <h1>{loggedInUser.user.name}</h1>
-      <p>{loggedInUser.user.email}</p>
-      <button onClick={handleLogOut}>Sair</button>
+      <>
+        <NavBar />
+        <h1>{loggedInUser.user.name}</h1>
+        <p>{loggedInUser.user.email}</p>
+        <button onClick={handleLogOut}>Sair</button>
+      </>
+      <ViewOrders />
     </>
   );
 }

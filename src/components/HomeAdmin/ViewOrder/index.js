@@ -32,23 +32,25 @@ export function ViewOrder() {
       <Card style={{ borderRadius: 50 }}>
         {orders.map((currentOrder) => {
           return (
-            <div>
-              <p>Customer: {currentOrder.customerId.name}</p>
-              <p>Order Date: {currentOrder.dateCreated}</p>
-              {currentOrder.trips.map((currentTrip) => {
-                return (
-                  <>
-                    <p>Order Id: {currentTrip.trip}</p>
-                    <p>Trip's Quantity: {currentTrip.quantity}</p>
-                    <p>Trip Price: ${currentTrip.unitPrice}</p>
-                    <p>Total Price: ${currentOrder.orderTotal}</p>
-                    <Link to={`/admin/order/${currentOrder._id}`}>
-                      <button>Edit Order</button>
-                    </Link>
-                  </>
-                );
-              })}
-            </div>
+            <Card>
+              <div>
+                <p>Customer: {currentOrder.customerId.name}</p>
+                <p>Order Date: {currentOrder.dateCreated}</p>
+                {currentOrder.trips.map((currentTrip) => {
+                  return (
+                    <>
+                      <p>Order Id: {currentTrip.trip}</p>
+                      <p>Trip's Quantity: {currentTrip.quantity}</p>
+                      <p>Trip Price: ${currentTrip.unitPrice}</p>
+                      <p>Total Price: ${currentOrder.orderTotal}</p>
+                      <Link to={`/admin/order/${currentOrder._id}`}>
+                        <button>Edit Order</button>
+                      </Link>
+                    </>
+                  );
+                })}
+              </div>
+            </Card>
           );
         })}
       </Card>

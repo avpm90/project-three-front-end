@@ -30,7 +30,7 @@ export function ViewUser() {
               </p>
               <p>{currentUser.email}</p>
               <Link to={`admin/user/${currentUser._id}`}>
-                <button>Edit</button>
+                <button>Delete</button>
               </Link>
             </Card>
           </div>
