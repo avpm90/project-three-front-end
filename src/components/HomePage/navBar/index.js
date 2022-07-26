@@ -1,15 +1,14 @@
 import style from "./style.module.css";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../../contexts/authContext";
 import { Link } from "react-scroll";
 
-import { LoginModal } from "../loginModal";
 import { SignUpModal } from "../signupModal";
+import { LoginModal } from "../../loginModal";
 
 export function NavBar() {
   const { loggedInUser } = useContext(AuthContext);
-  const [openModal, setOpenModal] = useState(false);
   const redirectAfterLogOut = useNavigate();
   const location = useLocation();
   console.log(location);
@@ -52,26 +51,16 @@ export function NavBar() {
           )}
         </div>
         {loggedInUser ? (
-          <button
+          <p
             onClick={() => {
               logOut();
             }}
           >
-            loginDiv Out
-          </button>
+            Log Off
+          </p>
         ) : (
           <div className={style.modalDiv}>
-            <button
-              className={style.loginP}
-              onClick={() => {
-                setOpenModal(true);
-              }}
-            >
-              Log In
-            </button>
-            <div className={style.loginDiv}>
-              {openModal && <LoginModal closeModal={setOpenModal} />}
-            </div>
+            <LoginModal />
           </div>
         )}
       </div>
