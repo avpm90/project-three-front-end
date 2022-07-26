@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+/* import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { api } from "../../../api/api";
 import { Form, Card, Divider } from "antd";
@@ -42,10 +42,7 @@ export function EditOrder() {
       console.log(err);
     }
   }
-  async function deleteOrder() {
-    await api.delete(`/order/delete-order/${id}`);
-    navigate("/admin");
-  }
+
   console.log(order);
   return (
     <>
@@ -56,15 +53,15 @@ export function EditOrder() {
       </Form>
       <Divider></Divider>
       <button onClick={handleUpdate}>Edit</button>
-      <button onClick={deleteOrder}>Delete</button>
-      {/* <Card style={{ borderRadius: 50, width: "500" }}>
+      <Card style={{ borderRadius: 50, width: "500" }}>
         <p>Customer: {order.customerId.name}</p>
         <p>Order Date: {order.dateCreated}</p>
         <p>Order Id: {order.trips.trip}</p>
         <p>Trip's Quantity: {order.trips.quantity}</p>
         <p>Trip Price: ${order.trips.unitPrice}</p>
         <p>Total Price: ${order.orderTotal}</p>
-      </Card> */}
+      </Card>
     </>
   );
 }
+ */

@@ -1,7 +1,6 @@
-import { useContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { api } from "../../../api/api";
 import { useNavigate, Link } from "react-router-dom";
-import { AuthContext } from "../../../contexts/authContext";
 import { Card } from "antd";
 
 export function ViewOrders() {
@@ -29,7 +28,6 @@ export function ViewOrders() {
     fetchOrders();
   }, []);
 
-  const { loggedInUser } = useContext(AuthContext);
 
   return (
     <>
