@@ -3,11 +3,12 @@ import { Cart } from '../../components/Store/Cart';
 import { CartProvider } from 'react-use-cart';
 import { NavBar } from '../../components/HomePage/navBar';
 
+import CardDetails from '../../components/Store/CardDetails/teste';
+
 export function Store() {
 	return (
 		<>
-		<NavBar />
-			{/* <div>Cart HERE</div> */}
+			<NavBar />
 			<div
 				className="container"
 				style={{ display: 'flex', flexDirection: 'row' }}
@@ -18,6 +19,7 @@ export function Store() {
 					</div>
 					<div className="cart">
 						<Cart />
+						<CardDetails />
 					</div>
 				</CartProvider>
 			</div>
