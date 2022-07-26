@@ -2,10 +2,7 @@ import { useState, useEffect } from 'react';
 import { api } from '../../../api/api';
 import { Card } from 'antd';
 import { useCart } from 'react-use-cart';
-import CardDetails from '../CardDetails/teste';
-
-// import { CardDetails } from '../CardDetails/index';
-// import { Link } from 'react-router-dom';
+import CardDetails from '../CardDetails/index';
 
 export function TripCard() {
 	const { addItem } = useCart();
@@ -104,9 +101,6 @@ export function TripCard() {
 							<p>{currentTrip.description}</p>
 							<p>${currentTrip.unitPrice}</p>
 
-							{/* <Link to={`<CardDetails/>${currentTrip._id}`}> */}
-							{/* <button>Trip Details</button> */}
-							{/* </Link> */}
 							<CardDetails trip={currentTrip} />
 
 							<button onClick={() => addItem(item)}>Add to Cart</button>

@@ -70,11 +70,11 @@ export const Cart = () => {
 						</table>
 					</div>
 					<div>
-						<h2>Total Price: {cartTotal}</h2>
+						<h2>Total Price:$ {cartTotal}</h2>
 					</div>
 					<div>
 						<button onClick={() => emptyCart()}>Clear Cart</button>
-						<button>Buy Now</button>
+						<button>Checkout</button>
 					</div>
 				</div>
 			</section>
