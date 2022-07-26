@@ -74,21 +74,6 @@ export function SignUpForm() {
 
   return (
     <div>
-      {/* <Modal
-        title="Basic Modal"
-        visible={isModalVisible}
-        onOk={handleOk}
-        onCancel={handleCancel}
-      > */}
-        {/* <Alert
-          message="ERROR!"
-          description="Email or Password didn't match. Please, check and submit again!"
-          type="error"
-          showIcon
-          closable
-        /> */}
-      {/* </Modal> */}
-      {/* <Alert message="Error" type="error" showIcon /> */}
       <div>
         <form onSubmit={handleSubmit}>
           <label htmlFor="formName">What should we call you?</label>
