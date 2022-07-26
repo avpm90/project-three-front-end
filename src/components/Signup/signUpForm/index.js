@@ -3,7 +3,7 @@ import { api } from "../../../api/api";
 import { useNavigate } from "react-router-dom";
 // import style from "./style.module.css";
 
-import { Alert } from "antd";
+// import { Alert } from "antd";
 
 export function SignUpForm() {
 
@@ -80,13 +80,13 @@ export function SignUpForm() {
         onOk={handleOk}
         onCancel={handleCancel}
       > */}
-        <Alert
+        {/* <Alert
           message="ERROR!"
           description="Email or Password didn't match. Please, check and submit again!"
           type="error"
           showIcon
           closable
-        />
+        /> */}
       {/* </Modal> */}
       {/* <Alert message="Error" type="error" showIcon /> */}
       <div>

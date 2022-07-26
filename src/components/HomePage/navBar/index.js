@@ -5,6 +5,7 @@ import { AuthContext } from "../../../contexts/authContext";
 import { Link } from "react-scroll";
 
 import { LoginModal } from "../loginModal";
+import { SignUpModal } from "../signupModal";
 
 export function NavBar() {
   const { loggedInUser } = useContext(AuthContext);
@@ -28,7 +29,9 @@ export function NavBar() {
           <a href="/store">Store</a>
         </div>
         <div>
-          <a href="/sign-up">Sign Up</a>
+          <p>
+            <SignUpModal />
+          </p>
         </div>
       </div>
       <a href="/" className={style.navLogo}>
