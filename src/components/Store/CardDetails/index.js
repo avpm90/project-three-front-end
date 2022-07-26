@@ -48,6 +48,7 @@ const CardDetails = ({ trip }) => {
 			<Button onClick={showModal}>Trip Details</Button>
 			{trip && (
 				<Modal
+					footer={null}
 					title={
 						<div
 							style={{
