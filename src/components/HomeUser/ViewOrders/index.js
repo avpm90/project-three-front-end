@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { api } from "../../../api/api";
-import { useNavigate, Link } from "react-router-dom";
 import { Card } from "antd";
 
 export function ViewOrders() {
