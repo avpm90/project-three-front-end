@@ -24,23 +24,13 @@ export function NavBar() {
   return (
     <div className={style.navComp}>
       <div className={style.navRight}>
-        <div className={style.text}>
-          <NavLink to="/store" className={style.text}>
-            Store
-          </NavLink>
-        </div>
-        <div>{loggedInUser ? null : <SignUpModal />}</div>
-      </div>
-      <div>
-        <NavLink to="/" className={style.text}>
-          Logo Here
+        <NavLink to="/store" className={`${style.text} ${style.textStore}`}>
+          Store
         </NavLink>
-      </div>
-      <div className={style.navLeft}>
         <div>
           {location.pathname === "/" && (
             <Link
-              className={style.text}
+              className={`${style.text} ${style.textContact}`}
               to="contact"
               spy={true}
               smooth={true}
@@ -51,7 +41,37 @@ export function NavBar() {
             </Link>
           )}
         </div>
-        <div>
+        <div>{loggedInUser ? null : <SignUpModal />}</div>
+      </div>
+      <div>
+        <NavLink to="/" className={style.text}>
+          Where to go?
+        </NavLink>
+      </div>
+      <div className={style.navLeft}>
+        <div className={style.profileBtn}>
+          {loggedInUser ? (
+            <div className={style.text}>
+              {loggedInUser.user.role === "ADMIN" ? (
+                <NavLink
+                  to="/admin"
+                  className={`${style.text} ${style.textProfile}`}
+                >
+                  Profile
+                </NavLink>
+              ) : (
+                <NavLink
+                  to="/user"
+                  className={`${style.text} ${style.textProfile}`}
+                >
+                  {" "}
+                  Profile
+                </NavLink>
+              )}
+            </div>
+          ) : null}
+        </div>
+        <div className={style.textOff}>
           {loggedInUser ? (
             <p
               onClick={() => {
@@ -64,18 +84,7 @@ export function NavBar() {
             <LoginModal />
           )}
         </div>
-        {/* <button>{loggedInUser.user.role === "ADMIN" ? <Link to="/admin">Profile</Link> : <Link to="/user"> Profile</Link>} </button> */}
       </div>
-
-      {loggedInUser ? (
-        <button>
-          {loggedInUser.user.role === "ADMIN" ? (
-            <NavLink to="/admin">Profile</NavLink>
-          ) : (
-            <NavLink to="/user"> Profile</NavLink>
-          )}
-        </button>
-      ) : null}
     </div>
   );
 }
