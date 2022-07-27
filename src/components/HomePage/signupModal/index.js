@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { api } from "../../../api/api";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation, } from "react-router-dom";
 import { Modal, DatePicker, Form, Input, Checkbox } from "antd";
 import style from "./style.module.css"
 
@@ -8,6 +8,7 @@ export const SignUpModal = () => {
   const [visible, setVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [componentSize, setComponentSize] = useState("default"); // SIGN UP ANTD
+  const location = useLocation();
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -67,9 +68,11 @@ export const SignUpModal = () => {
 
   return (
     <div>
-      <p type="primary" onClick={showModal} className={style.text} href>
+      {location.pathname === "/" && (
+<p type="primary" onClick={showModal} className={`${style.text} ${style.textSignUp}`} href>
         Sign Up
       </p>
+)}
       <Modal
         title="SIGN UP FORM"
         visible={visible}
@@ -217,3 +220,4 @@ export const SignUpModal = () => {
     </div>
   );
 };
+
