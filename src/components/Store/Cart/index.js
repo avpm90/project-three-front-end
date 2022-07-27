@@ -1,12 +1,12 @@
 import React from 'react';
 import { useCart } from 'react-use-cart';
 import {
-	ShoppingCartOutlined,
 	MinusCircleOutlined,
 	PlusCircleOutlined,
 	DeleteOutlined,
 } from '@ant-design/icons';
 import { PaymentModal } from '../PaymentModal/index';
+import style from '../Cart/style.module.css';
 
 export const Cart = () => {
 	const {
@@ -19,13 +19,19 @@ export const Cart = () => {
 		removeItem,
 		emptyCart,
 	} = useCart();
-	console.log(items);
+
 	if (isEmpty)
 		return (
-			<div style={{ display: 'flex', flexDirection: 'row' }}>
-				<h2>
-					Your Cart is Empty <ShoppingCartOutlined />
-				</h2>
+			<div
+				className={style.container}
+				style={{
+					display: 'flex',
+					flexDirection: 'column',
+					width: '24vw',
+					height: '85vh',
+				}}
+			>
+				<h3>Your Cart is Empty</h3>
 			</div>
 		);
 	// console.log(items);
@@ -34,9 +40,6 @@ export const Cart = () => {
 			<section>
 				<div>
 					<div>
-						<h5>
-							Cart Items: ({totalUniqueItems}) Total Items: ({totalItems})
-						</h5>
 						<tr>
 							<th>Destination</th>
 							<th>Price</th>
@@ -79,6 +82,9 @@ export const Cart = () => {
 						</table>
 					</div>
 					<div>
+						<h5>
+							Cart Items: ({totalUniqueItems}) Total Items: ({totalItems})
+						</h5>
 						<h2>Total Price:$ {cartTotal}</h2>
 					</div>
 					<div>
