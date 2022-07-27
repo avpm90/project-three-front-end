@@ -1,96 +1,96 @@
 .navComp {
-	position: fixed;
-	z-index: 1;
-	height: 50px;
-	width: 100%;
-	background-color: blue;
-	/* color: white; */
-	font-size: 20px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	/* text-transform: uppercase; */
-	margin-top: -50px;
+  position: fixed;
+  z-index: 1;
+  height: 50px;
+  width: 100%;
+  background-color: black;
+  /* color: white; */
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* text-transform: uppercase; */
+  margin-top: -50px;
 }
 a:hover {
-	background-color: white;
-	text-decoration: none;
-	color: black;
+  background-color: white;
+  text-decoration: none;
+  color: black;
 }
 .text {
-	padding: 4px 10px;
-	text-align: center;
-	text-decoration: none;
-	color: white;
-	background-color: black;
+  padding: 4px 10px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: black;
 }
 .textStore {
-	position: fixed;
-	left: 20px;
-	padding: 0px 5px;
-	top: 10px;
-	background-color: black;
+  position: fixed;
+  left: 20px;
+  padding: 0px 5px;
+  top: 10px;
+  background-color: black;
 }
 .textContact {
-	position: fixed;
-	left: 100px;
-	padding: 0px 5px;
-	top: 10px;
+  position: fixed;
+  left: 100px;
+  padding: 0px 5px;
+  top: 10px;
 }
 .textProfile {
-	position: fixed;
-	right: 130px;
-	padding: 0px 5px;
-	top: 10px;
+  position: fixed;
+  right: 130px;
+  padding: 0px 5px;
+  top: 10px;
 }
 .textOff p {
-	text-decoration: none;
-	color: white;
-	padding: 0px 5px;
-	position: fixed;
-	right: 30px;
-	top: 10px;
-	/* font-size: 20px; */
+  text-decoration: none;
+  color: white;
+  padding: 0px 5px;
+  position: fixed;
+  right: 30px;
+  top: 10px;
+  /* font-size: 20px; */
 }
 .navRight {
-	/* position: fixed; */
-	text-decoration: none;
-	color: white;
-	width: 400px;
-	gap: 10px;
-	display: flex;
-	align-items: center;
-	justify-content: space-evenly;
+  /* position: fixed; */
+  text-decoration: none;
+  color: white;
+  width: 400px;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 .navLeft {
-	text-decoration: none;
-	color: white;
-	width: 300px;
-	gap: 10px;
-	display: flex;
-	align-items: center;
-	justify-content: space-evenly;
-	margin-right: 10px;
+  text-decoration: none;
+  color: white;
+  width: 300px;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-right: 10px;
 }
 .loginP {
-	margin: 0px;
+  margin: 0px;
 }
 .loginModal {
-	position: relative;
-	right: 250px;
+  position: relative;
+  right: 250px;
 }
 
 .helloUser {
-	position: fixed;
-	right: 220px;
-	/* padding: 0px 5px; */
-	/* margin: 0px 5px; */
-	top: 10px;
-	color: aliceblue;
-	/* text-transform: initial; */
-	text-decoration-line: underline;
-	font-style: italic;
-	/* text-transform: capitalize; */
-	/* text-decoration-style:wavy; */
-	/* text-decoration:underline; */
+  position: fixed;
+  right: 220px;
+  /* padding: 0px 5px; */
+  /* margin: 0px 5px; */
+  top: 10px;
+  color: aliceblue;
+  /* text-transform: initial; */
+  text-decoration-line: underline;
+  font-style: italic;
+  /* text-transform: capitalize; */
+  /* text-decoration-style:wavy; */
+  /* text-decoration:underline; */
 }
