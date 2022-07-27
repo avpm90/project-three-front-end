@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { api } from "../../../api/api";
-import { Card } from "antd";
+import style from "./style.module.css";
 
 export function ViewOrders() {
   const [orders, setOrders] = useState([
@@ -29,18 +29,20 @@ export function ViewOrders() {
 
   return (
     <>
-      <Card style={{ borderRadius: 50 }}>
-        {orders.map((currentOrder) => {
-          return (
-            <Card>
-              <div>
-                <p>Order Id: {currentOrder.customerId}</p>
-                <p>Total Price: ${currentOrder.orderTotal}</p>
+      <div>
+        <h1>Orders</h1>
+        <div>
+          {orders.map((currentOrder) => {
+            return (
+              <div className={style.orderCard}>
+                <p>Order Number: {currentOrder.customerId}</p>
+                <p>Order Total: ${currentOrder.orderTotal}</p>
+                <button>Details</button>
               </div>
-            </Card>
-          );
-        })}
-      </Card>
+            );
+          })}
+        </div>
+      </div>
     </>
   );
 }
