@@ -1,29 +1,26 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { Button, Form, Input, Modal } from "antd";
-import { AuthContext } from "../../../contexts/authContext";
 import { api } from "../../../api/api";
 
-export function EditUser() {
-  const { loggedInUser } = useContext(AuthContext);
+export function EditUser({ update, setUpdate }) {
+  //  const { loggedInUser } = useContext(AuthContext);
   const [forms, setForms] = useState({
     name: "",
-    email: "",
-    birthday: "",
   });
+
   function handleForms(e) {
     setForms({ ...forms, [e.target.name]: e.target.value });
   }
-
   const [visible, setVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
-  const [modalText, setModalText] = useState("Content of the modal");
+  //  const [modalText, setModalText] = useState("Content of the modal");
 
   const showModal = () => {
     setVisible(true);
   };
 
   const handleOk = async (e) => {
-    setModalText("The modal will be closed after two seconds");
+    //  setModalText("The modal will be closed after two seconds");
     setConfirmLoading(true);
     setTimeout(() => {
       setVisible(false);
@@ -34,6 +31,7 @@ export function EditUser() {
     delete forms._id;
     try {
       await api.patch(`/user/update-user`, forms);
+      setUpdate(!update);
     } catch (err) {
       console.log(err);
     }
@@ -66,7 +64,7 @@ export function EditUser() {
   return (
     <>
       <Button type="primary" onClick={showModal}>
-        Edit User
+        Edit
       </Button>
       <Modal
         title="EDIT DETAILS"

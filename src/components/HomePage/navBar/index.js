@@ -11,12 +11,9 @@ export function NavBar() {
   const { loggedInUser } = useContext(AuthContext);
   const redirectAfterLogOut = useNavigate();
   const location = useLocation();
-  console.log(location);
-  console.log(window.location);
 
   function logOut() {
     localStorage.removeItem("loggedInUser");
-    console.log(localStorage);
     redirectAfterLogOut("/");
     window.location.reload();
   }
