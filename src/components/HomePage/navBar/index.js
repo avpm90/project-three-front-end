@@ -20,6 +20,9 @@ export function NavBar() {
 
   return (
     <div className={style.navComp}>
+      <div className={style.helloUser}>
+        {loggedInUser ? <p>{`Hello, ${loggedInUser.user.name}, how are you today?`}</p> : null}
+      </div>
       <div className={style.navRight}>
         <NavLink to="/store" className={`${style.text} ${style.textStore}`}>
           Store
@@ -75,7 +78,7 @@ export function NavBar() {
                 logOut();
               }}
             >
-              Log Off
+              Log Out
             </p>
           ) : (
             <LoginModal />
