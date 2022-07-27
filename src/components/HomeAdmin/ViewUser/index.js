@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { api } from "../../../api/api";
 import { Card } from "antd";
-import { Link } from "react-router-dom";
 
 export function ViewUser() {
   const [users, setUsers] = useState([
@@ -19,6 +18,12 @@ export function ViewUser() {
     }
     fetchUsers();
   }, []);
+
+  async function deleteUser(id) {
+    await api.delete(`/user/delete-user/${id}`);
+    window.location.reload();
+  }
+
   return (
     <>
       {users.map((currentUser) => {
@@ -29,9 +34,9 @@ export function ViewUser() {
                 {currentUser.name} {currentUser.surname}
               </p>
               <p>{currentUser.email}</p>
-              <Link to={`admin/user/${currentUser._id}`}>
-                <button>Delete</button>
-              </Link>
+              <button onClick={() => deleteUser(currentUser._id)}>
+                Delete
+              </button>
             </Card>
           </div>
         );

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { api } from "../../../api/api";
 import { Card } from "antd";
 import { CreateTrip } from "../CreateTrip";
+import "./style.css"
 
 export function ViewTrip() {
   const [trips, setTrips] = useState([
@@ -12,6 +13,7 @@ export function ViewTrip() {
       description: "",
       inStock: "",
       unitPrice: "",
+      tripImg: "",
     },
   ]);
   console.log(trips);
@@ -43,6 +45,7 @@ export function ViewTrip() {
                 <p>Description: {currentTrip.description}</p>
                 <p>In Stock: {currentTrip.inStock}</p>
                 <p>Unit Price: {currentTrip.unitPrice}</p>
+                <img className="tripImg" src={currentTrip.tripImg} alt={currentTrip.destination} />
 
                 <Link to={`/admin/trip/${currentTrip._id}`}>
                   <button>Edit</button>

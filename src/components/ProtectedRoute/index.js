@@ -8,7 +8,7 @@ export function ProtectedRoute(props) {
 
   const { loggedInUser } = useContext(AuthContext);
 
-  if (loggedInUser) {
+  if (loggedInUser && loggedInUser.user.role === "ADMIN") {
     return <Component />;
   }
 
