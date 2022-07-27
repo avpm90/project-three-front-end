@@ -10,14 +10,14 @@ export function Hello() {
     <div className={style.helloComp}>
       {loggedInUser ? <p>{`Hello, ${loggedInUser.user.name}`}</p> : null}
       <div className={style.helloText}>
-        <h1>TEXT HERE!</h1>
-        <h2>TEXT HERE!</h2>
+        <h1>Where do you wanna go?</h1>
+        <h2>We have a selection of nice and surprising destinations to take you</h2>
       </div>
-      <div>IMAGE HERE</div>
-      <div className={style.helloBtns}>
-        <Link to={"/store"}>SHOP NOW</Link>
-        <Link to={"/quiz"}>TAKE THE QUIZ</Link>
-      </div>
+      {/* <div>IMAGE HERE</div> */}
+      {/* <div className={style.helloBtns}> */}
+        <Link to={"/store"}>See All Trips</Link>
+        {/* <Link to={"/quiz"}>TAKE THE QUIZ</Link> */}
+      {/* </div> */}
     </div>
   );
 }

@@ -65,18 +65,19 @@ export const SignUpModal = () => {
   }
 
   return (
-    <>
+    <div>
       <p type="primary" onClick={showModal}>
         Sign Up
       </p>
       <Modal
-        title="Sign Up"
+        title="SIGN UP FORM"
         visible={visible}
         onOk={handleOk}
         confirmLoading={confirmLoading}
         onCancel={handleCancel}
         // closable={false}
         okText="Submit"
+        bodyStyle={{height: 580, paddingTop:10}}
       >
         <Form
           onSubmit={handleOk}
@@ -84,7 +85,7 @@ export const SignUpModal = () => {
             span: 10,
           }}
           wrapperCol={{
-            span: 14,
+            span: 28,
           }}
           layout="vertical"
           initialValues={{
@@ -212,6 +213,6 @@ export const SignUpModal = () => {
           <Checkbox>Sign up for our newsletter</Checkbox>
         </Form>
       </Modal>
-    </>
+    </div>
   );
 };
