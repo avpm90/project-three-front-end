@@ -1,0 +1,9 @@
+.orderCard {
+  display: flex;
+  padding: 1.25rem;
+  width: 230px;
+  height: 180px;
+  border-radius: 30px;
+  background-color: black;
+  margin: 10px;
+}
