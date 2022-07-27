@@ -6,17 +6,15 @@ import { useNavigate } from "react-router-dom";
 // import { Alert } from "antd";
 
 export function SignUpForm() {
+  //   const [isModalVisible, setIsModalVisible] = useState(false);
 
-//   const [isModalVisible, setIsModalVisible] = useState(false);
+  //   const handleOk = () => {
+  //     setIsModalVisible(false);
+  //   };
 
-
-//   const handleOk = () => {
-//     setIsModalVisible(false);
-//   };
-
-//   const handleCancel = () => {
-//     setIsModalVisible(false);
-//   };
+  //   const handleCancel = () => {
+  //     setIsModalVisible(false);
+  //   };
 
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -28,29 +26,10 @@ export function SignUpForm() {
     birthday: "",
   });
 
-  // const [img, setImg] = useState("");
-
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  /*   function handleImage(e) {
-    setImg(e.target.files[0]);
-  }
- */
-  /*   async function handleUpload() {
-    try {
-      const uploadData = new FormData();
-      uploadData.append("picture", img);
-
-      const response = await api.post("/upload-image", uploadData);
-
-      return response.data.url;
-    } catch (error) {
-      console.log(error);
-    }
-  }
- */
   async function handleSubmit(e) {
     e.preventDefault();
     try {
@@ -84,9 +63,7 @@ export function SignUpForm() {
             value={form.name}
             onChange={handleChange}
           />
-          {/* <label htmlFor="formImg">Sua foto de perfil:</label>
-      <input type="file" id="formImg" onChange={handleImage} />
- */}
+
           <label htmlFor="formEmail">What is your email?</label>
           <input
             id="formEmail"

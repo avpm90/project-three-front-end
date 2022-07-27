@@ -28,7 +28,7 @@ export function HomeAdmin() {
 
   return (
     <>
-    <NavBar />
+      <NavBar />
       <button className={showTrips ? "test" : "btn"} onClick={handleTrip}>
         Trips
       </button>

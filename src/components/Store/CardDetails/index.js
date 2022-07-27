@@ -95,3 +95,4 @@ const CardDetails = ({ trip }) => {
 };
 
 export default CardDetails;
+

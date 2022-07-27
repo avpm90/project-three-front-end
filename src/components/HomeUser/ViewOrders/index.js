@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react";
 import { api } from "../../../api/api";
 import { Card } from "antd";
-import { Link, useNavigate } from "react-router-dom";
 
-export function ViewOrder() {
-  const navigate = useNavigate();
-
+export function ViewOrders() {
   const [orders, setOrders] = useState([
     {
       customerId: "",
@@ -23,17 +20,13 @@ export function ViewOrder() {
 
   useEffect(() => {
     async function fetchOrders() {
-      const response = await api.get("/order/all-orders");
+      const response = await api.get("/order/all-orders-user");
       setOrders(response.data);
-      console.log(response.data);
     }
+
     fetchOrders();
   }, []);
 
-  async function deleteOrder(id) {
-    await api.delete(`/order/delete-order/${id}`);
-    navigate("/admin");
-  }
 
   return (
     <>
@@ -51,12 +44,6 @@ export function ViewOrder() {
                       <p>Trip's Quantity: {currentTrip.quantity}</p>
                       <p>Trip Price: ${currentTrip.unitPrice}</p>
                       <p>Total Price: ${currentOrder.orderTotal}</p>
-                      <Link to={`/admin/order/${currentOrder._id}`}>
-                        <button>Edit Order</button>
-                      </Link>
-                      <button onClick={() => deleteOrder(currentOrder._id)}>
-                        Delete
-                      </button>
                     </>
                   );
                 })}

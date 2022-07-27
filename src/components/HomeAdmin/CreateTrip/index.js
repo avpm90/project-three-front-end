@@ -24,6 +24,25 @@ export function CreateTrip() {
     window.location.reload();
   }
 
+  const [img, setImg] = useState("");
+
+  function handleImage(e) {
+    setImg(e.target.files[0]);
+  }
+
+  async function handleUpload() {
+    try {
+      const uploadData = new FormData();
+      uploadData.append("picture", img);
+
+      const response = await api.post("/upload-image", uploadData);
+
+      return response.data.url;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div>
       <Form>
@@ -34,6 +53,8 @@ export function CreateTrip() {
           value={form.destination}
           onChange={handleForm}
         />
+        <label htmlFor="formImg">Sua foto de perfil:</label>
+        <input type="file" id="formImg" onChange={handleImage} />
         <label>Category</label>
         <select
           name="category"
