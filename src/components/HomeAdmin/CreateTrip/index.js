@@ -6,25 +6,17 @@ import { Form } from "antd";
 export function CreateTrip() {
   const [form, setForm] = useState({
     destination: "",
-    category: "",
+    category: "Adventure",
     inStock: "",
     description: "",
     unitPrice: "",
   });
 
+  const [img, setImg] = useState("");
+
   function handleForm(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
-
-  async function handleTrips(e) {
-    e.preventDefault();
-    console.log(form);
-    const response = await api.post("/trip/add-trip", form);
-    console.log(response);
-    window.location.reload();
-  }
-
-  const [img, setImg] = useState("");
 
   function handleImage(e) {
     setImg(e.target.files[0]);
@@ -43,9 +35,25 @@ export function CreateTrip() {
     }
   }
 
+  async function handleTrips(e) {
+    e.preventDefault();
+
+    try {
+      const imgURL = await handleUpload();
+      const response = await api.post("/trip/add-trip", {
+        ...form,
+        tripImg: imgURL,
+      });
+      console.log(response);
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div>
-      <Form onSubmit={handleUpload}>
+      <Form onSubmit={handleTrips}>
         <label>Destination</label>
         <input
           name="destination"

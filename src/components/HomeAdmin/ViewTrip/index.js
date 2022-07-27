@@ -12,6 +12,7 @@ export function ViewTrip() {
       description: "",
       inStock: "",
       unitPrice: "",
+      tripImg: "",
     },
   ]);
   console.log(trips);
@@ -43,6 +44,7 @@ export function ViewTrip() {
                 <p>Description: {currentTrip.description}</p>
                 <p>In Stock: {currentTrip.inStock}</p>
                 <p>Unit Price: {currentTrip.unitPrice}</p>
+                <img src={currentTrip.tripImg} alt="Paris" />
 
                 <Link to={`/admin/trip/${currentTrip._id}`}>
                   <button>Edit</button>

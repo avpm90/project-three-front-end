@@ -64,24 +64,24 @@ export const LoginModal = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-//   async function handleSumit(e) {
-//     e.preventDefault();
+  //   async function handleSumit(e) {
+  //     e.preventDefault();
 
-//     try {
-//       const response = await api.post("/user/log-in", form);
-//       setLoggedInUser({ ...response.data });
-//       // console.log(response.data);
+  //     try {
+  //       const response = await api.post("/user/log-in", form);
+  //       setLoggedInUser({ ...response.data });
+  //       // console.log(response.data);
 
-//       localStorage.setItem("loggedInUser", JSON.stringify(response.data));
-//       if (response.data.user.role === "ADMIN") {
-//         navigate("/admin");
-//       } else {
-//         navigate("/");
-//       }
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   }
+  //       localStorage.setItem("loggedInUser", JSON.stringify(response.data));
+  //       if (response.data.user.role === "ADMIN") {
+  //         navigate("/admin");
+  //       } else {
+  //         navigate("/");
+  //       }
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
 
   return (
     <>
