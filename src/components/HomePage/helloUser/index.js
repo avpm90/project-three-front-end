@@ -8,7 +8,7 @@ export function Hello() {
 
   return (
     <div className={style.helloComp}>
-      {loggedInUser ? <p>{`Hello, ${loggedInUser.user.name}`}</p> : null}
+      {/* {loggedInUser ? <p>{`Hello, ${loggedInUser.user.name}`}</p> : null} */}
       <div className={style.helloText}>
         <h1>Where do you wanna go?</h1>
         <h2>We have a selection of nice and surprising destinations to take you</h2>
