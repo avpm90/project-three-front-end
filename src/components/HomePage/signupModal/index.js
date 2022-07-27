@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { api } from "../../../api/api";
-import { useNavigate, useLocation, } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Modal, DatePicker, Form, Input, Checkbox } from "antd";
-import style from "./style.module.css"
+import style from "./style.module.css";
 
 export const SignUpModal = () => {
   const [visible, setVisible] = useState(false);
@@ -40,9 +40,10 @@ export const SignUpModal = () => {
         form.password !== form.confirmPassword
       ) {
         return;
-        // console.log("nao deu match!")
       }
-      await api.post("/user/sign-up", form);
+      const imgURL = await handleUpload();
+
+      await api.post("/user/sign-up", { ...form, proImg: imgURL });
       window.location.reload();
       navigate("/");
     } catch (error) {
@@ -66,13 +67,37 @@ export const SignUpModal = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
+  const [img, setImg] = useState("");
+
+  function handleImage(e) {
+    setImg(e.target.files[0]);
+  }
+
+  async function handleUpload() {
+    try {
+      const uploadData = new FormData();
+      uploadData.append("picture", img);
+
+      const response = await api.post("/upload-image", uploadData);
+
+      return response.data.url;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div>
       {location.pathname === "/" && (
-<p type="primary" onClick={showModal} className={`${style.text} ${style.textSignUp}`} href>
-        Sign Up
-      </p>
-)}
+        <p
+          type="primary"
+          onClick={showModal}
+          className={`${style.text} ${style.textSignUp}`}
+          href
+        >
+          Sign Up
+        </p>
+      )}
       <Modal
         title="SIGN UP FORM"
         visible={visible}
@@ -81,7 +106,7 @@ export const SignUpModal = () => {
         onCancel={handleCancel}
         // closable={false}
         okText="Submit"
-        bodyStyle={{height: 580, paddingTop:10}}
+        bodyStyle={{ height: 580, paddingTop: 10 }}
       >
         <Form
           onSubmit={handleOk}
@@ -98,6 +123,10 @@ export const SignUpModal = () => {
           onValuesChange={onFormLayoutChange}
           size={componentSize}
         >
+          <Form.Item label="Profile Picture:" htmlFor="formImg">
+            <Input type="file" id="formImg" onChange={handleImage} />
+          </Form.Item>
+
           <Form.Item label="What should we call you?" htmlFor="formName">
             <Input
               id="formName"
@@ -107,6 +136,7 @@ export const SignUpModal = () => {
               onChange={handleChange}
             />
           </Form.Item>
+
           <Form.Item
             name="email"
             label="What is your email?"
@@ -129,6 +159,7 @@ export const SignUpModal = () => {
               onChange={handleChange}
             />
           </Form.Item>
+
           <Form.Item
             name="confirmEmail"
             label="Confirm your email"
@@ -220,4 +251,3 @@ export const SignUpModal = () => {
     </div>
   );
 };
-

@@ -18,10 +18,7 @@ function App() {
           <Route path="/store" element={<Store />} />
           <Route path="*" element={<ErrorPage />} />
 
-          {/*        <Route path="/admin/trip/:id" element={<EditTrip />} />
-          <Route path="/admin" element={<HomeAdmin />} />
-          <Route path="/user" element={<HomeUser />} />
- */}
+      
           <Route
             path="/admin/trip/:id"
             element={<ProtectedRouteAdmin component={EditTrip} />}

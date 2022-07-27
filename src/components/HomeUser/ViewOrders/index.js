@@ -17,7 +17,6 @@ export function ViewOrders() {
       ],
     },
   ]);
-  console.log(orders);
   useEffect(() => {
     async function fetchOrders() {
       const response = await api.get("/order/all-orders-user");
@@ -31,7 +30,8 @@ export function ViewOrders() {
     <>
       <div>
         <h1>Orders</h1>
-        <div>
+
+        <div className={style.ordersContainer}>
           {orders.map((currentOrder) => {
             return (
               <div className={style.orderCard}>

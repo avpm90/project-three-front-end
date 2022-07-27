@@ -7,7 +7,6 @@ export function ProtectedRouteAdmin(props) {
   const { component: Component } = props;
 
   const { loggedInUser } = useContext(AuthContext);
-  console.log(loggedInUser);
   if (loggedInUser.user.role === "ADMIN") {
     return <Component />;
   }

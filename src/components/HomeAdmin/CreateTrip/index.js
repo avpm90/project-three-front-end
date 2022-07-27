@@ -61,7 +61,7 @@ export function CreateTrip() {
           value={form.destination}
           onChange={handleForm}
         />
-        <label htmlFor="formImg">Sua foto de perfil:</label>
+        <label htmlFor="formImg">Trip Pic Here</label>
         <input type="file" id="formImg" onChange={handleImage} />
         <label>Category</label>
         <select
