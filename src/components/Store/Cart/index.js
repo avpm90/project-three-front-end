@@ -6,6 +6,7 @@ import {
 	PlusCircleOutlined,
 	DeleteOutlined,
 } from '@ant-design/icons';
+import { PaymentModal } from '../PaymentModal/index';
 
 export const Cart = () => {
 	const {
@@ -18,6 +19,7 @@ export const Cart = () => {
 		removeItem,
 		emptyCart,
 	} = useCart();
+	console.log(items);
 	if (isEmpty)
 		return (
 			<div style={{ display: 'flex', flexDirection: 'row' }}>
@@ -74,7 +76,7 @@ export const Cart = () => {
 					</div>
 					<div>
 						<button onClick={() => emptyCart()}>Clear Cart</button>
-						<button>Checkout</button>
+						<PaymentModal />
 					</div>
 				</div>
 			</section>
