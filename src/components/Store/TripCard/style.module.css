@@ -4,11 +4,21 @@
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	align-content: space-around;
+	background-color: blue;
 }
 .cardsDiv {
+	margin-top: 0.6rem;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	align-content: space-around;
+	background-color: red;
+}
+.card {
+	border-radius: 1rem;
+	border-style: dotted;
+	border-color: blueviolet;
+	width: 22rem;
+	height: 19rem;
 }
