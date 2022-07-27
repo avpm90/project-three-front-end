@@ -30,7 +30,8 @@ export function ViewOrders() {
     <>
       <div>
         <h1>Orders</h1>
-        <div>
+
+        <div className={style.ordersContainer}>
           {orders.map((currentOrder) => {
             return (
               <div className={style.orderCard}>

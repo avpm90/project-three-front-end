@@ -14,6 +14,7 @@ export function HomeUser() {
   const [user, setUser] = useState({
     name: "",
     email: "",
+    proImg: "",
   });
 
   const [update, setUpdate] = useState(false);
@@ -37,6 +38,8 @@ export function HomeUser() {
         <NavBar className="userNav" />
         <div className="userDivs">
           <Card className="userCard">
+          <img className="tripImg" src={user.proImg} alt={user.name} />
+
             <h1>Details</h1>
             <h2>User</h2>
             <p>{user.name}</p>
