@@ -1,11 +1,11 @@
 import style from "./style.module.css";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../../contexts/authContext";
 import { Link } from "react-scroll";
 
 import { SignUpModal } from "../signupModal";
-import { LoginModal } from "../../loginModal";
+import { LoginModal } from "../loginModal";
 
 export function NavBar() {
   const { loggedInUser } = useContext(AuthContext);
@@ -24,22 +24,21 @@ export function NavBar() {
   return (
     <div className={style.navComp}>
       <div className={style.navRight}>
-        <div>
-          <a href="/store">Store</a>
+        <div className={style.text}>
+          <NavLink to="/store" className={style.text}>
+            Store
+          </NavLink>
         </div>
-        <div>
-          <p>
-            <SignUpModal />
-          </p>
-        </div>
+        <div>{loggedInUser ? null : <SignUpModal />}</div>
       </div>
-      <a href="/" className={style.navLogo}>
+      <NavLink to="/" className={style.text}>
         Logo Here
-      </a>
+      </NavLink>
       <div className={style.navLeft}>
         <div>
           {location.pathname === "/" && (
             <Link
+              className={style.text}
               to="contact"
               spy={true}
               smooth={true}
@@ -50,19 +49,19 @@ export function NavBar() {
             </Link>
           )}
         </div>
-        {loggedInUser ? (
-          <p
-            onClick={() => {
-              logOut();
-            }}
-          >
-            Log Off
-          </p>
-        ) : (
-          <div className={style.modalDiv}>
+        <div>
+          {loggedInUser ? (
+            <p
+              onClick={() => {
+                logOut();
+              }}
+            >
+              Log Off
+            </p>
+          ) : (
             <LoginModal />
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
