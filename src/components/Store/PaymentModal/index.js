@@ -10,7 +10,7 @@ export const PaymentModal = () => {
 	const countDown = () => {
 		const modal = Modal.success({
 			title: 'Pack your bags',
-			content: `This modal will be destroyed after second.`,
+			content: `Your Order was completed successfully`,
 		});
 		setTimeout(() => {
 			modal.destroy();
@@ -19,7 +19,6 @@ export const PaymentModal = () => {
 
 	async function handleSubmit(e) {
 		e.preventDefault();
-
 		try {
 			await api.post('/order/new-order', {
 				trips: items,
@@ -35,11 +34,9 @@ export const PaymentModal = () => {
 	const onFormLayoutChange = ({ size }) => {
 		setComponentSize(size);
 	};
-
 	const showModal = () => {
 		setVisible(true);
 	};
-
 	const handleCancel = () => {
 		console.log('Clicked cancel button');
 		setVisible(false);
