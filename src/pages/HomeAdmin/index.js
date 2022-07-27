@@ -29,17 +29,19 @@ export function HomeAdmin() {
   return (
     <>
       <NavBar />
-      <button className={showTrips ? "test" : "btn"} onClick={handleTrip}>
-        Trips
-      </button>
-      <button onClick={handleOrders}>Orders</button>
-      <button onClick={handleUsers}>Users</button>
-      {showTrips && <ViewTrip />}
-      {showOrders && <ViewOrder />}
-      {showUsers && <ViewUser />}
-      <Link to="/">
-        <button>Home</button>
-      </Link>
+      <div className="adminDivs">
+        <button className={showTrips ? "test" : "btn"} onClick={handleTrip}>
+          Trips
+        </button>
+        <button onClick={handleOrders}>Orders</button>
+        <button onClick={handleUsers}>Users</button>
+        {showTrips && <ViewTrip />}
+        {showOrders && <ViewOrder />}
+        {showUsers && <ViewUser />}
+        <Link to="/">
+          <button>Home</button>
+        </Link>
+      </div>
     </>
   );
 }

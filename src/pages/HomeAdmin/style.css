@@ -5,3 +5,12 @@
 .btn {
   background-color: blue;
 }
+
+
+.adminDivs {
+  margin-top: 3.1rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  border-radius: 150px;
+}

@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { api } from "../../../api/api";
 
 import { AuthContext } from "../../../contexts/authContext";
-import { Card, Form } from "antd";
+import { Form } from "antd";
 
 export function EditUser() {
   const { loggedInUser } = useContext(AuthContext);
@@ -30,7 +30,6 @@ export function EditUser() {
 
   return (
     <>
-      
       <Form>
         <label>Name</label>
         <input
