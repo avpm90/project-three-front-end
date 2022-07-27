@@ -3,6 +3,7 @@
 // import { api } from "../../../api/api";
 // import { useNavigate } from "react-router-dom";
 // import { Link } from "react-router-dom";
+import style from "./style.module.css"
 
 import { NavBar } from "../../components/HomePage/navBar";
 import { Hello } from "../../components/HomePage/helloUser";
@@ -13,7 +14,7 @@ import { ContactUs } from "../../components/HomePage/contactUs";
 
 export function HomePage() {
   return (
-    <div> 
+    <div className={style.homePage}> 
       <NavBar />
       <Hello />
       <HowWorks />

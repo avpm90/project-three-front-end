@@ -6,13 +6,13 @@ body::-webkit-scrollbar {
   z-index: 1;
   height: 50px;
   width: 100%;
-  background-color: black;
+  background-color: blue;
   /* color: white; */
   font-size: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   margin-top: -50px;
 }
 a:hover {
@@ -34,13 +34,13 @@ a:hover {
 }
 .textContact {
   position: fixed;
-  left:110px;
+  left:100px;
   padding: 0px 5px;
   top: 10px;
 }
 .textProfile {
   position: fixed;
-  right: 150px;
+  right: 130px;
   padding: 0px 5px;
   top: 10px;
 }
@@ -79,4 +79,19 @@ a:hover {
 .loginModal {
   position: relative;
   right: 250px;
+}
+
+.helloUser {
+  position: fixed;
+  right: 220px;
+  /* padding: 0px 5px; */
+  /* margin: 0px 5px; */
+  top: 10px;
+  color: aliceblue;
+  /* text-transform: initial; */
+  text-decoration-line: underline;
+  font-style: italic;
+  /* text-transform: capitalize; */
+  /* text-decoration-style:wavy; */
+  /* text-decoration:underline; */
 }
