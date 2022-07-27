@@ -2,7 +2,6 @@ import { TripCard } from '../../components/Store/TripCard';
 import { Cart } from '../../components/Store/Cart';
 import { CartProvider } from 'react-use-cart';
 import { NavBar } from '../../components/HomePage/navBar';
-import { PaymentModal } from '../../components/Store/PaymentModal';
 
 export function Store() {
 	return (
@@ -20,7 +19,6 @@ export function Store() {
 						<Cart />
 					</div>
 				</CartProvider>
-				<PaymentModal />
 			</div>
 		</>
 	);

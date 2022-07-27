@@ -1,32 +1,36 @@
-import { Button, Modal, DatePicker, Form, Input, InputNumber } from 'antd';
+import { Button, Modal, DatePicker, Form, Input } from 'antd';
 import { IdcardOutlined, CreditCardOutlined } from '@ant-design/icons';
 import React, { useState } from 'react';
 import { api } from '../../../api/api';
-import { useNavigate } from 'react-router-dom';
+import { useCart } from 'react-use-cart';
 
-export const PaymentModal = ({ trips, orderTotal, emptyCart }) => {
-	console.log(trips);
-	console.log(orderTotal);
-	const navigate = useNavigate();
+export const PaymentModal = () => {
+	const { emptyCart, items, cartTotal } = useCart();
+
+	const countDown = () => {
+		const modal = Modal.success({
+			title: 'Pack your bags',
+			content: `This modal will be destroyed after second.`,
+		});
+		setTimeout(() => {
+			modal.destroy();
+		}, 3000);
+	};
 
 	async function handleSubmit(e) {
 		e.preventDefault();
-		console.log('submit');
+
 		try {
 			await api.post('/order/new-order', {
-				trips: trips,
-				orderTotal: orderTotal,
+				trips: items,
+				orderTotal: cartTotal,
 			});
-			emptyCart();
-			navigate('/');
 		} catch (error) {
 			console.log(error);
 		}
 	}
 
 	const [visible, setVisible] = useState(false);
-	const [confirmLoading, setConfirmLoading] = useState(false);
-	const [modalText, setModalText] = useState('Content of the modal');
 	const [componentSize, setComponentSize] = useState('default');
 	const onFormLayoutChange = ({ size }) => {
 		setComponentSize(size);
@@ -34,15 +38,6 @@ export const PaymentModal = ({ trips, orderTotal, emptyCart }) => {
 
 	const showModal = () => {
 		setVisible(true);
-	};
-
-	const handleOk = () => {
-		setModalText('The modal will be closed after two seconds');
-		setConfirmLoading(true);
-		setTimeout(() => {
-			setVisible(false);
-			setConfirmLoading(false);
-		}, 2000);
 	};
 
 	const handleCancel = () => {
@@ -56,8 +51,12 @@ export const PaymentModal = ({ trips, orderTotal, emptyCart }) => {
 			<Modal
 				title="Payment Information"
 				visible={visible}
-				onOk={handleSubmit}
-				confirmLoading={confirmLoading}
+				onOk={(e) => {
+					handleSubmit(e);
+					emptyCart();
+					setVisible(false);
+					countDown();
+				}}
 				onCancel={handleCancel}
 				okText="Pay Now"
 				closable={false}
