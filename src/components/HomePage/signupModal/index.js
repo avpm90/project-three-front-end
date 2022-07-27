@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { api } from "../../../api/api";
 import { useNavigate } from "react-router-dom";
 import { Modal, DatePicker, Form, Input, Checkbox } from "antd";
+import style from "./style.module.css"
 
 export const SignUpModal = () => {
   const [visible, setVisible] = useState(false);
@@ -66,7 +67,7 @@ export const SignUpModal = () => {
 
   return (
     <div>
-      <p type="primary" onClick={showModal}>
+      <p type="primary" onClick={showModal} className={style.text} href>
         Sign Up
       </p>
       <Modal

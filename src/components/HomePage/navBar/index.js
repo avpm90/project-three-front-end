@@ -31,9 +31,11 @@ export function NavBar() {
         </div>
         <div>{loggedInUser ? null : <SignUpModal />}</div>
       </div>
-      <NavLink to="/" className={style.text}>
-        Logo Here
-      </NavLink>
+      <div>
+        <NavLink to="/" className={style.text}>
+          Logo Here
+        </NavLink>
+      </div>
       <div className={style.navLeft}>
         <div>
           {location.pathname === "/" && (
@@ -62,6 +64,7 @@ export function NavBar() {
             <LoginModal />
           )}
         </div>
+        {/* <button>{loggedInUser.user.role === "ADMIN" ? <Link to="/admin">Profile</Link> : <Link to="/user"> Profile</Link>} </button> */}
       </div>
     </div>
   );
