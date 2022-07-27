@@ -10,10 +10,7 @@ export function HomeUser() {
 
   const { loggedInUser } = useContext(AuthContext);
 
-  function handleLogOut() {
-    localStorage.removeItem("loggedInUser");
-    navigate("/");
-  }
+ 
 
   const [showEdition, setShowEdition] = useState(false);
   function handleEdition() {
@@ -26,8 +23,7 @@ export function HomeUser() {
         <NavBar />
         <h1>{loggedInUser.user.name}</h1>
         <p>{loggedInUser.user.email}</p>
-        <button onClick={handleLogOut}>Sair</button>
-        <button onClick={handleEdition}>Users</button>
+        <button onClick={handleEdition}>Edit</button>
         {showEdition && <EditUser />}
       </>
       <ViewOrders />

@@ -3,12 +3,12 @@ import { AuthContext } from "../../contexts/authContext";
 
 import { Navigate } from "react-router-dom";
 
-export function ProtectedRoute(props) {
+export function ProtectedRouteAdmin(props) {
   const { component: Component } = props;
 
   const { loggedInUser } = useContext(AuthContext);
   console.log(loggedInUser);
-  if (loggedInUser) {
+  if (loggedInUser.user.role === "ADMIN") {
     return <Component />;
   }
 

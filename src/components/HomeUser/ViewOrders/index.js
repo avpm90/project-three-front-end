@@ -17,7 +17,7 @@ export function ViewOrders() {
       ],
     },
   ]);
-
+  console.log(orders);
   useEffect(() => {
     async function fetchOrders() {
       const response = await api.get("/order/all-orders-user");
@@ -27,7 +27,6 @@ export function ViewOrders() {
     fetchOrders();
   }, []);
 
-
   return (
     <>
       <Card style={{ borderRadius: 50 }}>
@@ -35,18 +34,8 @@ export function ViewOrders() {
           return (
             <Card>
               <div>
-                <p>Customer: {currentOrder.customerId.name}</p>
-                <p>Order Date: {currentOrder.dateCreated}</p>
-                {currentOrder.trips.map((currentTrip) => {
-                  return (
-                    <>
-                      <p>Order Id: {currentTrip.trip}</p>
-                      <p>Trip's Quantity: {currentTrip.quantity}</p>
-                      <p>Trip Price: ${currentTrip.unitPrice}</p>
-                      <p>Total Price: ${currentOrder.orderTotal}</p>
-                    </>
-                  );
-                })}
+                <p>Order Id: {currentOrder.customerId}</p>
+                <p>Total Price: ${currentOrder.orderTotal}</p>
               </div>
             </Card>
           );
