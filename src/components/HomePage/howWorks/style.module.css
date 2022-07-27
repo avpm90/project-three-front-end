@@ -1,4 +1,59 @@
-.howWorksComp {
+.howWorksContainer {
   background-color: blanchedalmond;
-  border: 1px solid black;
+  height: 25rem;
+}
+.howWorksContainer h1 {
+  text-align: center;
+  font-size: 50px;
+  color: brown;
+  padding-top: 1.25rem;
+  padding-bottom: 15px;
+  margin: 0rem;
+}
+.howWorksContainer h2 {
+  text-align: center;
+  font-size: 50px;
+  margin: 0px;
+  /* padding: 0px; */
+  /* margin-bottom: 0px; */
+  /* padding: 0px; */
+  height: 70px;
+}
+.howWorksContainer h3 {
+  text-align: center;
+  font-size: 25px;
+  margin: 0px;
+  margin-bottom: 10px;
+  height: 30px;
+  
+}
+.howWorksContainer p {
+  text-align: center;
+  font-size: 15px;
+  margin: 0px;
+}
+.card {
+  border-radius: 40px;
+  background-color: brown;
+  width: 24rem;
+  height: 14rem;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  
+}
+.cardContent {
+  /* background-color: aliceblue; */
+  height: 180px;
+  width: 330px;
+  /* margin-top: 1px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.cardsContainer {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10px;
 }

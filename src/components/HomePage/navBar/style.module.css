@@ -1,29 +1,48 @@
+body::-webkit-scrollbar {
+  display: none;
+}
 .navComp {
-  /* position: fixed; */
+  position: fixed;
+  height: 50px;
+  width: 100%;
   background-color: black;
   color: white;
-
-  border: 1px solid black;
+  font-size: 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   text-transform: uppercase;
+  margin-top: -50px;
+}
+a:hover {
+  background-color: white;
+  color: black;
 }
 .text {
+  padding: 4px 10px ;
+  text-align: center;
   text-decoration: none;
   color: white;
 }
 .navRight {
+  text-decoration: none;
+  color: white;
+  width: 300px;
   gap: 10px;
   display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 .navLeft {
+  text-decoration: none;
+  color: white;
+  width: 300px;
   gap: 10px;
   display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-right: 10px;
 }
-/* .modalDiv {
-  display: flex;
-  align-items: flex-end;
-} */
 .loginP {
   margin: 0px;
 }

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/authContext";
 import { api } from "../../../api/api";
 import "./style.module.css";
+import style from "./style.module.css"
 import { Modal, Checkbox, Form, Input } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 
@@ -65,7 +66,7 @@ export const LoginModal = () => {
 
   return (
     <>
-      <p type="primary" onClick={showModal}>
+      <p type="primary" onClick={showModal} className={style.text}>
         Log In
       </p>
       <Modal
