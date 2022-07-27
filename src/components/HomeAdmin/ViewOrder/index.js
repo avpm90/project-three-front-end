@@ -21,12 +21,10 @@ export function ViewOrder() {
     },
   ]);
 
-  console.log(orders);
   useEffect(() => {
     async function fetchOrders() {
       const response = await api.get("/order/all-orders");
       setOrders(response.data);
-      console.log(response.data);
     }
     fetchOrders();
   }, []);

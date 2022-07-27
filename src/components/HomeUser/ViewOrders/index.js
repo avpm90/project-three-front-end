@@ -17,7 +17,6 @@ export function ViewOrders() {
       ],
     },
   ]);
-  console.log(orders);
   useEffect(() => {
     async function fetchOrders() {
       const response = await api.get("/order/all-orders-user");
