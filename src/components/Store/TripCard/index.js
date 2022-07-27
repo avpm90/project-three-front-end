@@ -96,7 +96,7 @@ export function TripCard() {
 							style={{ width: '300px', height: '300px' }}
 							key={currentTrip._Id}
 						>
-							<p>{currentTrip.tripImg}</p>
+							<img src={currentTrip.tripImg} alt={currentTrip.destination} />
 							<p>{currentTrip.destination}</p>
 							<p>{currentTrip.description}</p>
 							<p>${currentTrip.unitPrice}</p>
