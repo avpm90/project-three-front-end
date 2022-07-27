@@ -16,14 +16,14 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/store" element={<Store />} />
           <Route
-            path="/user"
-            element={<ProtectedRoute component={HomeUser} />}
+            path="/admin/trip/:id"
+            element={<ProtectedRoute component={EditTrip} />}
           />
           <Route
             path="/admin"
             element={<ProtectedRoute component={HomeAdmin} />}
           />
-          <Route path="/admin/trip/:id" element={<EditTrip />} />
+          <Route path="/user" element={<HomeUser />} />
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>

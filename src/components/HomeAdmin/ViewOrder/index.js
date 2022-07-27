@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { api } from "../../../api/api";
 import { Card } from "antd";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export function ViewOrder() {
   const navigate = useNavigate();
@@ -21,6 +21,7 @@ export function ViewOrder() {
     },
   ]);
 
+  console.log(orders);
   useEffect(() => {
     async function fetchOrders() {
       const response = await api.get("/order/all-orders");
