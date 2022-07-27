@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../contexts/authContext";
-import { api } from "../../api/api";
-// import style from "./style.module.css";
-import { Button, Modal, Checkbox, Form, Input } from "antd";
+import { AuthContext } from "../../../contexts/authContext";
+import { api } from "../../../api/api";
+import "./style.module.css";
+import { Modal, Checkbox, Form, Input } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 
 export const LoginModal = () => {
@@ -21,7 +21,6 @@ export const LoginModal = () => {
   };
 
   const handleOk = async (e) => {
-    // setModalText("The modal will be closed after two seconds");
     setConfirmLoading(true);
     setTimeout(() => {
       setVisible(false);
@@ -64,38 +63,23 @@ export const LoginModal = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  //   async function handleSumit(e) {
-  //     e.preventDefault();
-
-  //     try {
-  //       const response = await api.post("/user/log-in", form);
-  //       setLoggedInUser({ ...response.data });
-  //       // console.log(response.data);
-
-  //       localStorage.setItem("loggedInUser", JSON.stringify(response.data));
-  //       if (response.data.user.role === "ADMIN") {
-  //         navigate("/admin");
-  //       } else {
-  //         navigate("/");
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
-
   return (
     <>
       <p type="primary" onClick={showModal}>
         Log In
       </p>
       <Modal
+        title="LOG IN"
         visible={visible}
         onOk={handleOk}
         confirmLoading={confirmLoading}
         onCancel={handleCancel}
-        // footer={null}
+        closable={false}
+        okText="Log In"
+        bodyStyle={{ height: 190, paddingTop: 30 }}
+        width={400}
       >
-        <p>
+        <div>
           <Form
             name="normal_login"
             className="login-form"
@@ -152,19 +136,8 @@ export const LoginModal = () => {
                 Forgot password
               </a>
             </Form.Item>
-
-            <Form.Item>
-              <Button
-                type="primary"
-                onOk={handleOk}
-                htmlType="submit"
-                className="login-form-button"
-              >
-                Log in
-              </Button>
-            </Form.Item>
           </Form>
-        </p>
+        </div>
       </Modal>
     </>
   );

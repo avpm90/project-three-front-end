@@ -1,4 +1,11 @@
 .helloComp {
-  background-color: blueviolet;
+  /* background-image: url("../../../imgs/hello-img.jpeg"); */
   border: 1px solid black;
+  height: 500px;
+  object-fit: cover;
+  /* width: 100%; */
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
 }

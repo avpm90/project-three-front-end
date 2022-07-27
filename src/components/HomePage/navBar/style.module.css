@@ -1,10 +1,16 @@
 .navComp {
   /* position: fixed; */
-  background-color: aquamarine;
+  background-color: black;
+  color: white;
+
   border: 1px solid black;
   display: flex;
   justify-content: space-between;
   text-transform: uppercase;
+}
+.text {
+  text-decoration: none;
+  color: white;
 }
 .navRight {
   gap: 10px;
@@ -22,6 +28,6 @@
   margin: 0px;
 }
 .loginModal {
-  position:relative;
+  position: relative;
   right: 250px;
 }
