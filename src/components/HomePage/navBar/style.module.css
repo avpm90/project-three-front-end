@@ -3,10 +3,11 @@ body::-webkit-scrollbar {
 }
 .navComp {
   position: fixed;
+  z-index: 1;
   height: 50px;
   width: 100%;
   background-color: black;
-  color: white;
+  /* color: white; */
   font-size: 20px;
   display: flex;
   justify-content: space-between;
@@ -16,18 +17,47 @@ body::-webkit-scrollbar {
 }
 a:hover {
   background-color: white;
+  text-decoration: none;
   color: black;
 }
 .text {
-  padding: 4px 10px ;
+  padding: 4px 10px;
   text-align: center;
   text-decoration: none;
   color: white;
 }
-.navRight {
+.textStore {
+  position: fixed;
+  left: 20px;
+  padding: 0px 5px;
+  top: 10px;
+}
+.textContact {
+  position: fixed;
+  left:110px;
+  padding: 0px 5px;
+  top: 10px;
+}
+.textProfile {
+  position: fixed;
+  right: 150px;
+  padding: 0px 5px;
+  top: 10px;
+}
+.textOff p {
   text-decoration: none;
   color: white;
-  width: 300px;
+  padding: 0px 5px;
+  position: fixed;
+  right: 30px;
+  top: 10px;
+  /* font-size: 20px; */
+}
+.navRight {
+  /* position: fixed; */
+  text-decoration: none;
+  color: white;
+  width: 400px;
   gap: 10px;
   display: flex;
   align-items: center;
