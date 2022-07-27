@@ -4,20 +4,21 @@ import React, { useState } from 'react';
 import { api } from '../../../api/api';
 import { useNavigate } from 'react-router-dom';
 
-export const PaymentModal = ({ trips, orderTotal }) => {
+export const PaymentModal = ({ trips, orderTotal, emptyCart }) => {
 	console.log(trips);
 	console.log(orderTotal);
-	// const navigate = useNavigate();
-	// const [order, setOrder] = useState({
-	// 	trips: items,
-	// 	orderTotal: cartTotal,
-	// });
+	const navigate = useNavigate();
 
 	async function handleSubmit(e) {
 		e.preventDefault();
+		console.log('submit');
 		try {
-			await api.post('/order/new-order', trips, orderTotal);
-			// navigate('/');
+			await api.post('/order/new-order', {
+				trips: trips,
+				orderTotal: orderTotal,
+			});
+			emptyCart();
+			navigate('/');
 		} catch (error) {
 			console.log(error);
 		}
@@ -55,7 +56,7 @@ export const PaymentModal = ({ trips, orderTotal }) => {
 			<Modal
 				title="Payment Information"
 				visible={visible}
-				onOk={handleOk}
+				onOk={handleSubmit}
 				confirmLoading={confirmLoading}
 				onCancel={handleCancel}
 				okText="Pay Now"
@@ -96,7 +97,7 @@ export const PaymentModal = ({ trips, orderTotal }) => {
 						<Input />
 					</Form.Item>
 					<Form.Item label="Button">
-						<Button>Button</Button>
+						<Button onClick={handleSubmit}>Button</Button>
 					</Form.Item>
 				</Form>
 			</Modal>

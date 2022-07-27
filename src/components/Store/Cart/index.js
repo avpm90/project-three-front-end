@@ -76,7 +76,11 @@ export const Cart = () => {
 					</div>
 					<div>
 						<button onClick={() => emptyCart()}>Clear Cart</button>
-						<PaymentModal trips={items} orderTotal={cartTotal} />
+						<PaymentModal
+							trips={items}
+							orderTotal={cartTotal}
+							emptyCart={emptyCart}
+						/>
 					</div>
 				</div>
 			</section>
