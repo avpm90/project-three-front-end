@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { api } from "../../../api/api";
 import { Form, Card, Divider } from "antd";
 export function EditTrip() {
@@ -14,6 +14,8 @@ export function EditTrip() {
     unitPrice: "",
   });
 
+  const [img, setImg] = useState("");
+
   useEffect(() => {
     async function fetchId() {
       const response = await api.get(`/trip/one-trip/${id}`);
@@ -26,14 +28,34 @@ export function EditTrip() {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
+  function handleImage(e) {
+    setImg(e.target.files[0]);
+  }
+
+  async function handleUpload() {
+    try {
+      const uploadData = new FormData();
+      uploadData.append("picture", img);
+
+      const response = await api.post("/upload-image", uploadData);
+
+      return response.data.url;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   async function handleUpdate(e) {
     e.preventDefault();
     delete form._id;
     try {
-      await api.patch(`/trip/edit-trip/${id}`, form);
+      const imgURL = await handleUpload();
+
+      await api.patch(`/trip/edit-trip/${id}`, { ...form, tripImg: imgURL });
     } catch (err) {
       console.log(err);
     }
+    navigate("/admin");
   }
   async function deleteTrip() {
     await api.delete(`/trip/delete-trip/${id}`);
@@ -44,6 +66,8 @@ export function EditTrip() {
     <>
       <Card style={{ borderRadius: 50 }}>
         <Form>
+        <label htmlFor="formImg">Sua foto de perfil:</label>
+          <input type="file" id="formImg" onChange={handleImage} />
           <label>Destination:</label>
           <input
             name="destination"
@@ -63,6 +87,9 @@ export function EditTrip() {
             <option value="Culture">Culture</option>
             <option value="Beach">Beach</option>
           </select>
+
+         
+          <label>Category</label>
           <label>Description:</label>
           <input
             name="description"
@@ -82,6 +109,9 @@ export function EditTrip() {
         </Form>
       </Card>
       <Divider></Divider>
+      <Link to="/admin">
+        <button>Back</button>
+      </Link>
 
       <Card style={{ borderRadius: 50, width: "500" }}>
         <p>Destination: {form.destination}</p>

@@ -30,11 +30,7 @@ export function EditUser() {
 
   return (
     <>
-      <Card>
-        <h1>{loggedInUser.user.name}</h1>
-        <p>{loggedInUser.user.email}</p>
-        <p>{loggedInUser.user.birthday}</p>
-      </Card>
+      
       <Form>
         <label>Name</label>
         <input
@@ -51,7 +47,7 @@ export function EditUser() {
           value={form.birthday}
           onChange={handleForm}
         />
-        <button onClick={handleUpdate}>Add Edition</button>
+        <button onClick={handleUpdate}>Done</button>
       </Form>
     </>
   );

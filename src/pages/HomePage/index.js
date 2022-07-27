@@ -13,7 +13,7 @@ import { ContactUs } from "../../components/HomePage/contactUs";
 
 export function HomePage() {
   return (
-    <div>
+    <div> 
       <NavBar />
       <Hello />
       <HowWorks />

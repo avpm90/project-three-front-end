@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { api } from "../../../api/api";
 import { Card } from "antd";
 import { CreateTrip } from "../CreateTrip";
-import "./style.css"
+import "./style.css";
 
 export function ViewTrip() {
   const [trips, setTrips] = useState([
@@ -34,21 +34,26 @@ export function ViewTrip() {
   return (
     <div>
       <>
-        <button onClick={handleCreate}>Create Trip</button>
+        <button className="btnAT" onClick={handleCreate}>Create Trip</button>
         {showCreate && <CreateTrip />}
         {trips.map((currentTrip) => {
           return (
             <Card style={{ borderRadius: 50 }}>
               <div key={currentTrip._id}>
+                <img
+                  className="tripImg"
+                  src={currentTrip.tripImg}
+                  alt={currentTrip.destination}
+                />
+
                 <p>Destination: {currentTrip.destination}</p>
                 <p>Category: {currentTrip.category}</p>
-                <p>Description: {currentTrip.description}</p>
+                <p style={{width:100}}>Description: {currentTrip.description}</p>
                 <p>In Stock: {currentTrip.inStock}</p>
                 <p>Unit Price: {currentTrip.unitPrice}</p>
-                <img className="tripImg" src={currentTrip.tripImg} alt={currentTrip.destination} />
 
                 <Link to={`/admin/trip/${currentTrip._id}`}>
-                  <button>Edit</button>
+                  <button className="btnAT">Edit</button>
                 </Link>
               </div>
             </Card>

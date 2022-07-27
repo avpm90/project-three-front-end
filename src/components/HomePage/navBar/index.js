@@ -63,6 +63,16 @@ export function NavBar() {
           )}
         </div>
       </div>
+
+      {loggedInUser ? (
+        <button>
+          {loggedInUser.user.role === "ADMIN" ? (
+            <NavLink to="/admin">Profile</NavLink>
+          ) : (
+            <NavLink to="/user"> Profile</NavLink>
+          )}
+        </button>
+      ) : null}
     </div>
   );
 }
