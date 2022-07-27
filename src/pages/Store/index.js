@@ -10,20 +10,15 @@ export function Store() {
 		<>
 			<NavBar />
 			<div
-				className={style.container}
+				className={style.containerStore}
 				style={{ display: 'flex', flexDirection: 'row' }}
 			>
 				<CartProvider>
 					<div className={style.tripCard}>
 						<TripCard />
 					</div>
-					<div
-						className={style.cart}
-						style={{
-							width: '22vw',
-							height: '85vh',
-						}}
-					>
+
+					<div className={style.cart}>
 						<h1>
 							Cart <ShoppingCartOutlined />
 						</h1>

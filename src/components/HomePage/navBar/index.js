@@ -11,9 +11,12 @@ export function NavBar() {
   const { loggedInUser } = useContext(AuthContext);
   const redirectAfterLogOut = useNavigate();
   const location = useLocation();
+  console.log(location);
+  console.log(window.location);
 
   function logOut() {
     localStorage.removeItem("loggedInUser");
+    console.log(localStorage);
     redirectAfterLogOut("/");
     window.location.reload();
   }
@@ -21,7 +24,9 @@ export function NavBar() {
   return (
     <div className={style.navComp}>
       <div className={style.helloUser}>
-        {loggedInUser ? <p>{`Hello, ${loggedInUser.user.name}, how are you today?`}</p> : null}
+        {loggedInUser ? (
+          <p>{`Hello, ${loggedInUser.user.name}, how are you today?`}</p>
+        ) : null}
       </div>
       <div className={style.navRight}>
         <NavLink to="/store" className={`${style.text} ${style.textStore}`}>
