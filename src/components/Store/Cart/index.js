@@ -22,19 +22,10 @@ export const Cart = () => {
 
 	if (isEmpty)
 		return (
-			<div
-				className={style.container}
-				style={{
-					display: 'flex',
-					flexDirection: 'column',
-					width: '24vw',
-					height: '85vh',
-				}}
-			>
+			<div className={style.cartEmpty}>
 				<h3>Your Cart is Empty</h3>
 			</div>
 		);
-	// console.log(items);
 	return (
 		<>
 			<section>

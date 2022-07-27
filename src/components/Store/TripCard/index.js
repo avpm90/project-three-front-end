@@ -3,6 +3,7 @@ import { api } from '../../../api/api';
 // import { Card } from 'antd';
 import { useCart } from 'react-use-cart';
 import CardDetails from '../CardDetails/index';
+import { ShoppingCartOutlined } from '@ant-design/icons';
 import style from '../TripCard/style.module.css';
 
 export function TripCard() {
@@ -38,10 +39,7 @@ export function TripCard() {
 	}
 	return (
 		<>
-			<div
-				className={style.container}
-				style={{ width: '77vw', height: '85vh' }}
-			>
+			<div className={style.container}>
 				<div className={style.categoriesDiv}>
 					<button
 						onClick={() => {
@@ -97,18 +95,27 @@ export function TripCard() {
 
 						return (
 							<div className={style.card} key={currentTrip._Id}>
-								<p>{currentTrip.destination}</p>
 								<img
 									className={style.cardImg}
 									src={currentTrip.tripImg}
 									alt={currentTrip.destination}
 								/>
-								<p>{currentTrip.description}</p>
-								<p>${currentTrip.unitPrice}</p>
+								<div className={style.infoCards}>
+									<p>{currentTrip.destination}</p>
+									<p className={style.infoCard_destaque}>
+										${currentTrip.unitPrice}
+									</p>
+								</div>
+								<div className={style.cardGroupBtn}>
+									<CardDetails trip={currentTrip} />
 
-								<CardDetails trip={currentTrip} />
-
-								<button onClick={() => addItem(item)}>Add to Cart</button>
+									<button
+										className={style.btnCart}
+										onClick={() => addItem(item)}
+									>
+										<ShoppingCartOutlined />
+									</button>
+								</div>
 							</div>
 						);
 					})}

@@ -1,52 +1,52 @@
 body::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
 .navComp {
-  position: fixed;
-  height: 50px;
-  width: 100%;
-  background-color: black;
-  color: white;
-  font-size: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-transform: uppercase;
-  margin-top: -50px;
+	position: fixed;
+	z-index: 1;
+	height: 50px;
+	width: 100%;
+	background-color: black;
+	color: white;
+	font-size: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-transform: uppercase;
 }
 a:hover {
-  background-color: white;
-  color: black;
+	background-color: white;
+	color: black;
 }
 .text {
-  padding: 4px 10px ;
-  text-align: center;
-  text-decoration: none;
-  color: white;
+	padding: 4px 10px;
+	text-align: center;
+	text-decoration: none;
+	color: white;
 }
 .navRight {
-  text-decoration: none;
-  color: white;
-  width: 300px;
-  gap: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+	text-decoration: none;
+	color: white;
+	width: 300px;
+	gap: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
 }
 .navLeft {
-  text-decoration: none;
-  color: white;
-  width: 300px;
-  gap: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  margin-right: 10px;
+	text-decoration: none;
+	color: white;
+	width: 300px;
+	gap: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	margin-right: 10px;
 }
 .loginP {
-  margin: 0px;
+	margin: 0px;
 }
 .loginModal {
-  position: relative;
-  right: 250px;
+	position: relative;
+	right: 250px;
 }
