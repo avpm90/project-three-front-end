@@ -1,12 +1,9 @@
-body::-webkit-scrollbar {
-  display: none;
-}
 .navComp {
   position: fixed;
   z-index: 1;
   height: 50px;
   width: 100%;
-  background-color: blue;
+  background-color: black;
   /* color: white; */
   font-size: 20px;
   display: flex;
@@ -25,16 +22,18 @@ a:hover {
   text-align: center;
   text-decoration: none;
   color: white;
+  background-color: black;
 }
 .textStore {
   position: fixed;
   left: 20px;
   padding: 0px 5px;
   top: 10px;
+  background-color: black;
 }
 .textContact {
   position: fixed;
-  left:100px;
+  left: 100px;
   padding: 0px 5px;
   top: 10px;
 }

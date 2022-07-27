@@ -11,14 +11,49 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: space-evenly;
-	align-content: space-around;
-	background-color: red;
+	background-color: orange;
+	height: 525px;
+	overflow-y: scroll;
 }
 .card {
 	border-radius: 1rem;
 	border-style: dotted;
 	border-color: blueviolet;
-	width: 22rem;
-	height: 19rem;
+	width: 20rem;
+	height: 23rem;
+	margin: 10px;
+}
+.cardImg {
+	width: 100%;
+	height: 250px;
+	border-radius: 15px 15px 0px 0px;
+}
+.infoCards {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-top: 15px;
+	align-items: center;
+}
+.infoCards p {
+	font-size: 14px;
+	font-weight: 700;
+	margin: 0px;
+}
+.infoCard_destaque {
+	font-weight: 700;
+	background-color: white;
+	padding: 5px 15px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px black;
+}
+.cardGroupBtn {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding-left: 30px;
+}
+.btnCart {
+	padding: 3px 4px;
+	margin-left: 3px;
 }

@@ -22,30 +22,25 @@ export const Cart = () => {
 
 	if (isEmpty)
 		return (
-			<div
-				className={style.container}
-				style={{
-					display: 'flex',
-					flexDirection: 'column',
-					width: '24vw',
-					height: '85vh',
-				}}
-			>
+			<div className={style.cartEmpty}>
 				<h3>Your Cart is Empty</h3>
 			</div>
 		);
-	// console.log(items);
 	return (
 		<>
 			<section>
 				<div>
 					<div>
-						<tr>
-							<th>Destination</th>
-							<th>Price</th>
-							<th>Quantity</th>
-						</tr>
 						<table>
+							<tr>
+								<th>Destination</th>
+								<th>Price</th>
+								<th>Quantity</th>
+								<th> -- </th>
+								<th> -- </th>
+								<th> -- </th>
+							</tr>
+
 							<tbody>
 								{items.map((item, index) => {
 									return (
