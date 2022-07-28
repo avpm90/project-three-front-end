@@ -4,23 +4,23 @@
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	align-content: space-around;
-	background-color: blue;
+	background-color: #edafb8;
 }
 .cardsDiv {
 	margin-top: 0.6rem;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	background-color: orange;
+	background-color: #f7e1d7;
 	height: 525px;
 	overflow-y: scroll;
 }
 .card {
 	border-radius: 1rem;
 	border-style: dotted;
-	border-color: blueviolet;
+	border-color: #b0c4b1;
 	width: 20rem;
-	height: 23rem;
+	height: 22rem;
 	margin: 10px;
 }
 .cardImg {
