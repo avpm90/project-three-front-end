@@ -28,20 +28,25 @@ export function ViewOrders() {
   }, []);
 
   return (
-    <div className={style.pagedivO}>
-      <h1>Orders</h1>
-
-      <div className={style.ordersContainer}>
+    <>
+      <div className={style.h1Container}>
+        <h1>My Orders</h1>
+      </div>
+      <div className={style.myOrders}>
         {orders.map((currentOrder) => {
           return (
             <div className={style.orderCard}>
-              <p>Order Number: {currentOrder.customerId}</p>
-              <p>Order Total: ${currentOrder.orderTotal}</p>
-              <Button type="primary">Details</Button>
+              <p>Order Number</p>
+              <p className={style.id}>{currentOrder.customerId}</p>
+              <p>Order Total </p>
+              <p className={style.total}>${currentOrder.orderTotal}</p>
+              <Button className={style.btn} shape="round" size="default">
+                Details
+              </Button>
             </div>
           );
         })}
       </div>
-    </div>
+    </>
   );
 }

@@ -5,6 +5,7 @@ import { ViewOrders } from "../../components/HomeUser/ViewOrders";
 import { EditUser } from "../../components/HomeUser/EditUser";
 import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
+import { ContactUs } from "../../components/HomePage/contactUs";
 
 import style from "./style.module.css";
 import { api } from "../../api/api";
@@ -43,31 +44,37 @@ export function HomeUser() {
     <>
       <div>
         <NavBar className={style.userNav} />
-          <div className={style.body}>
-            <div className={style.userDetails}>
-              <div className={style.userCardText}>
-                <h1>User Details</h1>
-                <h2>Name</h2>
-                <p>{user.name}</p>
-                <h2>E-mail</h2>
-                <p>{user.email}</p>
-              </div>
-
-              <div className={style.imgdiv}>
-                <img
-                  className={style.picImg}
-                  src={user.proImg}
-                  alt={user.name}
-                />
-                {<EditUser update={update} setUpdate={setUpdate} />}
-                <Button onClick={deleteTrip} type="primary">
-                  Disable
-                </Button>
-              </div>
-            </div>
+        <div className={style.h1Container}>
+          <h1>User Details</h1>
         </div>
+        <div className={style.userContainer}>
+          <div className={style.userCardTextContainer}>
+            <h2>Name</h2>
+            <p>{user.name}</p>
+            <h2 className={style.emailH2}>E-mail</h2>
+            <p className={style.emailP}>{user.email}</p>
+          </div>
+          <div className={style.btns}>
+              {<EditUser update={update} setUpdate={setUpdate} />}
+              <Button onClick={deleteTrip} shape="round" size="default" type="danger">
+                Delete Account
+              </Button>
+            </div>
+          <div className={style.imgDiv}>
+            <div>
+              <img
+                className={style.userImg}
+                src={user.proImg}
+                alt={user.name}
+              />
+            </div>
+            
+          </div>
+        </div>
+        <ViewOrders />
       </div>
-      <ViewOrders />
+
+      <ContactUs />
     </>
   );
 }
