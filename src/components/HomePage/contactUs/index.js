@@ -1,35 +1,69 @@
 import style from "./style.module.css";
+import { LinkedinFilled, GithubFilled } from "@ant-design/icons";
 
-import { Card } from "antd";
+// import { Card } from "antd";
 import React from "react";
 
 export function ContactUs() {
   return (
     // colocar o ID AQUI
-    <div className={style.contactComp} id="contact"> 
-      <div>
-        <h2>Contact Us</h2>
+    <div className={style.contactContainer} id="contact">
+      <div className={style.contactH1}>
+        <h1>Contact Us</h1>
       </div>
       <div className={style.cards}>
-        <div>
-          <Card
-            title=""
-            bordered={true}
-            style={{ height: 200, width: 200 }}
-            className={style.card}
-          >
-            <p>CONTACT INFO</p>
-          </Card>
-        </div>
-        <div>
-          <Card
-            title=""
-            bordered={true}
-            style={{ height: 200, width: 200 }}
-            className={style.card}
-          >
-            <p>GOOGLE MAPS</p>
-          </Card>
+        <div className={style.card}>
+          <div className={style.cardImg}>img here</div>
+          <div className={style.cardContent}>
+            <h2>Tulio Minini</h2>
+            <p>
+              aaaaaaaaaaaaaaaaaaaaaaaa aaaa aaaasaaaaaaaaaaaa aaaaaaaaaaaaaaaa
+              aaaaaaaaaa aaaa aaa aaaaa aaa aaaa aaaaa a aa a aaaaa as a aaaa
+              aaaaa a a a aaa aaaa aaaaaaa aaaaa aaaa
+            </p>
+            <div className={style.icons}>
+              <div>
+                <LinkedinFilled style={{ fontSize: 40 }} />
+              </div>
+              <div>
+                <GithubFilled style={{ fontSize: 40 }} />
+              </div>
+            </div>
+          </div>
+          <div className={style.cardImg}>img here</div>
+          <div className={style.cardContent}>
+            <h2>Tulio Minini</h2>
+            <p>
+              aaaaaaaaaaaaaaaaaaaaaaaa aaaa aaaasaaaaaaaaaaaa aaaaaaaaaaaaaaaa
+              aaaaaaaaaa aaaa aaa aaaaa aaa aaaa aaaaa a aa a aaaaa as a aaaa
+              aaaaa a a a aaa aaaa aaaaaaa aaaaa aaaa
+            </p>
+            <div className={style.icons}>
+              <div>
+                <LinkedinFilled style={{ fontSize: 40 }} />
+              </div>
+              <div>
+                <GithubFilled style={{ fontSize: 40 }} />
+              </div>
+            </div>
+          </div>
+          <div className={style.cardImg}>img here</div>
+          <div className={style.cardContent}>
+            <h2>Tulio Minini</h2>
+            <p>
+              aaaaaaaaaaaaaaaaaaaaaaaa aaaa aaaasaaaaaaaaaaaa aaaaaaaaaaaaaaaa
+              aaaaaaaaaa aaaa aaa aaaaa aaa aaaa aaaaa a aa a aaaaa as a aaaa
+              aaaaa a a a aaa aaaa aaaaaaa aaaaa aaaa
+            </p>
+            <div className={style.icons}>
+              <div>
+                <LinkedinFilled style={{ fontSize: 40 }} />
+              </div>
+              <div>
+                <GithubFilled style={{ fontSize: 40 }} />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

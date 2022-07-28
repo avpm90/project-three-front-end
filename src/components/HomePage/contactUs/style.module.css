@@ -1,7 +1,60 @@
-.contactComp {
-  background-color: darkcyan;
-  border: 1px solid black;
+.contactH1 {
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Roboto', sans-serif;
+}
+.contactContainer {
+  background-color: blanchedalmond;
 }
 .cards {
+  /* height: 550px; */
   display: flex;
+  flex-direction: column;
+}
+
+.card {
+  background-color: white;
+  height: 320px;
+  width: 290px;
+  border-radius: 50px;
+  padding: 20px 30px 30px 30px;
+  text-align: center;
+}
+.cardContent {
+  text-align: center;
+  /* background-color: blue; */
+  height: 240px;
+  width: 230px;
+  padding: 0px 20px 20px 20px;
+  /* margin-right: 50px; */
+}
+.cardContent h2 {
+/* margin-top: 0px; */
+font-size: 37px;
+margin-top: -40px;
+}
+.cardContent p {
+  text-align: center;
+  /* background-color: aqua; */
+  /* width: 290; */
+  margin-top: -19px;
+  margin-bottom: -10px;
+  height: 150px;
+  width: 200px;
+}
+.icons {
+  display: flex;
+  justify-content: space-around;
+  width: 150px;
+  margin-left: 30px;
+}
+.cardImg {
+  position: relative;
+  bottom: 50px;
+  left: 70px;
+  width: 100px;
+  height: 90px;
+  background-color: black;
+  border-radius: 50px;
+  margin: 0px;
 }
