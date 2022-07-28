@@ -106,7 +106,7 @@ export const SignUpModal = () => {
         onCancel={handleCancel}
         // closable={false}
         okText="Submit"
-        bodyStyle={{ height: 580, paddingTop: 10 }}
+        bodyStyle={{ height: 605, paddingTop: 10 }}
       >
         <Form
           onSubmit={handleOk}
@@ -123,10 +123,6 @@ export const SignUpModal = () => {
           onValuesChange={onFormLayoutChange}
           size={componentSize}
         >
-          <Form.Item label="Profile Picture:" htmlFor="formImg">
-            <Input type="file" id="formImg" onChange={handleImage} />
-          </Form.Item>
-
           <Form.Item label="What should we call you?" htmlFor="formName">
             <Input
               id="formName"
@@ -242,9 +238,18 @@ export const SignUpModal = () => {
               onChange={handleChange}
             />
           </Form.Item>
+          <Form.Item label="Profile Picture" htmlFor="formImg">
+            <Input
+              style={{ height: 35 }}
+              type="file"
+              id="formImg"
+              onChange={handleImage}
+            />
+          </Form.Item>
           <Form.Item label="What's your date of birth?">
             <DatePicker />
           </Form.Item>
+
           <Checkbox>Sign up for our newsletter</Checkbox>
         </Form>
       </Modal>
