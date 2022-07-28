@@ -5,6 +5,7 @@ import { ViewTrip } from "../../components/HomeAdmin/ViewTrip";
 import { ViewUser } from "../../components/HomeAdmin/ViewUser";
 import "./style.css";
 import { NavBar } from "../../components/HomePage/navBar";
+import { Button } from "antd";
 
 export function HomeAdmin() {
   const [showTrips, setShowTrips] = useState(false);
@@ -30,17 +31,23 @@ export function HomeAdmin() {
     <>
       <NavBar />
       <div className="adminDivs">
-        <button className={showTrips ? "test" : "btn"} onClick={handleTrip}>
-          Trips
-        </button>
-        <button onClick={handleOrders}>Orders</button>
-        <button onClick={handleUsers}>Users</button>
-        {showTrips && <ViewTrip />}
-        {showOrders && <ViewOrder />}
-        {showUsers && <ViewUser />}
-        <Link to="/">
-          <button>Home</button>
-        </Link>
+        <div>
+          <Link to="/">
+            <Button type="primary">Home</Button>
+          </Link>
+          <Button type="primary" onClick={handleTrip}>
+            Trips
+          </Button>
+          <Button type="primary" onClick={handleOrders}>
+            Orders
+          </Button>
+          <Button type="primary" onClick={handleUsers}>
+            Users
+          </Button>
+          {showTrips && <ViewTrip />}
+          {showOrders && <ViewOrder />}
+          {showUsers && <ViewUser />}
+        </div>
       </div>
     </>
   );

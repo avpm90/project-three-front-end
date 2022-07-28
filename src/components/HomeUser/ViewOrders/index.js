@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { api } from "../../../api/api";
 import style from "./style.module.css";
+import { Button } from "antd";
 
 export function ViewOrders() {
   const [orders, setOrders] = useState([
@@ -27,22 +28,20 @@ export function ViewOrders() {
   }, []);
 
   return (
-    <>
-      <div>
-        <h1>Orders</h1>
+    <div className={style.pagedivO}>
+      <h1>Orders</h1>
 
-        <div className={style.ordersContainer}>
-          {orders.map((currentOrder) => {
-            return (
-              <div className={style.orderCard}>
-                <p>Order Number: {currentOrder.customerId}</p>
-                <p>Order Total: ${currentOrder.orderTotal}</p>
-                <button>Details</button>
-              </div>
-            );
-          })}
-        </div>
+      <div className={style.ordersContainer}>
+        {orders.map((currentOrder) => {
+          return (
+            <div className={style.orderCard}>
+              <p>Order Number: {currentOrder.customerId}</p>
+              <p>Order Total: ${currentOrder.orderTotal}</p>
+              <Button type="primary">Details</Button>
+            </div>
+          );
+        })}
       </div>
-    </>
+    </div>
   );
 }

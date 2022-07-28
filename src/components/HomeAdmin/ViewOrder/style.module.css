@@ -1,0 +1,23 @@
+.divDadVO {
+  display: flex;
+}
+
+.divcardDad {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: aqua;
+  margin: 20px;
+  padding: 10px, 10px, 10px, 10px;
+  justify-content: space-between;
+  align-content: space-between;
+  background-color: white;
+}
+
+.cardVo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-around;
+}

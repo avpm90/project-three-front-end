@@ -1,64 +1,18 @@
-import style from "./style.module.css";
+// import style from "./style.module.css";
+// import Img1 from "../../assets/images/hello-img.jpeg";
+// // import { Link } from "react-router-dom";
 
-import { Card } from "antd";
-import React from "react";
+// // import { Card } from "antd";
+// import React from "react";
 
-export function Community() {
-  return (
-    <div className={style.communityComp}>
-      <div>
-        <h2>COMMUNITY</h2>
-      </div>
-      <div className={style.cards}>
-        <div>
-          <Card
-            title=""
-            bordered={true}
-            style={{ height: 300, width: 250 }}
-            className={style.card}
-          >
-            <a
-              href="https://www.w3schools.com"
-              rel="noreferrer"
-              target="_blank"
-            >
-              COMMUNITY ONE
-            </a>
-          </Card>
-        </div>
-        <div>
-          <Card
-            title=""
-            bordered={true}
-            style={{ height: 300, width: 250 }}
-            className={style.card}
-          >
-            <a
-              href="https://www.w3schools.com"
-              rel="noreferrer"
-              target="_blank"
-            >
-              COMMUNITY TWO
-            </a>
-          </Card>
-        </div>
-        <div>
-          <Card
-            title=""
-            bordered={true}
-            style={{ height: 300, width: 250 }}
-            className={style.card}
-          >
-            <a
-              href="https://www.w3schools.com"
-              rel="noreferrer"
-              target="_blank"
-            >
-              COMMUNITY THREE
-            </a>
-          </Card>
-        </div>
-      </div>
-    </div>
-  );
-}
+// export function Community() {
+//   return (
+//     <div className={style.communityContainer}>
+//       <div className={style.communityCard}>
+//         <a href="https://sustainabletravel.org/" target="_blank">
+//           <img src={Img1} className={style.communityCard} alt="help" />
+//         </a>
+//       </div>
+//     </div>
+//   );
+// }

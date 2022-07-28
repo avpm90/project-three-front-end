@@ -3,10 +3,10 @@ import { AuthContext } from "../../contexts/authContext";
 import { NavBar } from "../../components/HomePage/navBar";
 import { ViewOrders } from "../../components/HomeUser/ViewOrders";
 import { EditUser } from "../../components/HomeUser/EditUser";
-import { Card, Button } from "antd";
+import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 
-import "./style.css";
+import style from "./style.module.css";
 import { api } from "../../api/api";
 
 export function HomeUser() {
@@ -42,24 +42,32 @@ export function HomeUser() {
   return (
     <>
       <>
-        <NavBar className="userNav" />
-        <div className="userDivs">
-          <Card className="userCard">
-            <img className="tripImg" src={user.proImg} alt={user.name} />
+        <NavBar className={style.userNav} />
+        <div className={style.pageDiv}>
+          <div className="userDivs">
+            <div className={style.userCard} style={{ borderRadius: 50 }}>
+              <div className={style.userCardText}>
+                <h1>User Details</h1>
+                <h2>Name</h2>
+                <p>{user.name}</p>
+                <h2>E-mail</h2>
+                <p>{user.email}</p>
+              </div>
 
-            <h1>Details</h1>
-            <h2>User</h2>
-            <p>{user.name}</p>
-            <h2>E-mail</h2>
-            <p>{user.email}</p>
+              <div className={style.imgdiv}>
+                <img
+                  className={style.picImg}
+                  src={user.proImg}
+                  alt={user.name}
+                />
 
-            <div>
-              {<EditUser update={update} setUpdate={setUpdate} />}
-              <Button onClick={deleteTrip} type="primary">
-                Disable
-              </Button>
+                {<EditUser update={update} setUpdate={setUpdate} />}
+                <Button onClick={deleteTrip} type="primary">
+                  Disable
+                </Button>
+              </div>
             </div>
-          </Card>
+          </div>
         </div>
       </>
 

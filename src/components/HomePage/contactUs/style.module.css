@@ -1,7 +1,78 @@
-.contactComp {
-  background-color: darkcyan;
-  border: 1px solid black;
+.contactContainer {
+  background-color: blanchedalmond;
+  height: 600px;
 }
-.cards {
+.contactH1 {
+  text-align: center;
+  font-size: 40px;
+  font-family: "Roboto", sans-serif;
+  padding-top: 40px;
+}
+.contact {
+  justify-content: center;
   display: flex;
+  flex: row;
+}
+.cardsContainer {
+  margin-top: 90px;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.card {
+  background-color: white;
+  height: 170px;
+  width: 270px;
+  border-radius: 50px;
+  padding: 20px 30px 30px 30px;
+  text-align: center;
+}
+.cardContent {
+  height: 100px;
+  width: 210px;
+  font-family: "Roboto", sans-serif;
+}
+.cardContent h2 {
+  font-size: 35px;
+  text-align: center;
+  width: 250px;
+  margin-top: -60px;
+  margin-left: -20px;
+  font-family: "Roboto", sans-serif;
+}
+.cardContent p {
+  text-align: center;
+  margin-top: -19px;
+  margin-bottom: -10px;
+  height: 150px;
+  width: 200px;
+  font-family: "Roboto", sans-serif;
+}
+.icons {
+  display: flex;
+  justify-content: space-around;
+  width: 110px;
+  margin-left: 50px;
+  margin-top: -15px;
+}
+.cardImg {
+  position: relative;
+  bottom: 70px;
+  width: 110px;
+  height: 100px;
+  background-color: black;
+  border-radius: 50px;
+  margin: 0px;
+}
+.ironHack {
+  width: 50%;
+  height: 400;
+}
+.ironHack h2 {
+  text-align: center;
+}
+.maps {
+  height: 320px;
+  width: 100%;
 }
