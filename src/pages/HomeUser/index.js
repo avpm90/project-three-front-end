@@ -3,12 +3,14 @@ import { AuthContext } from "../../contexts/authContext";
 import { NavBar } from "../../components/HomePage/navBar";
 import { ViewOrders } from "../../components/HomeUser/ViewOrders";
 import { EditUser } from "../../components/HomeUser/EditUser";
-import { Card } from "antd";
+import { Card, Button } from "antd";
+import { useNavigate } from "react-router-dom";
 
 import "./style.css";
 import { api } from "../../api/api";
 
 export function HomeUser() {
+  const navigate = useNavigate();
   const { loggedInUser } = useContext(AuthContext);
   console.log(loggedInUser);
   const [user, setUser] = useState({
@@ -32,13 +34,18 @@ export function HomeUser() {
     fetchUser();
   }, [update]);
 
+  async function deleteTrip() {
+    await api.delete(`/user/disable-user`);
+    navigate("/");
+  }
+
   return (
     <>
       <>
         <NavBar className="userNav" />
         <div className="userDivs">
           <Card className="userCard">
-          <img className="tripImg" src={user.proImg} alt={user.name} />
+            <img className="tripImg" src={user.proImg} alt={user.name} />
 
             <h1>Details</h1>
             <h2>User</h2>
@@ -46,7 +53,12 @@ export function HomeUser() {
             <h2>E-mail</h2>
             <p>{user.email}</p>
 
-            <div>{<EditUser update={update} setUpdate={setUpdate} />}</div>
+            <div>
+              {<EditUser update={update} setUpdate={setUpdate} />}
+              <Button onClick={deleteTrip} type="primary">
+                Disable
+              </Button>
+            </div>
           </Card>
         </div>
       </>
