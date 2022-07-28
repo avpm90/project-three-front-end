@@ -84,10 +84,8 @@ const CardDetails = ({ trip }) => {
 					)}
 				>
 					{/* <p>{trips.tripImg}</p> */}
-					<p>{trip.destination}</p>
 					<p>{trip.description}</p>
-					<p>${trip.price}</p>
-					<p>{trip.category}</p>
+					<p>Category: {trip.category}</p>
 				</Modal>
 			)}
 		</>
@@ -95,4 +93,3 @@ const CardDetails = ({ trip }) => {
 };
 
 export default CardDetails;
-
