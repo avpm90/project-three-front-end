@@ -1,5 +1,8 @@
-.orderCard {
+.ordersContainer {
   display: flex;
+}
+
+.orderCard {
   padding: 1.25rem;
   width: 230px;
   height: 180px;
