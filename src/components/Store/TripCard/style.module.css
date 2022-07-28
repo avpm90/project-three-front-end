@@ -1,3 +1,5 @@
+/* #dedbd2 cor3 */
+
 .categoriesDiv {
 	display: flex;
 	flex-direction: row;
@@ -42,7 +44,7 @@
 	margin: 0.6rem;
 	border-radius: 1rem;
 	background: #dedbd2;
-	box-shadow: 20px 20px 60px #a09e97, -20px -20px 60px #ffffff;
+	box-shadow: 6px 6px 12px #9e9b95, -6px -6px 12px #9e9b95;
 }
 /* .card:hover {
 	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
