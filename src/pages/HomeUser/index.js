@@ -3,7 +3,7 @@ import { AuthContext } from "../../contexts/authContext";
 import { NavBar } from "../../components/HomePage/navBar";
 import { ViewOrders } from "../../components/HomeUser/ViewOrders";
 import { EditUser } from "../../components/HomeUser/EditUser";
-import { Card, Button } from "antd";
+import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 
 import style from "./style.module.css";
@@ -43,29 +43,29 @@ export function HomeUser() {
     <>
       <>
         <NavBar className={style.userNav} />
-        <div className="userDivs">
+        <div className={style.pageDiv}>
+          <div className="userDivs">
+            <div className={style.userCard} style={{ borderRadius: 50 }}>
+              <div className={style.userCardText}>
+                <h1>User Details</h1>
+                <h2>Name</h2>
+                <p>{user.name}</p>
+                <h2>E-mail</h2>
+                <p>{user.email}</p>
+              </div>
 
+              <div className={style.imgdiv}>
+                <img
+                  className={style.picImg}
+                  src={user.proImg}
+                  alt={user.name}
+                />
 
-
-          <div className={style.userCard} style={{ borderRadius: 50 }}>
-
-            <div className={style.userCardText}>
-
-              <h1>User Details</h1>
-              <h2>Name</h2>
-              <p>{user.name}</p>
-              <h2>E-mail</h2>
-              <p>{user.email}</p>
-
-            </div>
-            
-            <div>
-              <img className={style.picImg} src={user.proImg} alt={user.name} />
-
-              {<EditUser update={update} setUpdate={setUpdate} />}
-              <Button onClick={deleteTrip} type="primary">
-                Disable
-              </Button>
+                {<EditUser update={update} setUpdate={setUpdate} />}
+                <Button onClick={deleteTrip} type="primary">
+                  Disable
+                </Button>
+              </div>
             </div>
           </div>
         </div>
