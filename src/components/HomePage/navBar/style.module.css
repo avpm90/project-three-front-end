@@ -3,7 +3,7 @@
   z-index: 1;
   height: 50px;
   width: 100%;
-  background-color: #4A5759;
+  background-color: #4a5759;
   font-size: 20px;
   text-decoration: none;
   display: flex;
@@ -11,13 +11,11 @@
   align-items: center;
   margin-top: -50px;
 }
-a:hover {
-  background-color: #DEDBD2;
-  text-decoration: none;
+a {
   color: black;
 }
-.textUser p:hover {
-  background-color: #DEDBD2;
+a:hover {
+  background-color: #dedbd2;
   text-decoration: none;
   color: black;
 }
@@ -34,7 +32,9 @@ a:hover {
   left: 20px;
   padding: 0px 15px;
   top: 10px;
-  /* background-color: black; */
+}
+a.textStore:hover {
+  color: black;
 }
 .textContact {
   position: fixed;
@@ -42,11 +42,17 @@ a:hover {
   padding: 0px 15px;
   top: 10px;
 }
+a.textContact:hover {
+  color: black;
+}
 .textProfile {
   position: fixed;
   right: 130px;
   padding: 0px 15px;
   top: 10px;
+}
+a.textProfile:hover {
+  color: black;
 }
 .textOff p {
   text-decoration: none;
@@ -68,7 +74,6 @@ a:hover {
 .textUser p {
   border-radius: 20px;
   padding: 0px 15px;
-
 }
 .navRight {
   text-decoration: none;
@@ -96,5 +101,3 @@ a:hover {
   position: relative;
   right: 250px;
 }
-
-

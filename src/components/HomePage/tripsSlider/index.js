@@ -5,23 +5,16 @@ import React from "react";
 
 const contentStyle = {
   height: "800px",
-  // color: "#fff",
   lineHeight: "200px",
   textAlign: "center",
   fontSize: "100px",
   marginBottom: "0px",
-  // backgroundColor: "white",
-  // background: "#364d79",
 };
 
 export function TripSlider() {
   return (
     <div className={style.sliderComp}>
-      <Carousel
-        autoplay
-        // style={{ height: 100 }}
-        // width={400}
-      >
+      <Carousel autoplay>
         <div>
           <h3 style={contentStyle} className={style.img1}>
             NEW YORK

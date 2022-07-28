@@ -29,11 +29,14 @@
 }
 .helloH3 {
   margin-top: 20px;
-  width: 700px;
-  height: 70px;
+  text-align: left;
+  width: 530px;
+  height: 90px;
+  border-radius: 40px;
   font-size: 30px;
   font-family: 'Roboto', sans-serif;
-  color: rgb(69, 69, 69);
+  color: white;
+  letter-spacing: 1px;
 }
 .helloBtn {
   text-align: center;

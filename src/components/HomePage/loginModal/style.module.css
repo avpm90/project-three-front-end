@@ -2,17 +2,9 @@
   margin: 0px;
   text-decoration: none;
   color: white;
-  padding: 0px 10px ;
+  padding: 0px 10px;
 }
 p:hover {
-  background-color: #DEDBD2;
+  background-color: #dedbd2;
   color: black;
 }
-/* .textIn {
-  text-decoration: none;
-  color: white;
-  padding: 0px 5px;
-  position: fixed;
-  right: 30px;
-  top: 10px;
-} */
