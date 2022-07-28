@@ -1,12 +1,12 @@
 .contactContainer {
   background-color: blanchedalmond;
-  height: 600px;
+  height: 37.5rem;
 }
 .contactH1 {
   text-align: center;
-  font-size: 40px;
+  font-size: 2.5rem;
   font-family: "Roboto", sans-serif;
-  padding-top: 40px;
+  padding-top: 2.5rem;
 }
 .contact {
   justify-content: center;
@@ -14,65 +14,62 @@
   flex: row;
 }
 .cardsContainer {
-  margin-top: 90px;
+  margin-top: 5.62rem;
   width: 80%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  /* background-color: aqua; */
 }
 .card {
-  background-color: white;
-  height: 170px;
-  width: 270px;
-  border-radius: 50px;
-  padding: 20px 30px 30px 30px;
+  /* background-color: white; */
+  height: 10.62rem;
+  width: 16.875rem;
+  border-radius: 3.125rem;
+  padding: 1.25rem 1.875rem 1.875rem 1.875rem;
   text-align: center;
 }
 .cardContent {
-  height: 100px;
-  width: 210px;
+  height: 6.25rem;
+  width: 13.124rem;
   font-family: "Roboto", sans-serif;
 }
 .cardContent h2 {
-  font-size: 35px;
+  /* background-color: blue; */
+  font-size: 2.8125rem;
   text-align: center;
-  width: 250px;
-  margin-top: -60px;
-  margin-left: -20px;
+  width: 20rem;
+  margin-top: -3.75rem;
+  margin-left: -3rem;
   font-family: "Roboto", sans-serif;
 }
 .cardContent p {
   text-align: center;
-  margin-top: -19px;
-  margin-bottom: -10px;
-  height: 150px;
-  width: 200px;
+  margin-top: -1.1875rem;
+  margin-bottom: -0.625rem;
+  height: 9.375rem;
+  width: 12.5rem;
   font-family: "Roboto", sans-serif;
 }
 .icons {
   display: flex;
   justify-content: space-around;
-  width: 110px;
-  margin-left: 50px;
-  margin-top: -15px;
+  width: 6.875rem;
+  margin-left: 3.5rem;
+  margin-top: -0.9375rem;
+  /* background-color: blueviolet; */
 }
 .cardImg {
   position: relative;
-  bottom: 70px;
-  width: 110px;
-  height: 100px;
+  bottom: 4.375rem;
+  /* left: 2rem; */
+  width: 7.5rem;
+  height: 7rem;
   background-color: black;
-  border-radius: 50px;
-  margin: 0px;
+  border-radius: 4rem;
+  margin: 0rem;
 }
 .ironHack {
+  margin-left: 3.75rem;
   width: 50%;
-  height: 400;
-}
-.ironHack h2 {
-  text-align: center;
-}
-.maps {
-  height: 320px;
-  width: 100%;
 }
