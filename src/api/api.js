@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const apiURLs = {
-  development: "http://localhost:4000",
-  production: "https://project-three-back-end.herokuapp.com",
+	development: 'http://localhost:4000',
+	production: 'https://test-back-tathy.herokuapp.com',
 };
 
 const api = axios.create({ baseURL: apiURLs[process.env.NODE_ENV] });
