@@ -1,41 +1,54 @@
 .userDivs {
-    margin-top: 3.1rem;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: row;
-    border-radius: 150px;
-  }
-  
-  .userCard {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: row;
-    border-radius: 50px;
-    width: 1800px;
-  }
-  
-  .userOrders {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-    flex-direction: row;
-    border-radius: 50px;
-  }
-  
-  .picCard {
-    display: flex;
-  }
-  
-  .picImg {
-    display: flex;
-    width: 180px;
-    height: 180px;
-    border-radius: 200px;
-  }
-  
-  .userCardText {
-    font-size: 25px;
-  }
-  
-  
-  
+  align-items: flex-start;
+  flex-direction: row;
+  border-radius: 150px;
+}
+
+.userCard {
+  border: 1px solid black;
+  background-color: #dedbd2;
+  margin-top: 3.1rem;
+  padding: 30px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+  border-radius: 50px;
+  width: 60%;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
+  font-size: 20px;
+}
+
+.userOrders {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: row;
+  border-radius: 50px;
+}
+
+.picCard {
+  margin-top: 3.1rem;
+
+  display: flex;
+}
+.imgDiv {
+  display: flex;
+}
+
+.picImg {
+  margin-top: 3.1rem;
+
+  display: flex;
+  width: 240px;
+  height: 240px;
+  border-radius: 200px;
+}
+/* 
+.userCardText {
+  margin-top: 1.1rem;
+
+  font-size: 25px;
+}
+ */

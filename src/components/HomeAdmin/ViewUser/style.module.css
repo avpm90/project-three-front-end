@@ -1,5 +1,6 @@
 .divPaidac {
   display: "flex";
+  margin-top: 5rem;
 }
 
 .divKid {
@@ -8,6 +9,8 @@
   flex-wrap: wrap;
   background-color: aqua;
   margin: 20px;
+  margin-top: 5rem;
+
   padding: 10px, 10px, 10px, 10px;
   justify-content: space-between;
   align-content: space-between;
@@ -15,6 +18,8 @@
 }
 
 .divAntCar {
+  margin-top: 5rem;
+
   border-radius: 10px;
   display: flex;
   flex-direction: column;
