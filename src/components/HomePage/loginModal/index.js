@@ -77,7 +77,7 @@ export const LoginModal = () => {
         onCancel={handleCancel}
         closable={false}
         okText="Log In"
-        bodyStyle={{ height: 190, paddingTop: 30 }}
+        bodyStyle={{ height: 170, paddingTop: 20 }}
         width={400}
       >
         <div>

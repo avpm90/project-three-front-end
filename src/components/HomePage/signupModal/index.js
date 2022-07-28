@@ -106,7 +106,7 @@ export const SignUpModal = () => {
         onCancel={handleCancel}
         // closable={false}
         okText="Submit"
-        bodyStyle={{ height: 605, paddingTop: 10 }}
+        bodyStyle={{ height: 650, paddingTop: 10 }}
       >
         <Form
           onSubmit={handleOk}
@@ -240,7 +240,7 @@ export const SignUpModal = () => {
           </Form.Item>
           <Form.Item label="Profile Picture" htmlFor="formImg">
             <Input
-              style={{ height: 35 }}
+              style={{ height: 38 }}
               type="file"
               id="formImg"
               onChange={handleImage}
