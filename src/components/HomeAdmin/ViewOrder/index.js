@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { api } from "../../../api/api";
-import { Card, Button } from "antd";
+import { Button, Card } from "antd";
 import { useNavigate } from "react-router-dom";
-import style from "./style.module.css";
 
 export function ViewOrder() {
   const navigate = useNavigate();
@@ -21,6 +20,9 @@ export function ViewOrder() {
       ],
     },
   ]);
+
+  console.log(orders);
+
   useEffect(() => {
     async function fetchOrders() {
       const response = await api.get("/order/all-orders");
@@ -36,21 +38,28 @@ export function ViewOrder() {
 
   return (
     <>
-      <div className={style.divDadVO} style={{ borderRadius: 50 }}>
+      <div>
         {orders.map((currentOrder) => {
           return (
-            <div className={style.divcardDad}>
-              <div className={style.cardVo}>
+            <div key={`${currentOrder._id}orders`}>
+              <Card title={`Order Number: ${currentOrder._id}`}>
                 <p>Customer: {currentOrder.customerId.name}</p>
-                <p>Order Date: {currentOrder.dateCreated}</p>
                 {currentOrder.trips.map((currentTrip) => {
                   return (
-                    <>
-                      <p>Order Id: {currentTrip.trip}</p>
-                      <p>Trip's Quantity: {currentTrip.quantity}</p>
-                      <p>Trip Price: ${currentTrip.unitPrice}</p>
-                      <p>Total Price: ${currentOrder.orderTotal}</p>
-                    </>
+                    <div key={`${currentTrip._id}trips`}>
+                      <Card
+                        type="inner"
+                        title="Trip Details"
+                        extra={`Date of Purchase: ${currentOrder.dateCreated.substring(
+                          0,
+                          10
+                        )}`}
+                      >
+                        <p>Trip's Quantity: {currentTrip.quantity}</p>
+                        <p>Trip Price: ${currentTrip.unitPrice}</p>
+                        <p>Total Price: ${currentOrder.orderTotal}</p>
+                      </Card>
+                    </div>
                   );
                 })}
                 <Button
@@ -59,7 +68,7 @@ export function ViewOrder() {
                 >
                   Delete
                 </Button>
-              </div>
+              </Card>
             </div>
           );
         })}
