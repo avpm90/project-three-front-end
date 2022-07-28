@@ -83,7 +83,7 @@ export function EditTrip() {
 					>
 						<option value="Adventure">Adventure</option>
 						<option value="Relax">Relax</option>
-						<option value="Night Life">Night Life</option>
+						<option value="Nightlife">Nightlife</option>
 						<option value="Culture">Culture</option>
 						<option value="Romance">Romance</option>
 					</select>

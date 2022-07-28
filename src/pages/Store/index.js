@@ -1,22 +1,23 @@
-import { TripCard } from "../../components/Store/TripCard";
-import { Cart } from "../../components/Store/Cart";
-import { CartProvider } from "react-use-cart";
-import { NavBar } from "../../components/HomePage/navBar";
-import { ShoppingCartOutlined } from "@ant-design/icons";
-import style from "../Store/style.module.css";
+import { TripCard } from '../../components/Store/TripCard';
+import { Cart } from '../../components/Store/Cart';
+import { CartProvider } from 'react-use-cart';
+import { NavBar } from '../../components/HomePage/navBar';
+import { ShoppingCartOutlined } from '@ant-design/icons';
+import style from '../Store/style.module.css';
+import { ContactUs } from '../../components/HomePage/contactUs';
 
 export function Store() {
-  return (
-    <>
-      <NavBar />
-      <div
-        className={style.containerStore}
-        style={{ display: "flex", flexDirection: "row" }}
-      >
-        <CartProvider>
-          <div className={style.tripCard}>
-            <TripCard />
-          </div>
+	return (
+		<>
+			<NavBar />
+			<div
+				className={style.containerStore}
+				style={{ display: 'flex', flexDirection: 'row' }}
+			>
+				<CartProvider>
+					<div className={style.tripCard}>
+						<TripCard />
+					</div>
 
 					<div className={style.cart}>
 						<h1>
@@ -26,6 +27,7 @@ export function Store() {
 					</div>
 				</CartProvider>
 			</div>
+			<ContactUs />
 		</>
 	);
 }
