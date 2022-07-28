@@ -26,7 +26,7 @@ export function ContactUs() {
                     rel="noreferrer"
                     style={{ color: "black" }}
                   >
-                    <LinkedinFilled style={{ fontSize: 40 }} />
+                    <LinkedinFilled style={{ fontSize: 30 }} />
                   </a>
                 </>
                 <>
@@ -37,7 +37,7 @@ export function ContactUs() {
                     style={{ color: "black" }}
                   >
                     {" "}
-                    <GithubFilled style={{ fontSize: 40 }} />
+                    <GithubFilled style={{ fontSize: 30 }} />
                   </a>
                 </>
               </div>
@@ -46,7 +46,7 @@ export function ContactUs() {
           <div className={style.card}>
             <img src={AvatarTulio} className={style.cardImg} alt="help" />
             <div className={style.cardContent}>
-              <h2>Tathyana M.</h2>
+              <h2>Tathyana Maximiano</h2>
               <div className={style.icons}>
                 <>
                   <a
@@ -55,7 +55,7 @@ export function ContactUs() {
                     rel="noreferrer"
                     style={{ color: "black" }}
                   >
-                    <LinkedinFilled style={{ fontSize: 40 }} />
+                    <LinkedinFilled style={{ fontSize: 30 }} />
                   </a>
                 </>
                 <>
@@ -66,7 +66,7 @@ export function ContactUs() {
                     style={{ color: "black" }}
                   >
                     {" "}
-                    <GithubFilled style={{ fontSize: 40 }} />
+                    <GithubFilled style={{ fontSize: 30 }} />
                   </a>
                 </>
               </div>
@@ -84,7 +84,7 @@ export function ContactUs() {
                     rel="noreferrer"
                     style={{ color: "black" }}
                   >
-                    <LinkedinFilled style={{ fontSize: 40 }} />
+                    <LinkedinFilled style={{ fontSize: 30 }} />
                   </a>
                 </>
                 <>
@@ -95,29 +95,12 @@ export function ContactUs() {
                     style={{ color: "black" }}
                   >
                     {" "}
-                    <GithubFilled style={{ fontSize: 40 }} />
+                    <GithubFilled style={{ fontSize: 30 }} />
                   </a>
                 </>
               </div>
             </div>
           </div>
-        </div>
-        <div className={style.ironHack}>
-          <iframe
-            title="This is a unique title"
-            src={
-              "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.185562227396!2d-46.662381685022225!3d-23.561778084682718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59468d48985b%3A0x694f27fed85d9b0c!2sIronhack%20S%C3%A3o%20Paulo!5e0!3m2!1spt-BR!2sbr!4v1659012409799!5m2!1spt-BR!2sbr"
-            }
-            style={{
-              allowFullScreen: "",
-              loading: "lazy",
-              referrerPolicy: "no-referrer-when-downgrade",
-              height: 300,
-              width: 600,
-              frameBorder: 0,
-              border: 0,
-            }}
-          ></iframe>
         </div>
       </div>
     </div>
