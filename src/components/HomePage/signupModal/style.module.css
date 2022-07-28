@@ -4,13 +4,14 @@
   color: white;
   padding: 0px 10px;
 }
-p:hover {
-  background-color: white;
+/* .textSignUp p:hover {
+  background-color: #DEDBD2;
   color: black;
-}
+} */
 .textSignUp {
   position: fixed;
-  left: 260px;
-  padding: 0px 5px;
-  top:10px;
+  left: 250px;
+  padding: 0px 15px;
+  border-radius: 20px;
+  top: 10px;
 }

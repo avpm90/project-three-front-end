@@ -23,13 +23,15 @@ export function NavBar() {
 
   return (
     <div className={style.navComp}>
-      <div className={style.helloUser}>
-        {loggedInUser ? (
-          <p>{`Hello, ${loggedInUser.user.name}, how are you today?`}</p>
-        ) : null}
+      <div className={style.textUser}>
+        {loggedInUser ? <p>{`Hello, ${loggedInUser.user.name}`}</p> : null}
       </div>
       <div className={style.navRight}>
-        <NavLink to="/store" className={`${style.text} ${style.textStore}`}>
+        <NavLink
+          to="/store"
+          style={{ textDecoration: "none" }}
+          className={`${style.text} ${style.textStore}`}
+        >
           Store
         </NavLink>
         <div>
@@ -49,9 +51,7 @@ export function NavBar() {
         <div>{loggedInUser ? null : <SignUpModal />}</div>
       </div>
       <div>
-        <NavLink to="/" className={style.text}>
-          Where to go?
-        </NavLink>
+        <NavLink to="/">Where to go?</NavLink>
       </div>
       <div className={style.navLeft}>
         <div className={style.profileBtn}>
