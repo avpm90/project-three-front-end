@@ -112,8 +112,8 @@ export function ContactUs() {
               allowFullScreen: "",
               loading: "lazy",
               referrerPolicy: "no-referrer-when-downgrade",
-              height: 330,
-              width: 700,
+              height: 300,
+              width: 600,
               frameBorder: 0,
               border: 0,
             }}
