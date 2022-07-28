@@ -1,21 +1,21 @@
 .containerStore {
-	margin-top: 3.125rem;
-	display: flex;
-	flex-direction: row;
-	/* width: 100%; */
-	height: 100%;
-	/* margin: 0px 25px; */
+  margin-top: 3.125rem;
+  display: flex;
+  flex-direction: row;
+  /* width: 100%; */
+  height: 100%;
+  /* margin: 0px 25px; */
 }
 .cart {
-	background-color: cyan;
-	width: 30%;
-	padding: 15px;
+  background-color: cyan;
+  width: 30%;
+  padding: 15px;
 }
 .tripCard {
-	background-color: #B0C4B1
-	width: 70%;
-	padding: 15px;
+  background-color: #b0c4b1;
+  width: 70%;
+  padding: 15px;
 }
 .cart h1 {
-	text-align: center;
+  text-align: center;
 }

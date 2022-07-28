@@ -11,7 +11,7 @@
   align-items: flex-start;
   flex-direction: row;
   border-radius: 50px;
-  width: 1000px;
+  width: 1800px;
 }
 
 .userOrders {
@@ -20,4 +20,19 @@
   align-items: flex-start;
   flex-direction: row;
   border-radius: 50px;
+}
+
+.picCard {
+  display: flex;
+}
+
+.picImg {
+  display: flex;
+  width: 180px;
+  height: 180px;
+  border-radius: 200px;
+}
+
+.userCardText {
+  font-size: 25px;
 }

@@ -44,16 +44,17 @@ export function HomeUser() {
       <>
         <NavBar className="userNav" />
         <div className="userDivs">
-          <Card className="userCard">
-            <img className="tripImg" src={user.proImg} alt={user.name} />
-
-            <h1>Details</h1>
-            <h2>User</h2>
-            <p>{user.name}</p>
-            <h2>E-mail</h2>
-            <p>{user.email}</p>
-
+          <Card className="userCard" style={{ borderRadius: 50 }}>
+            <div className="userCardText">
+              <h1>User Details</h1>
+              <h2>Name</h2>
+              <p>{user.name}</p>
+              <h2>E-mail</h2>
+              <p>{user.email}</p>
+            </div>
             <div>
+              <img className="picImg" src={user.proImg} alt={user.name} />
+
               {<EditUser update={update} setUpdate={setUpdate} />}
               <Button onClick={deleteTrip} type="primary">
                 Disable
