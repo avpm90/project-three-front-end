@@ -1,23 +1,23 @@
 import style from "./style.module.css";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../../../contexts/authContext";
+// import { useContext } from "react";
+// import { AuthContext } from "../../../contexts/authContext";
 
 export function Hello() {
-  const { loggedInUser } = useContext(AuthContext);
+  // const { loggedInUser } = useContext(AuthContext);
 
   return (
-    <div className={style.helloComp}>
+    <div className={style.helloContainer}>
       {/* {loggedInUser ? <p>{`Hello, ${loggedInUser.user.name}`}</p> : null} */}
-      <div className={style.helloText}>
-        <h1>Where do you wanna go?</h1>
-        <h2>We have a selection of nice and surprising destinations to take you</h2>
-      </div>
-      {/* <div>IMAGE HERE</div> */}
-      {/* <div className={style.helloBtns}> */}
+      <>
+        <h1 className={style.helloH1}>Where do You Wanna Go?</h1>
+        <h3 className={style.helloH3}>
+          We have a selection of nice and surprising destinations to take you
+        </h3>
+      </>
+      <div className={style.helloBtn}>
         <Link to={"/store"}>See All Trips</Link>
-        {/* <Link to={"/quiz"}>TAKE THE QUIZ</Link> */}
-      {/* </div> */}
+      </div>
     </div>
   );
 }
