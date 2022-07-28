@@ -1,12 +1,17 @@
+.pageDivO {
+  background-color: #dedbd2;
+  display: flex;
+  border: 1px solid black;
+}
 .ordersContainer {
   display: flex;
+  border: 1px solid black;
 }
-
 .orderCard {
   padding: 1.25rem;
   width: 230px;
   height: 180px;
   border-radius: 30px;
-  background-color: black;
+  background-color: #b0c4b1;
   margin: 10px;
 }

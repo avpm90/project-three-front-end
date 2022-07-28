@@ -1,15 +1,10 @@
 import style from "./style.module.css";
 import { Link } from "react-router-dom";
-// import { useContext } from "react";
-// import { AuthContext } from "../../../contexts/authContext";
-
 
 export function Hello() {
-  // const { loggedInUser } = useContext(AuthContext);
 
   return (
     <div className={style.helloContainer}>
-      {/* {loggedInUser ? <p>{`Hello, ${loggedInUser.user.name}`}</p> : null} */}
       <>
         <h1 className={style.helloH1}>Where do You</h1>
         <h1 className={style.helloH1b}>Wanna Go?</h1>
@@ -18,7 +13,9 @@ export function Hello() {
         </h3>
       </>
       <div className={style.helloBtn}>
-        <Link to={"/store"}>See All Trips</Link>
+        <Link to={"/store"} style={{ color: "black" }}>
+          See All Trips
+        </Link>
       </div>
     </div>
   );

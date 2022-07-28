@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { api } from "../../../api/api";
-import { Card } from "antd";
+import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
+import style from "./style.module.css";
 
 export function ViewOrder() {
   const navigate = useNavigate();
@@ -20,7 +21,6 @@ export function ViewOrder() {
       ],
     },
   ]);
-
   useEffect(() => {
     async function fetchOrders() {
       const response = await api.get("/order/all-orders");
@@ -36,11 +36,11 @@ export function ViewOrder() {
 
   return (
     <>
-      <Card style={{ borderRadius: 50 }}>
+      <div className={style.divDadVO} style={{ borderRadius: 50 }}>
         {orders.map((currentOrder) => {
           return (
-            <Card>
-              <div>
+            <div className={style.divcardDad}>
+              <div className={style.cardVo}>
                 <p>Customer: {currentOrder.customerId.name}</p>
                 <p>Order Date: {currentOrder.dateCreated}</p>
                 {currentOrder.trips.map((currentTrip) => {
@@ -53,14 +53,17 @@ export function ViewOrder() {
                     </>
                   );
                 })}
-                <button onClick={() => deleteOrder(currentOrder._id)}>
+                <Button
+                  type="primary"
+                  onClick={() => deleteOrder(currentOrder._id)}
+                >
                   Delete
-                </button>
+                </Button>
               </div>
-            </Card>
+            </div>
           );
         })}
-      </Card>
+      </div>
     </>
   );
 }

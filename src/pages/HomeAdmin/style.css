@@ -1,15 +1,12 @@
-.test {
-  background-color: red;
-}
-
-.btn {
-  background-color: blue;
-}
-
 
 .adminDivs {
   margin-top: 3.1rem;
   align-items: flex-start;
   flex-direction: row;
   border-radius: 150px;
+}
+.picImgT {
+  display: flex;
+  width: 275px;
+  height: 230px;
 }

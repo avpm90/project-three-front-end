@@ -29,7 +29,11 @@ export function NavBar() {
       <div className={style.navRight}>
         <NavLink
           to="/store"
-          style={{ textDecoration: "none" }}
+          style={{
+            ":hover": {
+              color: "black",
+            },
+          }}
           className={`${style.text} ${style.textStore}`}
         >
           Store

@@ -1,12 +1,11 @@
-.communityComp {
-  background-color: darkcyan;
-  border: 1px solid black;
+.communityContainer {
+  background-color: red;
+  height: 500px;
 }
-.cards {
-  display: flex;
-}
-.card {
-  /* height: 100px; */
-  /* width: 100px; */
-  text-align: center;
+.communityCard {
+  background-color: white;
+  height: 300px;
+  width: 200px;
+  border-radius: 30px;
+  /* background-size: 100%; */
 }
