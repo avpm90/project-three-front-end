@@ -20,7 +20,7 @@ export function Store() {
 
 					<div className={style.cart}>
 						<h1>
-							Cart <ShoppingCartOutlined />
+							Shopping Cart <ShoppingCartOutlined />
 						</h1>
 						<Cart />
 					</div>

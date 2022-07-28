@@ -39,50 +39,50 @@ export function TripCard() {
 	}
 	return (
 		<>
-			<div className={style.container}>
+			<div className={style.cardContainer}>
 				<div className={style.categoriesDiv}>
-					<button
+					<p
 						onClick={() => {
 							setTrips(clone);
 						}}
 					>
 						All Trips
-					</button>
-					<button
+					</p>
+					<p
 						onClick={() => {
 							handleCategory('Adventure');
 						}}
 					>
 						Adventure
-					</button>
-					<button
+					</p>
+					<p
 						onClick={() => {
-							handleCategory('Beach');
+							handleCategory('Romance');
 						}}
 					>
-						Beach
-					</button>
-					<button
+						Romance
+					</p>
+					<p
 						onClick={() => {
 							handleCategory('Culture');
 						}}
 					>
 						Culture
-					</button>
-					<button
+					</p>
+					<p
 						onClick={() => {
 							handleCategory('Nightlife');
 						}}
 					>
 						Nightlife
-					</button>
-					<button
+					</p>
+					<p
 						onClick={() => {
 							handleCategory('Relax');
 						}}
 					>
 						Relax
-					</button>
+					</p>
 				</div>
 
 				<div className={style.cardsDiv}>
@@ -102,19 +102,13 @@ export function TripCard() {
 								/>
 								<div className={style.infoCards}>
 									<p>{currentTrip.destination}</p>
-									<p className={style.infoCard_destaque}>
-										${currentTrip.unitPrice}
-									</p>
+									<p>${currentTrip.unitPrice}</p>
 								</div>
 								<div className={style.cardGroupBtn}>
 									<CardDetails trip={currentTrip} />
-
-									<button
-										className={style.btnCart}
-										onClick={() => addItem(item)}
-									>
-										<ShoppingCartOutlined />
-									</button>
+									<p onClick={() => addItem(item)}>
+										<ShoppingCartOutlined style={{ fontSize: 30 }} />
+									</p>
 								</div>
 							</div>
 						);

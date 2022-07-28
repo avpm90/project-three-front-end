@@ -3,57 +3,78 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
-	align-content: space-around;
-	background-color: #edafb8;
+	align-items: flex-end;
+	padding-top: 3px;
+	width: 34rem;
+}
+.categoriesDiv p {
+	font-size: 1.15rem;
+	--s: 0.1em; /* the thickness of the line */
+	--c: #4a5759; /* the color */
+
+	color: #0000;
+	padding-bottom: var(--s);
+	background: linear-gradient(90deg, var(--c) 50%, #000 0)
+			calc(100% - var(--_p, 0%)) / 200% 100%,
+		linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) var(--s) no-repeat;
+	-webkit-background-clip: text, padding-box;
+	background-clip: text, padding-box;
+	transition: 0.5s;
+}
+.categoriesDiv p:hover {
+	--_p: 100%;
+	--_s: 0.3s;
 }
 .cardsDiv {
-	margin-top: 0.6rem;
+	border-radius: 20px;
+	padding-top: 20px;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	background-color: #f7e1d7;
-	height: 580px;
+	background-color: #dedbd2;
+	justify-content: space-evenly;
+	height: 36rem;
 	overflow-y: scroll;
 }
 .card {
+	width: 15rem;
+	height: 21rem;
+	margin: 0.6rem;
 	border-radius: 1rem;
-	border-style: dotted;
-	border-color: #b0c4b1;
-	width: 20rem;
-	height: 22rem;
-	margin: 10px;
+	background: #dedbd2;
+	box-shadow: 20px 20px 60px #a09e97, -20px -20px 60px #ffffff;
 }
+/* .card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+	transform: scale(1.1, 1.1);
+} */
 .cardImg {
 	width: 100%;
-	height: 250px;
+	height: 15rem;
 	border-radius: 15px 15px 0px 0px;
 }
 .infoCards {
 	display: flex;
 	flex-direction: row;
+
 	justify-content: space-around;
-	margin-top: 15px;
 	align-items: center;
+	align-content: center;
+	margin-top: 0.5rem;
+	margin-left: 20px;
+	width: 200px;
 }
 .infoCards p {
-	font-size: 14px;
 	font-weight: 700;
 	margin: 0px;
-}
-.infoCard_destaque {
-	font-weight: 700;
-	background-color: white;
-	padding: 5px 15px;
-	border-radius: 5px;
-	box-shadow: 1px 1px 1px black;
+	font-size: 1.5rem;
 }
 .cardGroupBtn {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
-	padding-left: 30px;
+	align-content: flex-start;
+	padding-left: 50px;
 }
-.btnCart {
-	padding: 3px 4px;
-	margin-left: 3px;
+.cardGroupBtn p {
+	margin-left: 5px;
 }
