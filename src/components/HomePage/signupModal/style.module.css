@@ -1,13 +1,15 @@
 .text {
-  margin: 0px;
+  margin: 0rem;
   text-decoration: none;
   color: white;
-  padding: 0px 10px;
+  padding: 0rem 0.625rem;
 }
 .textSignUp {
   position: fixed;
-  left: 250px;
-  padding: 0px 15px;
-  border-radius: 20px;
-  top: 10px;
+  left: 23.125rem;
+  padding: 0rem 1.875rem;
+  top: 0.5rem;
+}
+p.textSignUp:hover {
+  color: black;
 }

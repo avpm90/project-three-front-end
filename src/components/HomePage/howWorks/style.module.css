@@ -1,5 +1,5 @@
 .howWorksContainer {
-  background-color: #e4e3df;
+  background-color: aliceblue;
   height: 34rem;
   font-family: "Roboto", sans-serif;
 }
@@ -43,7 +43,7 @@
   justify-content: center;
 }
 .cardContent {
-  background-color: aliceblue;
+  background-color: #e4e3df;
   width: 28.125rem;
   margin-top: 1.875rem;
   padding: 0.625rem;
