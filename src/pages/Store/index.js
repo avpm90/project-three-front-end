@@ -18,14 +18,14 @@ export function Store() {
             <TripCard />
           </div>
 
-          <div className={style.cart}>
-            <h1>
-              Cart <ShoppingCartOutlined />
-            </h1>
-            <Cart />
-          </div>
-        </CartProvider>
-      </div>
-    </>
-  );
+					<div className={style.cart}>
+						<h1>
+							Shopping Cart <ShoppingCartOutlined />
+						</h1>
+						<Cart />
+					</div>
+				</CartProvider>
+			</div>
+		</>
+	);
 }
