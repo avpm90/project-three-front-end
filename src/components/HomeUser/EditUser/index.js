@@ -83,8 +83,8 @@ export function EditUser({ update, setUpdate }) {
 
   return (
     <>
-      <Button type="primary" onClick={showModal}>
-        Edit
+      <Button shape="round" size="default" onClick={showModal}>
+        Edit Details
       </Button>
       <Modal
         title="EDIT DETAILS"
