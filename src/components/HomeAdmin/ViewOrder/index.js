@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { api } from "../../../api/api";
-import { Card, Button } from "antd";
+import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 import style from "./style.module.css";
 
