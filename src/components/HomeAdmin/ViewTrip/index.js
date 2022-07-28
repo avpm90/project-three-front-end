@@ -16,7 +16,6 @@ export function ViewTrip() {
       tripImg: "",
     },
   ]);
-  console.log(trips);
 
   useEffect(() => {
     async function fetchTrips() {
@@ -34,7 +33,9 @@ export function ViewTrip() {
   return (
     <div>
       <>
-        <button className="btnAT" onClick={handleCreate}>Create Trip</button>
+        <button className="btnAT" onClick={handleCreate}>
+          Create Trip
+        </button>
         {showCreate && <CreateTrip />}
         {trips.map((currentTrip) => {
           return (
@@ -48,7 +49,9 @@ export function ViewTrip() {
 
                 <p>Destination: {currentTrip.destination}</p>
                 <p>Category: {currentTrip.category}</p>
-                <p style={{width:100}}>Description: {currentTrip.description}</p>
+                <p style={{ width: 100 }}>
+                  Description: {currentTrip.description}
+                </p>
                 <p>In Stock: {currentTrip.inStock}</p>
                 <p>Unit Price: {currentTrip.unitPrice}</p>
 
