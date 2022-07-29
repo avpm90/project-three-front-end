@@ -1,54 +1,86 @@
-.userDivs {
-  align-items: flex-start;
-  flex-direction: row;
-  border-radius: 150px;
+.userNav {
+  position: fixed;
+  z-index: 1;
 }
-
-.userCard {
-  border: 1px solid black;
+.userContainer {
+  /* background-color: aqua; */
+  width: 100%;
+  height: 200px;
+  /* margin-top: 50px; */
+  display: flex;
+  background-color:#B0C4B1;
+  font-family: 'Roboto', sans-serif;
+}
+.h1Container {
+  width: 100%;
+  height: 100px;
+  /* background-color: brown; */
+  border-bottom: 1px solid black;
+  font-size: 30px;
+  margin-top: 50px;
+  /* padding: 15px; */
+  padding-left: 30px;
   background-color: #dedbd2;
-  margin-top: 3.1rem;
-  padding: 30px;
-  display: flex;
-  align-items: flex-end;
-  flex-direction: row;
-  border-radius: 50px;
-  width: 60%;
-  justify-content: space-between;
-  align-content: space-between;
-  flex-wrap: wrap;
-  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
 }
-
-.userOrders {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  flex-direction: row;
-  border-radius: 50px;
+.userCardTextContainer {
+  /* height: 200px; */
+  width: 80%;
+  font-family: 'Roboto', sans-serif;
 }
-
-.picCard {
-  margin-top: 3.1rem;
-
-  display: flex;
+.userCardTextContainer h2 {
+  font-size: 40px;
+  padding-top: 10px;
+  padding-left: 30px;
+  font-family: 'Roboto', sans-serif;
+  /* padding-bottom: -20px; */
+  /* background-color: blue; */
+}
+.emailH2 {
+  position: relative;
+  bottom: 80px;
+  font-family: 'Roboto', sans-serif;
+}
+.emailP {
+  position: relative;
+  /* bottom: -500px; */
+  top: -120px;
+  font-family: 'Roboto', sans-serif;
+}
+.userCardTextContainer p {
+  position: relative;
+  bottom: 40px;
+  font-size: 29px;
+  /* padding-top: 0px; */
+  padding-left: 30px;
+  /* background-color:blanchedalmond */
+}
+.userDiv {
+  width: 20%;
+  font-family: 'Roboto', sans-serif;
 }
 .imgDiv {
   display: flex;
+  flex-direction: column;
+  /* background-color: bisque; */
+  margin-top: 10px;
+  margin-right: 100px;
+  width: 300px;
 }
-
-.picImg {
-  margin-top: 3.1rem;
-
+.userImg {
+  width: 230px;
+  height: 230px;
+  border-radius: 130px;
+  margin-left: 50px;
+  /* margin-right: 50px; */
+}
+.btns {
+  /* background-color: aqua; */
+  width: 300px;
+  height: 50px;
+  margin-top: 150px;
+  margin-right: -40px;
   display: flex;
-  width: 240px;
-  height: 240px;
-  border-radius: 200px;
+  justify-content: space-between;
+  align-items: center;
 }
-/* 
-.userCardText {
-  margin-top: 1.1rem;
-
-  font-size: 25px;
-}
- */

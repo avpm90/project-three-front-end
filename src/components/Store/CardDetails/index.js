@@ -67,7 +67,7 @@ const CardDetails = ({ trip }) => {
 							onFocus={() => {}}
 							onBlur={() => {}} // end
 						>
-							{trip.destination} Experience
+							<b>{trip.destination} Experience</b>
 						</div>
 					}
 					visible={visible}
@@ -85,7 +85,9 @@ const CardDetails = ({ trip }) => {
 				>
 					{/* <p>{trips.tripImg}</p> */}
 					<p>{trip.description}</p>
-					<p>Category: {trip.category}</p>
+					<p>
+						<b>Category:</b> {trip.category}{' '}
+					</p>
 				</Modal>
 			)}
 		</>
