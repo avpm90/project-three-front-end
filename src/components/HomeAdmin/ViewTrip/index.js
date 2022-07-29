@@ -26,37 +26,40 @@ export function ViewTrip() {
   }, []);
 
   return (
-    <div>
+
+    <div className={style.divDVT}>
+
       <>
         <Row gutter={[48, 24]}>
           {trips.map((currentTrip) => {
             return (
-              <div key={`${currentTrip._id}trips`} >
-                <div className={style.divDVT}>
-                  <Col span={8}>
-                    <Card
-                      hoverable
-                      style={{
-                        width: 240,
-                      }}
-                      cover={
-                        <img
-                          src={currentTrip.tripImg}
-                          alt={currentTrip.destination}
-                        />
-                      }
-                    >
-                      <Meta
-                        title={currentTrip.destination}
-                        description={currentTrip.description}
+              <div key={`${currentTrip._id}trips`}>
+                <Col span={8}>
+                  <Card
+                    hoverable
+                    style={{
+                      width: 250,
+                      height: 400,
+                    }}
+                    cover={
+                      <img
+                        style={{ height: 150 }}
+                        src={currentTrip.tripImg}
+                        alt={currentTrip.destination}
                       />
+                    }
+                  >
+                    <Meta
+                      title={currentTrip.destination}
+                      description={currentTrip.description}
+                      style={{ height: 180 }}
+                    />
 
-                      <Link to={`/admin/trip/${currentTrip._id}`}>
-                        <Button>Edit</Button>
-                      </Link>
-                    </Card>
-                  </Col>
-                </div>
+                    <Link to={`/admin/trip/${currentTrip._id}`}>
+                      <Button type="primary">Edit</Button>
+                    </Link>
+                  </Card>
+                </Col>
               </div>
             );
           })}

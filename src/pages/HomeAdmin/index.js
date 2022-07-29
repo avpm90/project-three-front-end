@@ -7,6 +7,7 @@ import { NavBar } from "../../components/HomePage/navBar";
 import { Button } from "antd";
 import { ContactUs } from "../../components/HomePage/contactUs";
 import { CreateTrip } from "../../components/HomeAdmin/CreateTrip";
+import { Col, Row } from "antd";
 
 
 export function HomeAdmin() {
@@ -33,23 +34,29 @@ export function HomeAdmin() {
     <>
       <NavBar />
       <div className="adminDivs">
-        <div>
-          <Button onClick={handleTrip}>
-            Trips
-          </Button>
-          <Button onClick={handleOrders}>
-            Orders
-          </Button>
-          <Button onClick={handleUsers}>
-            Users
-          </Button>
-          <div></div>
-          {showTrips && <CreateTrip />}
-          {showTrips && <ViewTrip />}
 
-          {showOrders && <ViewOrder />}
-          {showUsers && <ViewUser />}
-        </div>
+        <Row justify="start">
+          <Col>
+            <Button type="primary" onClick={handleTrip}>
+              Trips
+            </Button>
+          </Col>
+          <Col>
+            <Button type="primary" onClick={handleOrders}>
+              Orders
+            </Button>
+          </Col>
+          <Col>
+            <Button type="primary" onClick={handleUsers}>
+              Users
+            </Button>
+          </Col>
+          <Col span={100}>{showTrips && <CreateTrip />}</Col>
+        </Row>
+        {showTrips && <ViewTrip />}
+
+        {showOrders && <ViewOrder />}
+        {showUsers && <ViewUser />}
       </div>
       <ContactUs />
     </>
