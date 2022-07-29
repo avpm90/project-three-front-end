@@ -9,11 +9,16 @@ export function Community() {
     <div className={style.communityContainer}>
       <div className={style.communityCard}>
         <div>
-          <img src={Envelope2} alt="envelop" className={style.Img2}/>
+          <img src={Envelope2} alt="envelop" className={style.Img2} />
         </div>
         <div>
-          <img src={Envelope3} alt="envelop" className={style.Img3}/>
+          <img src={Envelope3} alt="envelop" className={style.Img3} />
         </div>
+        <p className={style.text}>
+          "You will receive a series of beautiful sealed envelopes that contain
+          the next exciting steps of your way journey. The package came with
+          four surprise stops.""
+        </p>
       </div>
     </div>
   );

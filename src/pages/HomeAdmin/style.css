@@ -1,15 +1,14 @@
 .adminDivs {
   margin-top: 6.2rem;
   align-items: flex-start;
+  /* justify-content: space-between; */
   height: 800px;
   width: 100%;
   flex-direction: row;
-  /* border-radius: 150px; */
   background-color: #DEDBD2;
 }
 .picImgT {
   display: flex;
   width: 275px;
   height: 230px;
-  /* background-color: yellowgreen; */
 }
