@@ -8,7 +8,7 @@
 	flex-direction: row;
 }
 .cart {
-	background-color: #dedbd2;
+	/* background-color: #dedbd2; */
 	width: 25%;
 	padding: 15px;
 	border-radius: 16px;
@@ -17,7 +17,7 @@
 	margin-right: 30px;
 }
 .tripCard {
-	background-color: #b0c4b1;
+	/* background-color: #b0c4b1; */
 	width: 75%;
 	padding: 15px;
 	margin-left: 15px;
