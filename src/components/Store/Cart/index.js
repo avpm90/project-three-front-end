@@ -5,6 +5,7 @@ import {
 	PlusCircleOutlined,
 	DeleteOutlined,
 } from '@ant-design/icons';
+import { Button } from 'antd';
 import { PaymentModal } from '../PaymentModal/index';
 import style from '../Cart/style.module.css';
 
@@ -32,27 +33,20 @@ export const Cart = () => {
 				<div>
 					<div>
 						<table>
-							<div className={style.tableTitlesDiv}>
-								<tr>
-									<td> -- </td>
-									<td>Destination</td>
-									<td>Price</td>
-									<td>Quantity</td>
-									<td> -- </td>
-									<td> -- </td>
-									<td> -- </td>
-								</tr>
-							</div>
+							<tr>
+								<th>Destination </th>
+								<th>Price </th>
+								<th>Quantity </th>
+							</tr>
 
 							<tbody>
 								{items.map((item, index) => {
 									return (
 										<>
 											<tr key={index}>
-												<td>{/* <img /> */}</td>
 												<td>{item.destination}</td>
 												<td>${item.price}</td>
-												<td>({item.quantity})</td>
+												<td>{item.quantity}</td>
 												<td>
 													<button
 														onClick={() =>
@@ -80,13 +74,14 @@ export const Cart = () => {
 						</table>
 					</div>
 					<div>
-						<h5>
-							Cart Items: ({totalUniqueItems}) Total Items: ({totalItems})
-						</h5>
-						<h2>Total Price:$ {cartTotal}</h2>
+						<h5>Total Items: {totalItems}</h5>
+						<h3>Total Price:$ {cartTotal}</h3>
 					</div>
 					<div>
-						<button onClick={() => emptyCart()}>Clear Cart</button>
+						<Button danger onClick={() => emptyCart()}>
+							Clear Cart
+						</Button>
+
 						<PaymentModal />
 					</div>
 				</div>
