@@ -10,6 +10,7 @@ export function CreateTrip() {
     inStock: "",
     description: "",
     unitPrice: "",
+    tripImg: "",
   });
 
   const [img, setImg] = useState("");
@@ -88,7 +89,7 @@ export function CreateTrip() {
   return (
     <div>
       <Button shape="round" size="default" onClick={showModal}>
-       CREATE TRIP
+        CREATE TRIP
       </Button>
       <Modal
         title="CREATE TRIP"
@@ -123,7 +124,7 @@ export function CreateTrip() {
             <select
               name="category"
               placeholder="Category"
-              value={form.category}
+              value={forma.category}
               onChange={handleForma}
             >
               <option value="Adventure">Adventure</option>
@@ -137,7 +138,7 @@ export function CreateTrip() {
             <Input
               name="description"
               placeholder="Description"
-              value={form.description}
+              value={forma.description}
               onChange={handleForma}
             />
           </Form.Item>
@@ -145,7 +146,7 @@ export function CreateTrip() {
             <Input
               name="inStock"
               placeholder="In Stock"
-              value={form.inStock}
+              value={forma.inStock}
               onChange={handleForma}
             />
           </Form.Item>
@@ -153,13 +154,11 @@ export function CreateTrip() {
             <Input
               name="unitPrice"
               placeholder="Price"
-              value={form.unitPrice}
+              value={forma.unitPrice}
               onChange={handleForma}
             />
           </Form.Item>
-          {/*  <button type="submit" onClick={handleTrips}>
-            Add
-          </button> */}
+       
         </Form>
       </Modal>
     </div>
