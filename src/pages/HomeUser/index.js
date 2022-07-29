@@ -73,7 +73,6 @@ export function HomeUser() {
         </div>
         <ViewOrders />
       </div>
-
       <ContactUs />
     </>
   );

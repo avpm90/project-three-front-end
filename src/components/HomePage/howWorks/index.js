@@ -4,7 +4,7 @@ export function HowWorks() {
   return (
     <div className={style.howWorksContainer}>
       <div>
-        <h1>How does it works?</h1>
+        <h1>How does it work?</h1>
       </div>
       <div className={style.cardsContainer}>
         <div className={style.card}>

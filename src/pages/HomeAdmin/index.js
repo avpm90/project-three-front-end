@@ -6,6 +6,7 @@ import { ViewUser } from "../../components/HomeAdmin/ViewUser";
 import "./style.css";
 import { NavBar } from "../../components/HomePage/navBar";
 import { Button } from "antd";
+import { ContactUs } from "../../components/HomePage/contactUs";
 
 export function HomeAdmin() {
   const [showTrips, setShowTrips] = useState(true);
@@ -49,6 +50,7 @@ export function HomeAdmin() {
           {showUsers && <ViewUser />}
         </div>
       </div>
+      <ContactUs />
     </>
   );
 }

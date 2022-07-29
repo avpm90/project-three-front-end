@@ -249,7 +249,6 @@ export const SignUpModal = () => {
           <Form.Item label="What's your date of birth?">
             <DatePicker />
           </Form.Item>
-
           <Checkbox>Sign up for our newsletter</Checkbox>
         </Form>
       </Modal>
