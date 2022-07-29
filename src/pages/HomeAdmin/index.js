@@ -8,7 +8,7 @@ import { NavBar } from "../../components/HomePage/navBar";
 import { Button } from "antd";
 
 export function HomeAdmin() {
-  const [showTrips, setShowTrips] = useState(false);
+  const [showTrips, setShowTrips] = useState(true);
   const [showOrders, setShowOrders] = useState(false);
   const [showUsers, setShowUsers] = useState(false);
   function handleTrip() {

@@ -1,11 +1,11 @@
 .adminDivs {
-	margin-top: 3.1rem;
-	align-items: flex-start;
-	flex-direction: row;
-	border-radius: 150px;
+  margin-top: 6.2rem;
+  align-items: flex-start;
+  flex-direction: row;
+  border-radius: 150px;
 }
 .picImgT {
-	display: flex;
-	width: 275px;
-	height: 230px;
+  display: flex;
+  width: 275px;
+  height: 230px;
 }

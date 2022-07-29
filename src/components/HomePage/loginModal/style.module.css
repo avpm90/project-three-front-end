@@ -1,10 +1,9 @@
 .text {
-  margin: 0px;
+  margin: 0rem;
   text-decoration: none;
   color: white;
-  padding: 0px 10px;
+  padding: 0rem 0.625rem;
 }
-p:hover {
-  background-color: #dedbd2;
+p.text:hover {
   color: black;
 }

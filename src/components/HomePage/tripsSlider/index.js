@@ -1,7 +1,7 @@
 import style from "./style.module.css";
 
 import { Carousel } from "antd";
-import React from "react";
+//import React from "react";
 
 const contentStyle = {
   height: "800px",

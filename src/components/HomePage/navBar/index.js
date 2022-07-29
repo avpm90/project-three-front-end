@@ -87,7 +87,7 @@ export function NavBar() {
                 logOut();
               }}
             >
-              Log Out
+              Log out
             </p>
           ) : (
             <LoginModal />
