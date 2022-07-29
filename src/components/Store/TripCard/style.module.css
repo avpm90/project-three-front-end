@@ -29,9 +29,11 @@
   padding-top: 1.25rem;
   display: flex;
   justify-content: space-evenly;
-  background-color: #dedbd2;
+  gap: 20px;
+  flex-wrap: wrap;
   height: 40rem;
   overflow-y: scroll;
+  background-color: #dedbd2;
 }
 .card {
   width: 14.5rem;

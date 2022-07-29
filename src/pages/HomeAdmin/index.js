@@ -34,6 +34,7 @@ export function HomeAdmin() {
     <>
       <NavBar />
       <div className="adminDivs">
+
         <Row justify="start">
           <Col>
             <Button type="primary" onClick={handleTrip}>
