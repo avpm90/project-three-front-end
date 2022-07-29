@@ -1,18 +1,20 @@
-// import style from "./style.module.css";
-// import Img1 from "../../assets/images/hello-img.jpeg";
-// // import { Link } from "react-router-dom";
+import style from "./style.module.css";
+import Envelope2 from "../../assets/images/envelope2.jpg";
+import Envelope3 from "../../assets/images/envelope3.jpg";
 
-// // import { Card } from "antd";
-// import React from "react";
+import React from "react";
 
-// export function Community() {
-//   return (
-//     <div className={style.communityContainer}>
-//       <div className={style.communityCard}>
-//         <a href="https://sustainabletravel.org/" target="_blank">
-//           <img src={Img1} className={style.communityCard} alt="help" />
-//         </a>
-//       </div>
-//     </div>
-//   );
-// }
+export function Community() {
+  return (
+    <div className={style.communityContainer}>
+      <div className={style.communityCard}>
+        <div>
+          <img src={Envelope2} alt="envelop" className={style.Img2}/>
+        </div>
+        <div>
+          <img src={Envelope3} alt="envelop" className={style.Img3}/>
+        </div>
+      </div>
+    </div>
+  );
+}
