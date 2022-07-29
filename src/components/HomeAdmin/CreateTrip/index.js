@@ -88,8 +88,8 @@ export function CreateTrip() {
 
   return (
     <div>
-      <Button shape="round" size="default" onClick={showModal}>
-        CREATE TRIP
+      <Button type="primary" size="default" onClick={showModal}>
+        Create Trip
       </Button>
       <Modal
         title="CREATE TRIP"
@@ -158,7 +158,6 @@ export function CreateTrip() {
               onChange={handleForma}
             />
           </Form.Item>
-       
         </Form>
       </Modal>
     </div>
