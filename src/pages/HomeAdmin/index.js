@@ -6,6 +6,7 @@ import "./style.css";
 import { NavBar } from "../../components/HomePage/navBar";
 import { Button } from "antd";
 import { ContactUs } from "../../components/HomePage/contactUs";
+import { CreateTrip } from "../../components/HomeAdmin/CreateTrip";
 
 
 export function HomeAdmin() {
