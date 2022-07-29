@@ -34,7 +34,7 @@ export function ViewTrip() {
                 hoverable
                 style={{
                   width: 250,
-                  height: 400,
+                  height: 450,
                 }}
                 cover={
                   <img
@@ -47,7 +47,7 @@ export function ViewTrip() {
                 <Meta
                   title={currentTrip.destination}
                   description={currentTrip.description}
-                  style={{ height: 180 }}
+                  style={{ height: 230 }}
                 />
                 <Link to={`/admin/trip/${currentTrip._id}`}>
                   <Button>Edit</Button>
