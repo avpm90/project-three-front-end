@@ -1,3 +1,20 @@
 .cartEmpty {
 	text-align: center;
 }
+.tableTitlesDiv {
+	/* display: flex;
+	flex-direction: row; */
+	/* flex-wrap: wrap; */
+	/* justify-content: space-around; */
+	/* align-items: flex-start; */
+	/* align-content: flex-start; */
+	background-color: red;
+	/* width: 350px; */
+}
+td {
+	border: 1px solid #000000;
+}
+table tr[class='separar'] {
+	display: flex;
+	margin-bottom: 8px;
+}
