@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { api } from "../../../api/api";
 import { Button, Card } from "antd";
 import { useNavigate } from "react-router-dom";
+import style from "./style.module.css"
 
 export function ViewOrder() {
   const navigate = useNavigate();
@@ -38,10 +39,10 @@ export function ViewOrder() {
 
   return (
     <>
-      <div>
+      <div className={style.oderDiv}>
         {orders.map((currentOrder) => {
           return (
-            <div key={`${currentOrder._id}orders`}>
+            <div key={`${currentOrder._id}orders`} >
               <Card title={`Order Number: ${currentOrder._id}`}>
                 <p>Customer: {currentOrder.customerId.name}</p>
                 {currentOrder.trips.map((currentTrip) => {
