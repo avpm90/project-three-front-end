@@ -42,10 +42,10 @@ export function HomeAdmin() {
           <Button type="primary" onClick={handleUsers}>
             Users
           </Button>
-          <div>
-            <CreateTrip />
-          </div>
+          <div></div>
+          {showTrips && <CreateTrip />}
           {showTrips && <ViewTrip />}
+
           {showOrders && <ViewOrder />}
           {showUsers && <ViewUser />}
         </div>
