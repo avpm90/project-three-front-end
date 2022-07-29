@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { api } from "../../../api/api";
-import { Button } from "antd";
-import style from "./style.module.css";
+import { Button, Space, Table } from "antd";
 
 export function ViewUser() {
   const [users, setUsers] = useState([
@@ -25,29 +24,40 @@ export function ViewUser() {
     window.location.reload();
   }
 
+  const columns = [
+    {
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+    },
+    {
+      title: "E-mail",
+      dataIndex: "email",
+      key: "email",
+    },
+
+    {
+      title: "Action",
+      key: "action",
+      render: (_, record) => (
+        <Space size="middle">
+          <Button type="primary" onClick={() => deleteUser(record._id)}>
+            Delete
+          </Button>{" "}
+        </Space>
+      ),
+    },
+  ];
+
   return (
     <>
-      <div className={style.divPaidac}>
-        <div className={style.divKid}>
-          {users.map((currentUser) => {
-            return (
-              <div key={currentUser._id} className={style.divAntCar}>
-                <p>
-                  {currentUser.name} {currentUser.surname}
-                </p>
-                <p>{currentUser.email}</p>
-
-                <Button
-                  type="primary"
-                  onClick={() => deleteUser(currentUser._id)}
-                >
-                  Delete
-                </Button>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+      <Table
+        rowKey={(record) => {
+          return `${record._id}users`;
+        }}
+        columns={columns}
+        dataSource={users}
+      />
     </>
   );
 }
