@@ -26,7 +26,9 @@ export function ViewTrip() {
   }, []);
 
   return (
+
     <div className={style.divDVT}>
+
       <>
         <Row gutter={[48, 24]}>
           {trips.map((currentTrip) => {
