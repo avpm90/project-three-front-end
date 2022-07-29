@@ -12,7 +12,6 @@ import style from '../Cart/style.module.css';
 export const Cart = () => {
 	const {
 		isEmpty,
-		totalUniqueItems,
 		items,
 		totalItems,
 		cartTotal,
@@ -33,7 +32,7 @@ export const Cart = () => {
 				<div>
 					<div>
 						<table>
-							<tr>
+							<tr className={style.tableTr}>
 								<th>Destination </th>
 								<th>Price </th>
 								<th>Quantity </th>
@@ -43,28 +42,30 @@ export const Cart = () => {
 								{items.map((item, index) => {
 									return (
 										<>
-											<tr key={index}>
-												<td>{item.destination}</td>
-												<td>${item.price}</td>
-												<td>{item.quantity}</td>
+											<tr key={index} className={style.tableTd}>
+												<td className={style.tdDestination}>
+													{item.destination}
+												</td>
+												<td className={style.tdPrice}>${item.price}</td>
+												<td className={style.tdQuantity}>{item.quantity}</td>
 												<td>
-													<button
+													<span
 														onClick={() =>
 															updateItemQuantity(item.id, item.quantity - 1)
 														}
 													>
 														{<MinusCircleOutlined />}
-													</button>
-													<button
+													</span>
+													<span
 														onClick={() =>
 															updateItemQuantity(item.id, item.quantity + 1)
 														}
 													>
 														{<PlusCircleOutlined />}
-													</button>
-													<button onClick={() => removeItem(item.id)}>
+													</span>
+													<span onClick={() => removeItem(item.id)}>
 														{<DeleteOutlined />}
-													</button>
+													</span>
 												</td>
 											</tr>
 										</>
@@ -75,9 +76,11 @@ export const Cart = () => {
 					</div>
 					<div>
 						<h5>Total Items: {totalItems}</h5>
-						<h3>Total Price:$ {cartTotal}</h3>
+						<h3>
+							<strong>Total Price:</strong>${cartTotal}
+						</h3>
 					</div>
-					<div>
+					<div className={style.btnDiv}>
 						<Button danger onClick={() => emptyCart()}>
 							Clear Cart
 						</Button>

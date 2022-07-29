@@ -1,20 +1,39 @@
 .cartEmpty {
 	text-align: center;
 }
-.tableTitlesDiv {
-	/* display: flex;
-	flex-direction: row; */
-	/* flex-wrap: wrap; */
-	/* justify-content: space-around; */
-	/* align-items: flex-start; */
-	/* align-content: flex-start; */
-	background-color: red;
-	/* width: 350px; */
-}
-td {
-	border: 1px solid #000000;
-}
-table tr[class='separar'] {
+
+.tableTr {
 	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 	margin-bottom: 8px;
+	width: 250px;
+}
+.tableTd {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 8px;
+	width: 340px;
+}
+.tdPrice {
+	width: 50px;
+
+	margin-right: 50px;
+}
+.tdQuantity {
+	width: 30px;
+
+	margin-right: 40px;
+}
+.tdDestination {
+	width: 120px;
+}
+.btnDiv {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	gap: 20px;
 }
