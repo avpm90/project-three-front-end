@@ -1,31 +1,23 @@
-/* #b0c4b1 cor 4 */
-/* #dedbd2 cor 3 */
-
 .containerStore {
-	background-color: #b0c4b1;
-	margin-top: 6.25rem;
-	display: flex;
-	flex-direction: row;
+  background-color: #b0c4b1;
+  margin-top: 6.25rem;
+  display: flex;
+  flex-direction: row;
 }
 .cart {
-	/* background-color: #dedbd2; */
-	width: 25%;
-	padding: 15px;
-	border-radius: 16px;
-	margin-top: 67px;
-	margin-bottom: 15px;
-	margin-right: 30px;
+  width: 25%;
+  margin-top: 4.1875rem;
+  margin-right: 1.25rem;
+  font-size: 0.9375rem;
+  /* background-color: yellow; */
 }
 .tripCard {
-	/* background-color: #b0c4b1; */
-	width: 75%;
-	padding: 15px;
-	margin-left: 15px;
+  width: 75%;
+  padding: 0.9375rem;
+  margin-left: 0.9375rem;
 }
 .cart h1 {
-	padding: -20px;
-	text-align: center;
-	font-size: 1.3rem;
-	font-weight: bold;
-	border-bottom: 1px solid grey;
+  margin-top: -0.625rem;
+  font-size: 1.8rem;
+  border-bottom: 0.0625rem solid grey;
 }

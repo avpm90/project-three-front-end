@@ -12,7 +12,7 @@ export function Store() {
       <NavBar />
       <div
         className={style.containerStore}
-        style={{ display: "flex", flexDirection: "row" }}
+        // style={{ display: "flex", flexDirection: "row" }}
       >
         <CartProvider>
           <div className={style.tripCard}>

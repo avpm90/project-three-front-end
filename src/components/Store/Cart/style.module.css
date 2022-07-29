@@ -1,37 +1,77 @@
-.cartEmpty {
-	text-align: center;
+.emptyCart {
+	/* text-align: center; */
+	font-size: 1.25rem;
 }
-
 .tableTr {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 8px;
-	width: 250px;
+	width: 305px;
+	/* background-color: violet; */
+	font-size: 20px;
+	font-family: 'Roboto', sans-serif;
 }
 .tableTd {
 	display: flex;
-	flex-direction: row;
+	/* flex-direction: row; */
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 8px;
-	width: 340px;
+	/* margin-bottom: 5px; */
+	width: 370px;
+	font-size: 18px;
+	/* background-color: turquoise; */
+	font-family: 'Roboto', sans-serif;
 }
 .tdPrice {
-	width: 50px;
-
+	width: 40px;
 	margin-right: 50px;
+	/* background-color: antiquewhite; */
 }
 .tdQuantity {
-	width: 30px;
-
+	width: 20px;
 	margin-right: 40px;
+	/* background-color: tomato; */
 }
 .tdDestination {
-	width: 120px;
+	width: 170px;
+	/* background-color: teal; */
+}
+.thDest {
+	text-align: left;
+	/* background-color: aqua; */
+	width:650px;
+}
+.thPrice {
+	/* background-color:tomato; */
+	text-align: left;
+	width: 300px;
+}
+.thQuant {
+	/* background-color:violet; */
+	width: 150px;
+}
+.btns {
+	display: flex;
+	font-size: 20px;
+	gap:5px;
+}
+.totals {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+	/* background-color: grey; */
+	/* margin-bottom: 5px; */
+	height: 30px;
+	width: 370px;
+}
+.totals h3 {
+	/* background-color: aqua; */
+	font-size: 23px;
 }
 .btnDiv {
+	margin-top: 15px;
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
