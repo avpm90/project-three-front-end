@@ -32,14 +32,17 @@ export const Cart = () => {
 				<div>
 					<div>
 						<table>
-							<tr>
-								<th>Destination</th>
-								<th>Price</th>
-								<th>Quantity</th>
-								<th> -- </th>
-								<th> -- </th>
-								<th> -- </th>
-							</tr>
+							<div className={style.tableTitlesDiv}>
+								<tr>
+									<td> -- </td>
+									<td>Destination</td>
+									<td>Price</td>
+									<td>Quantity</td>
+									<td> -- </td>
+									<td> -- </td>
+									<td> -- </td>
+								</tr>
+							</div>
 
 							<tbody>
 								{items.map((item, index) => {
