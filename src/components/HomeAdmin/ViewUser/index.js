@@ -9,7 +9,6 @@ export function ViewUser() {
       surname: "",
     },
   ]);
-  console.log(users);
 
   useEffect(() => {
     async function fetchUsers() {

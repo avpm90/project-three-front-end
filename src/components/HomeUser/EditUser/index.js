@@ -38,7 +38,6 @@ export function EditUser({ update, setUpdate }) {
   }
 
   const handleOk = async (e) => {
-    //  setModalText("The modal will be closed after two seconds");
     setConfirmLoading(true);
     setTimeout(() => {
       setVisible(false);

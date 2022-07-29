@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { api } from "../../../api/api";
 import { Card, Button, Col, Row } from "antd";
-import { CreateTrip } from "../CreateTrip";
 
 export function ViewTrip() {
   const [trips, setTrips] = useState([
@@ -25,18 +24,9 @@ export function ViewTrip() {
     fetchTrips();
   }, []);
 
-  const [showCreate, setShowCreate] = useState(false);
-  function handleCreate() {
-    setShowCreate(!showCreate);
-  }
-
   return (
     <div className="divDVT">
       <>
-        <Button type="primary" className="btnAT" onClick={handleCreate}>
-          Create Trip
-        </Button>
-        {showCreate && <CreateTrip />}
         <Row gutter={[48, 24]}>
           {trips.map((currentTrip) => {
             return (
@@ -58,11 +48,6 @@ export function ViewTrip() {
                       title={currentTrip.destination}
                       description={currentTrip.description}
                     />
-                    {/*  <p>Destination: </p>
-                <p>Category: {currentTrip.category}</p>
-                <p>Description: </p>
-                <p>In Stock: {currentTrip.inStock}</p>
-                <p>Unit Price: {currentTrip.unitPrice}</p> */}
 
                     <Link to={`/admin/trip/${currentTrip._id}`}>
                       <Button type="primary">Edit</Button>
