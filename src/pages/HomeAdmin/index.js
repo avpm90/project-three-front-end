@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { ViewOrder } from "../../components/HomeAdmin/ViewOrder";
 import { ViewTrip } from "../../components/HomeAdmin/ViewTrip";
 import { ViewUser } from "../../components/HomeAdmin/ViewUser";
 import "./style.css";
 import { NavBar } from "../../components/HomePage/navBar";
 import { Button } from "antd";
+import { CreateTrip } from "../../components/HomeAdmin/CreateTrip";
 
 export function HomeAdmin() {
   const [showTrips, setShowTrips] = useState(true);
@@ -32,9 +32,6 @@ export function HomeAdmin() {
       <NavBar />
       <div className="adminDivs">
         <div>
-          <Link to="/">
-            <Button type="primary">Home</Button>
-          </Link>
           <Button type="primary" onClick={handleTrip}>
             Trips
           </Button>
@@ -44,6 +41,9 @@ export function HomeAdmin() {
           <Button type="primary" onClick={handleUsers}>
             Users
           </Button>
+          <div>
+            <CreateTrip />
+          </div>
           {showTrips && <ViewTrip />}
           {showOrders && <ViewOrder />}
           {showUsers && <ViewUser />}
