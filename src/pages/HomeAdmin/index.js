@@ -34,13 +34,13 @@ export function HomeAdmin() {
       <NavBar />
       <div className="adminDivs">
         <div>
-          <Button type="primary" onClick={handleTrip}>
+          <Button onClick={handleTrip}>
             Trips
           </Button>
-          <Button type="primary" onClick={handleOrders}>
+          <Button onClick={handleOrders}>
             Orders
           </Button>
-          <Button type="primary" onClick={handleUsers}>
+          <Button onClick={handleUsers}>
             Users
           </Button>
           <div></div>
