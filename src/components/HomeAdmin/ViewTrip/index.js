@@ -48,11 +48,6 @@ export function ViewTrip() {
                       title={currentTrip.destination}
                       description={currentTrip.description}
                     />
-                    {/*  <p>Destination: </p>
-                <p>Category: {currentTrip.category}</p>
-                <p>Description: </p>
-                <p>In Stock: {currentTrip.inStock}</p>
-                <p>Unit Price: {currentTrip.unitPrice}</p> */}
 
                     <Link to={`/admin/trip/${currentTrip._id}`}>
                       <Button type="primary">Edit</Button>
