@@ -57,11 +57,11 @@ p.textOff:hover {
 }
 .textUser {
   position: fixed;
-  right: 25rem;
+  right: 1.1rem;
   padding: 0rem 1.25rem;
   color: white;
   font-size: 1.2rem;
-  top: 1.6rem;
+  top: 4rem;
 }
 .navRight {
   text-decoration: none;
@@ -92,4 +92,3 @@ p.textOff:hover {
 .img {
   height: 430px;
 }
-
