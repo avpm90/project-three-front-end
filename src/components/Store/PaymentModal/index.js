@@ -46,7 +46,9 @@ export const PaymentModal = () => {
 		<>
 			<Button onClick={showModal}>Checkout</Button>
 			<Modal
-				title="Payment Information"
+				bodyStyle={{ height: 330, paddingTop: 20 }}
+				width={400}
+				title={<strong>Payment Information</strong>}
 				visible={visible}
 				onOk={(e) => {
 					handleSubmit(e);
@@ -91,9 +93,6 @@ export const PaymentModal = () => {
 					<label>Security Code</label>
 					<Form.Item>
 						<Input />
-					</Form.Item>
-					<Form.Item label="Button">
-						<Button onClick={handleSubmit}>Button</Button>
 					</Form.Item>
 				</Form>
 			</Modal>
