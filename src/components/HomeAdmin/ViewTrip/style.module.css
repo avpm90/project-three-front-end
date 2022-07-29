@@ -1,0 +1,9 @@
+.divDVT {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly !important;
+	align-items: center;
+	width: 100%;
+
+	padding: 20px 70px;
+}
