@@ -37,17 +37,17 @@ export function HomeAdmin() {
 
         <Row justify="start">
           <Col>
-            <Button type="primary" onClick={handleTrip}>
+            <Button onClick={handleTrip}>
               Trips
             </Button>
           </Col>
           <Col>
-            <Button type="primary" onClick={handleOrders}>
+            <Button onClick={handleOrders}>
               Orders
             </Button>
           </Col>
           <Col>
-            <Button type="primary" onClick={handleUsers}>
+            <Button onClick={handleUsers}>
               Users
             </Button>
           </Col>
