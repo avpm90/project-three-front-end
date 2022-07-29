@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { api } from "../../../api/api";
-import { Form, Card, Divider, Input, Button } from "antd";
+import { Form, Card, Input, Button } from "antd";
+import style from "./style.module.css";
+
+import { NavBar } from "../../../components/HomePage/navBar";
+
 export function EditTrip() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -65,12 +69,11 @@ export function EditTrip() {
 
   return (
     <>
-      <Card style={{ borderRadius: 50, width: "600px" }}>
+      <NavBar />
+      {/* <Card style={{ borderRadius: 50, width: "600px" }} > */}
+      <div className={style.card}>
         <Card style={{ width: "550px" }}>
           <Form style={{ width: "500px" }}>
-            <Form.Item label="Trip Pic Here" htmlFor="formImg">
-              <Input type="file" id="formImg" onChange={handleImage} />
-            </Form.Item>
             <Form.Item label="Destination">
               <Input
                 name="destination"
@@ -118,22 +121,25 @@ export function EditTrip() {
                 <option value="Romance">Romance</option>
               </select>
             </Form.Item>
+            <Form.Item label="Trip Pic Here" htmlFor="formImg">
+              <Input type="file" id="formImg" onChange={handleImage} />
+            </Form.Item>
+            <div className={style.btns}>
+              <Link to="/admin">
+                <Button>Back</Button>
+              </Link>
 
-            <Link to="/admin">
-              <Button type="primary">Back</Button>
-            </Link>
-            <Button type="primary" onClick={handleUpdate}>
-              Add Changes
-            </Button>
+              <Button onClick={handleUpdate}>Add Changes</Button>
 
-            <Button type="primary" onClick={deleteTrip}>
-              Delete Trip
-            </Button>
+              <Button onClick={deleteTrip}>Delete Trip</Button>
+            </div>
           </Form>
         </Card>
-        <Divider></Divider>
-      </Card>
-      <Card style={{ borderRadius: 50, width: "300px" }}>
+      </div>
+
+      {/* <Divider></Divider> */}
+      {/* </Card> */}
+      {/* <Card style={{ borderRadius: 50, width: "300px" }}>
         <img
           src={form.tripImg}
           alt={form.destination}
@@ -144,7 +150,7 @@ export function EditTrip() {
         <p>Category: {form.category}</p>
         <p>In Stock: {form.inStock}</p>
         <p>Unit Price: {form.unitPrice}</p>
-      </Card>
+      </Card> */}
     </>
   );
 }
