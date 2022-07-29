@@ -72,7 +72,7 @@ export function CreateTrip() {
         >
           <option value="Adventure">Adventure</option>
           <option value="Relax">Relax</option>
-          <option value="NightLife">NightLife</option>
+          <option value="Nightlife">Nightlife</option>
           <option value="Culture">Culture</option>
           <option value="Romance">Romance</option>
         </select>
