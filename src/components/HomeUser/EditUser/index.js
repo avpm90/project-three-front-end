@@ -3,7 +3,6 @@ import { Button, Form, Input, Modal } from "antd";
 import { api } from "../../../api/api";
 
 export function EditUser({ update, setUpdate }) {
-  //  const { loggedInUser } = useContext(AuthContext);
   const [forms, setForms] = useState({
     name: "",
   });
@@ -18,7 +17,6 @@ export function EditUser({ update, setUpdate }) {
   }
   const [visible, setVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
-  //  const [modalText, setModalText] = useState("Content of the modal");
 
   const showModal = () => {
     setVisible(true);

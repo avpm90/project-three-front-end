@@ -6,7 +6,6 @@ import { EditUser } from "../../components/HomeUser/EditUser";
 import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 import { ContactUs } from "../../components/HomePage/contactUs";
-
 import style from "./style.module.css";
 import { api } from "../../api/api";
 
@@ -68,7 +67,6 @@ export function HomeUser() {
                 alt={user.name}
               />
             </div>
-            
           </div>
         </div>
         <ViewOrders />

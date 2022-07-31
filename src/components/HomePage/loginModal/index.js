@@ -8,12 +8,11 @@ import { Modal, Checkbox, Form, Input } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 
 export const LoginModal = () => {
-  // LOG IN FORM INFO
+
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
   };
 
-  // MODAL INFO
   const [visible, setVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
 
@@ -31,7 +30,6 @@ export const LoginModal = () => {
     try {
       const response = await api.post("/user/log-in", form);
       setLoggedInUser({ ...response.data });
-      // console.log(response.data);
 
       localStorage.setItem("loggedInUser", JSON.stringify(response.data));
       if (response.data.user.role === "ADMIN") {
@@ -49,7 +47,6 @@ export const LoginModal = () => {
     setVisible(false);
   };
 
-  // FROM LOG IN PAGE
 
   const [form, setForm] = useState({
     email: "",
@@ -132,7 +129,6 @@ export const LoginModal = () => {
               <Form.Item name="remember" valuePropName="checked" noStyle>
                 <Checkbox>Remember me</Checkbox>
               </Form.Item>
-
               <a className="login-form-forgot" href="forgot">
                 Forgot password
               </a>

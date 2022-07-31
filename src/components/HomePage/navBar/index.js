@@ -4,7 +4,6 @@ import { useContext } from "react";
 import { AuthContext } from "../../../contexts/authContext";
 import { Link } from "react-scroll";
 import Logo from "./../../assets/images/logo.png"
-
 import { SignUpModal } from "../signupModal";
 import { LoginModal } from "../loginModal";
 
@@ -76,7 +75,6 @@ export function NavBar() {
                   to="/user"
                   className={`${style.text} ${style.textProfile}`}
                 >
-                  {" "}
                   Profile
                 </NavLink>
               )}
