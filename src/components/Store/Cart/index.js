@@ -89,7 +89,6 @@ export const Cart = () => {
             <Button danger onClick={() => emptyCart()}>
               Clear Cart
             </Button>
-
             <PaymentModal />
           </div>
         </div>

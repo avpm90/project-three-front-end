@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { api } from '../../../api/api';
-// import { Card } from 'antd';
 import { useCart } from 'react-use-cart';
 import CardDetails from '../CardDetails/index';
 import { ShoppingCartOutlined } from '@ant-design/icons';
@@ -19,7 +18,6 @@ export function TripCard() {
 		},
 	]);
 
-	// console.log(trips);
 	useEffect(() => {
 		async function fetchTrips() {
 			const response = await api.get('/trip/all-trips');

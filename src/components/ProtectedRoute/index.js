@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/authContext";
-
 import { Navigate } from "react-router-dom";
 
 export function ProtectedRoute(props) {
@@ -10,6 +9,5 @@ export function ProtectedRoute(props) {
   if (loggedInUser) {
     return <Component />;
   }
-
   return <Navigate to="/" />;
 }

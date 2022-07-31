@@ -1,20 +1,8 @@
 import { useState, React } from "react";
 import { api } from "../../../api/api";
 import { useNavigate } from "react-router-dom";
-// import style from "./style.module.css";
-
-// import { Alert } from "antd";
 
 export function SignUpForm() {
-  //   const [isModalVisible, setIsModalVisible] = useState(false);
-
-  //   const handleOk = () => {
-  //     setIsModalVisible(false);
-  //   };
-
-  //   const handleCancel = () => {
-  //     setIsModalVisible(false);
-  //   };
 
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -33,16 +21,11 @@ export function SignUpForm() {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      // const imgURL = await handleUpload();
       if (
         form.email !== form.confirmEmail ||
         form.password !== form.confirmPassword
       ) {
-        // const showModal = () => {
-        //     setIsModalVisible(true);
-        //   };
         return;
-        // console.log("nao deu match!")
       }
       await api.post("/user/sign-up", form);
       navigate("/");
@@ -63,7 +46,6 @@ export function SignUpForm() {
             value={form.name}
             onChange={handleChange}
           />
-
           <label htmlFor="formEmail">What is your email?</label>
           <input
             id="formEmail"
@@ -104,13 +86,9 @@ export function SignUpForm() {
             value={form.birthday}
             onChange={handleChange}
           />
-          {/* CHECKBOX SEM FUNCIONALIDADE! */}
           <input
             id="newsletter"
             type="checkbox"
-            // name="" PRECISA??
-            // value={form.} PRECISA??
-            // onChange={handleChange} PRECISA??
           />
           <label htmlFor="newsletter">Sign up for our newsletter</label>
         </form>

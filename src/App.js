@@ -17,8 +17,6 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/store" element={<Store />} />
           <Route path="*" element={<ErrorPage />} />
-
-      
           <Route
             path="/admin/trip/:id"
             element={<ProtectedRouteAdmin component={EditTrip} />}
@@ -27,7 +25,6 @@ function App() {
             path="/admin"
             element={<ProtectedRouteAdmin component={HomeAdmin} />}
           />
-
           <Route
             path="/user"
             element={<ProtectedRoute component={HomeUser} />}

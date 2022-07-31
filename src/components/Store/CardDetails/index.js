@@ -83,7 +83,6 @@ const CardDetails = ({ trip }) => {
 						</Draggable>
 					)}
 				>
-					{/* <p>{trips.tripImg}</p> */}
 					<p>{trip.description}</p>
 					<p>
 						<b>Category:</b> {trip.category}{' '}

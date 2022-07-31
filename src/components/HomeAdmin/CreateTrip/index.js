@@ -1,5 +1,4 @@
 import { useState } from "react";
-//import { Link } from "react-router-dom";
 import { api } from "../../../api/api";
 import { Form, Input, Button, Modal } from "antd";
 
@@ -55,8 +54,6 @@ export function CreateTrip() {
 
     try {
       await api.post(`/trip/add-trip`, { ...forma, tripImg: imgURL });
-      /*       setUpdate(!update);
-       */
     } catch (err) {
       console.log(err);
     }

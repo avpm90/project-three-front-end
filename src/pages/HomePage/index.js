@@ -1,5 +1,4 @@
 import style from "./style.module.css"
-
 import { NavBar } from "../../components/HomePage/navBar";
 import { Hello } from "../../components/HomePage/helloUser";
 import { HowWorks } from "../../components/HomePage/howWorks";

@@ -34,7 +34,6 @@ export const SignUpModal = () => {
     }, 2000);
     e.preventDefault();
     try {
-      // const imgURL = await handleUpload();
       if (
         form.email !== form.confirmEmail ||
         form.password !== form.confirmPassword
@@ -52,7 +51,6 @@ export const SignUpModal = () => {
   };
 
   const handleCancel = () => {
-    // console.log("Clicked cancel button");
     setVisible(false);
     setForm({
       name: "",
@@ -104,7 +102,6 @@ export const SignUpModal = () => {
         onOk={handleOk}
         confirmLoading={confirmLoading}
         onCancel={handleCancel}
-        // closable={false}
         okText="Submit"
         bodyStyle={{ height: 650, paddingTop: 10 }}
       >
@@ -132,7 +129,6 @@ export const SignUpModal = () => {
               onChange={handleChange}
             />
           </Form.Item>
-
           <Form.Item
             name="email"
             label="What is your email?"
@@ -155,7 +151,6 @@ export const SignUpModal = () => {
               onChange={handleChange}
             />
           </Form.Item>
-
           <Form.Item
             name="confirmEmail"
             label="Confirm your email"
@@ -204,7 +199,6 @@ export const SignUpModal = () => {
               onChange={handleChange}
             />
           </Form.Item>
-
           <Form.Item
             name="confirmPassword"
             label="Confirm Password"
