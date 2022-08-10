@@ -13,7 +13,7 @@ You can find the slides presentation at the following link: [Presentation Here!]
 
 ## Netlify Deploy
 
-You can find the app deploy at the following link: [Deploy Here!](https://project-three-ironhack.netlify.app/)
+You can find the app deploy at the following link: [Deploy Here!](https://(https://wtg-ecommerce.netlify.app/)
 
 ## GitHub Repositories
 
